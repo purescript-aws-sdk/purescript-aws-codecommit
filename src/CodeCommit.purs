@@ -20,187 +20,257 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "CodeCommit" :: String
-
 
 -- | <p>Returns information about one or more repositories.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>
 batchGetRepositories :: forall eff. BatchGetRepositoriesInput -> Aff (exception :: EXCEPTION | eff) BatchGetRepositoriesOutput
-batchGetRepositories = Request.request serviceName "batchGetRepositories" 
+batchGetRepositories = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "batchGetRepositories"
 
 
 -- | <p>Creates a new branch in a repository and points the branch to a commit.</p> <note> <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p> </note>
 createBranch :: forall eff. CreateBranchInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-createBranch = Request.request serviceName "createBranch" 
+createBranch = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "createBranch"
 
 
 -- | <p>Creates a pull request in the specified repository.</p>
 createPullRequest :: forall eff. CreatePullRequestInput -> Aff (exception :: EXCEPTION | eff) CreatePullRequestOutput
-createPullRequest = Request.request serviceName "createPullRequest" 
+createPullRequest = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "createPullRequest"
 
 
 -- | <p>Creates a new, empty repository.</p>
 createRepository :: forall eff. CreateRepositoryInput -> Aff (exception :: EXCEPTION | eff) CreateRepositoryOutput
-createRepository = Request.request serviceName "createRepository" 
+createRepository = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "createRepository"
 
 
 -- | <p>Deletes a branch from a repository, unless that branch is the default branch for the repository. </p>
 deleteBranch :: forall eff. DeleteBranchInput -> Aff (exception :: EXCEPTION | eff) DeleteBranchOutput
-deleteBranch = Request.request serviceName "deleteBranch" 
+deleteBranch = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "deleteBranch"
 
 
 -- | <p>Deletes the content of a comment made on a change, file, or commit in a repository.</p>
 deleteCommentContent :: forall eff. DeleteCommentContentInput -> Aff (exception :: EXCEPTION | eff) DeleteCommentContentOutput
-deleteCommentContent = Request.request serviceName "deleteCommentContent" 
+deleteCommentContent = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "deleteCommentContent"
 
 
 -- | <p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important> <p>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</p> </important>
 deleteRepository :: forall eff. DeleteRepositoryInput -> Aff (exception :: EXCEPTION | eff) DeleteRepositoryOutput
-deleteRepository = Request.request serviceName "deleteRepository" 
+deleteRepository = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "deleteRepository"
 
 
 -- | <p>Returns information about one or more pull request events.</p>
 describePullRequestEvents :: forall eff. DescribePullRequestEventsInput -> Aff (exception :: EXCEPTION | eff) DescribePullRequestEventsOutput
-describePullRequestEvents = Request.request serviceName "describePullRequestEvents" 
+describePullRequestEvents = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "describePullRequestEvents"
 
 
 -- | <p>Returns the base-64 encoded content of an individual blob within a repository.</p>
 getBlob :: forall eff. GetBlobInput -> Aff (exception :: EXCEPTION | eff) GetBlobOutput
-getBlob = Request.request serviceName "getBlob" 
+getBlob = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getBlob"
 
 
 -- | <p>Returns information about a repository branch, including its name and the last commit ID.</p>
 getBranch :: forall eff. GetBranchInput -> Aff (exception :: EXCEPTION | eff) GetBranchOutput
-getBranch = Request.request serviceName "getBranch" 
+getBranch = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getBranch"
 
 
 -- | <p>Returns the content of a comment made on a change, file, or commit in a repository.</p>
 getComment :: forall eff. GetCommentInput -> Aff (exception :: EXCEPTION | eff) GetCommentOutput
-getComment = Request.request serviceName "getComment" 
+getComment = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getComment"
 
 
 -- | <p>Returns information about comments made on the comparison between two commits.</p>
 getCommentsForComparedCommit :: forall eff. GetCommentsForComparedCommitInput -> Aff (exception :: EXCEPTION | eff) GetCommentsForComparedCommitOutput
-getCommentsForComparedCommit = Request.request serviceName "getCommentsForComparedCommit" 
+getCommentsForComparedCommit = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getCommentsForComparedCommit"
 
 
 -- | <p>Returns comments made on a pull request.</p>
 getCommentsForPullRequest :: forall eff. GetCommentsForPullRequestInput -> Aff (exception :: EXCEPTION | eff) GetCommentsForPullRequestOutput
-getCommentsForPullRequest = Request.request serviceName "getCommentsForPullRequest" 
+getCommentsForPullRequest = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getCommentsForPullRequest"
 
 
 -- | <p>Returns information about a commit, including commit message and committer information.</p>
 getCommit :: forall eff. GetCommitInput -> Aff (exception :: EXCEPTION | eff) GetCommitOutput
-getCommit = Request.request serviceName "getCommit" 
+getCommit = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getCommit"
 
 
 -- | <p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified reference). Results can be limited to a specified path.</p>
 getDifferences :: forall eff. GetDifferencesInput -> Aff (exception :: EXCEPTION | eff) GetDifferencesOutput
-getDifferences = Request.request serviceName "getDifferences" 
+getDifferences = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getDifferences"
 
 
 -- | <p>Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.</p>
 getMergeConflicts :: forall eff. GetMergeConflictsInput -> Aff (exception :: EXCEPTION | eff) GetMergeConflictsOutput
-getMergeConflicts = Request.request serviceName "getMergeConflicts" 
+getMergeConflicts = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getMergeConflicts"
 
 
 -- | <p>Gets information about a pull request in a specified repository.</p>
 getPullRequest :: forall eff. GetPullRequestInput -> Aff (exception :: EXCEPTION | eff) GetPullRequestOutput
-getPullRequest = Request.request serviceName "getPullRequest" 
+getPullRequest = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getPullRequest"
 
 
 -- | <p>Returns information about a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>
 getRepository :: forall eff. GetRepositoryInput -> Aff (exception :: EXCEPTION | eff) GetRepositoryOutput
-getRepository = Request.request serviceName "getRepository" 
+getRepository = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getRepository"
 
 
 -- | <p>Gets information about triggers configured for a repository.</p>
 getRepositoryTriggers :: forall eff. GetRepositoryTriggersInput -> Aff (exception :: EXCEPTION | eff) GetRepositoryTriggersOutput
-getRepositoryTriggers = Request.request serviceName "getRepositoryTriggers" 
+getRepositoryTriggers = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "getRepositoryTriggers"
 
 
 -- | <p>Gets information about one or more branches in a repository.</p>
 listBranches :: forall eff. ListBranchesInput -> Aff (exception :: EXCEPTION | eff) ListBranchesOutput
-listBranches = Request.request serviceName "listBranches" 
+listBranches = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "listBranches"
 
 
 -- | <p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>
 listPullRequests :: forall eff. ListPullRequestsInput -> Aff (exception :: EXCEPTION | eff) ListPullRequestsOutput
-listPullRequests = Request.request serviceName "listPullRequests" 
+listPullRequests = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "listPullRequests"
 
 
 -- | <p>Gets information about one or more repositories.</p>
 listRepositories :: forall eff. ListRepositoriesInput -> Aff (exception :: EXCEPTION | eff) ListRepositoriesOutput
-listRepositories = Request.request serviceName "listRepositories" 
+listRepositories = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "listRepositories"
 
 
 -- | <p>Closes a pull request and attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the fast-forward merge option.</p>
 mergePullRequestByFastForward :: forall eff. MergePullRequestByFastForwardInput -> Aff (exception :: EXCEPTION | eff) MergePullRequestByFastForwardOutput
-mergePullRequestByFastForward = Request.request serviceName "mergePullRequestByFastForward" 
+mergePullRequestByFastForward = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "mergePullRequestByFastForward"
 
 
 -- | <p>Posts a comment on the comparison between two commits.</p>
 postCommentForComparedCommit :: forall eff. PostCommentForComparedCommitInput -> Aff (exception :: EXCEPTION | eff) PostCommentForComparedCommitOutput
-postCommentForComparedCommit = Request.request serviceName "postCommentForComparedCommit" 
+postCommentForComparedCommit = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "postCommentForComparedCommit"
 
 
 -- | <p>Posts a comment on a pull request.</p>
 postCommentForPullRequest :: forall eff. PostCommentForPullRequestInput -> Aff (exception :: EXCEPTION | eff) PostCommentForPullRequestOutput
-postCommentForPullRequest = Request.request serviceName "postCommentForPullRequest" 
+postCommentForPullRequest = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "postCommentForPullRequest"
 
 
 -- | <p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>
 postCommentReply :: forall eff. PostCommentReplyInput -> Aff (exception :: EXCEPTION | eff) PostCommentReplyOutput
-postCommentReply = Request.request serviceName "postCommentReply" 
+postCommentReply = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "postCommentReply"
 
 
 -- | <p>Adds or updates a file in an AWS CodeCommit repository.</p>
 putFile :: forall eff. PutFileInput -> Aff (exception :: EXCEPTION | eff) PutFileOutput
-putFile = Request.request serviceName "putFile" 
+putFile = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "putFile"
 
 
 -- | <p>Replaces all triggers for a repository. This can be used to create or delete triggers.</p>
 putRepositoryTriggers :: forall eff. PutRepositoryTriggersInput -> Aff (exception :: EXCEPTION | eff) PutRepositoryTriggersOutput
-putRepositoryTriggers = Request.request serviceName "putRepositoryTriggers" 
+putRepositoryTriggers = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "putRepositoryTriggers"
 
 
 -- | <p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test will send data from the last commit. If no data is available, sample data will be generated.</p>
 testRepositoryTriggers :: forall eff. TestRepositoryTriggersInput -> Aff (exception :: EXCEPTION | eff) TestRepositoryTriggersOutput
-testRepositoryTriggers = Request.request serviceName "testRepositoryTriggers" 
+testRepositoryTriggers = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "testRepositoryTriggers"
 
 
 -- | <p>Replaces the contents of a comment.</p>
 updateComment :: forall eff. UpdateCommentInput -> Aff (exception :: EXCEPTION | eff) UpdateCommentOutput
-updateComment = Request.request serviceName "updateComment" 
+updateComment = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updateComment"
 
 
 -- | <p>Sets or changes the default branch name for the specified repository.</p> <note> <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p> </note>
 updateDefaultBranch :: forall eff. UpdateDefaultBranchInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateDefaultBranch = Request.request serviceName "updateDefaultBranch" 
+updateDefaultBranch = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updateDefaultBranch"
 
 
 -- | <p>Replaces the contents of the description of a pull request.</p>
 updatePullRequestDescription :: forall eff. UpdatePullRequestDescriptionInput -> Aff (exception :: EXCEPTION | eff) UpdatePullRequestDescriptionOutput
-updatePullRequestDescription = Request.request serviceName "updatePullRequestDescription" 
+updatePullRequestDescription = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updatePullRequestDescription"
 
 
 -- | <p>Updates the status of a pull request. </p>
 updatePullRequestStatus :: forall eff. UpdatePullRequestStatusInput -> Aff (exception :: EXCEPTION | eff) UpdatePullRequestStatusOutput
-updatePullRequestStatus = Request.request serviceName "updatePullRequestStatus" 
+updatePullRequestStatus = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updatePullRequestStatus"
 
 
 -- | <p>Replaces the title of a pull request.</p>
 updatePullRequestTitle :: forall eff. UpdatePullRequestTitleInput -> Aff (exception :: EXCEPTION | eff) UpdatePullRequestTitleOutput
-updatePullRequestTitle = Request.request serviceName "updatePullRequestTitle" 
+updatePullRequestTitle = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updatePullRequestTitle"
 
 
 -- | <p>Sets or changes the comment or description for a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>
 updateRepositoryDescription :: forall eff. UpdateRepositoryDescriptionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateRepositoryDescription = Request.request serviceName "updateRepositoryDescription" 
+updateRepositoryDescription = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updateRepositoryDescription"
 
 
 -- | <p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User Guide.</p>
 updateRepositoryName :: forall eff. UpdateRepositoryNameInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-updateRepositoryName = Request.request serviceName "updateRepositoryName" 
+updateRepositoryName = Request.request service method  where
+    service = Request.ServiceName "CodeCommit"
+    method = Request.MethodName "updateRepositoryName"
 
 
 newtype AccountId = AccountId String
