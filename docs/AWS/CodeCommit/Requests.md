@@ -11,7 +11,7 @@ batchGetRepositories :: forall eff. Service -> BatchGetRepositoriesInput -> Aff 
 #### `createBranch`
 
 ``` purescript
-createBranch :: forall eff. Service -> CreateBranchInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+createBranch :: forall eff. Service -> CreateBranchInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Creates a new branch in a repository and points the branch to a commit.</p> <note> <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p> </note>
@@ -243,7 +243,7 @@ updateComment :: forall eff. Service -> UpdateCommentInput -> Aff (exception :: 
 #### `updateDefaultBranch`
 
 ``` purescript
-updateDefaultBranch :: forall eff. Service -> UpdateDefaultBranchInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateDefaultBranch :: forall eff. Service -> UpdateDefaultBranchInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Sets or changes the default branch name for the specified repository.</p> <note> <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p> </note>
@@ -275,7 +275,7 @@ updatePullRequestTitle :: forall eff. Service -> UpdatePullRequestTitleInput -> 
 #### `updateRepositoryDescription`
 
 ``` purescript
-updateRepositoryDescription :: forall eff. Service -> UpdateRepositoryDescriptionInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateRepositoryDescription :: forall eff. Service -> UpdateRepositoryDescriptionInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Sets or changes the comment or description for a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>
@@ -283,7 +283,7 @@ updateRepositoryDescription :: forall eff. Service -> UpdateRepositoryDescriptio
 #### `updateRepositoryName`
 
 ``` purescript
-updateRepositoryName :: forall eff. Service -> UpdateRepositoryNameInput -> Aff (exception :: EXCEPTION | eff) NoOutput
+updateRepositoryName :: forall eff. Service -> UpdateRepositoryNameInput -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User Guide.</p>

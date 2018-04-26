@@ -19,7 +19,7 @@ batchGetRepositories (CodeCommit.Service serviceImpl) = AWS.request serviceImpl 
 
 
 -- | <p>Creates a new branch in a repository and points the branch to a commit.</p> <note> <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p> </note>
-createBranch :: forall eff. CodeCommit.Service -> CodeCommitTypes.CreateBranchInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+createBranch :: forall eff. CodeCommit.Service -> CodeCommitTypes.CreateBranchInput -> Aff (exception :: EXCEPTION | eff) Unit
 createBranch (CodeCommit.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "createBranch"
 
@@ -193,7 +193,7 @@ updateComment (CodeCommit.Service serviceImpl) = AWS.request serviceImpl method 
 
 
 -- | <p>Sets or changes the default branch name for the specified repository.</p> <note> <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p> </note>
-updateDefaultBranch :: forall eff. CodeCommit.Service -> CodeCommitTypes.UpdateDefaultBranchInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateDefaultBranch :: forall eff. CodeCommit.Service -> CodeCommitTypes.UpdateDefaultBranchInput -> Aff (exception :: EXCEPTION | eff) Unit
 updateDefaultBranch (CodeCommit.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateDefaultBranch"
 
@@ -217,12 +217,12 @@ updatePullRequestTitle (CodeCommit.Service serviceImpl) = AWS.request serviceImp
 
 
 -- | <p>Sets or changes the comment or description for a repository.</p> <note> <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p> </note>
-updateRepositoryDescription :: forall eff. CodeCommit.Service -> CodeCommitTypes.UpdateRepositoryDescriptionInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateRepositoryDescription :: forall eff. CodeCommit.Service -> CodeCommitTypes.UpdateRepositoryDescriptionInput -> Aff (exception :: EXCEPTION | eff) Unit
 updateRepositoryDescription (CodeCommit.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateRepositoryDescription"
 
 
 -- | <p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User Guide.</p>
-updateRepositoryName :: forall eff. CodeCommit.Service -> CodeCommitTypes.UpdateRepositoryNameInput -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+updateRepositoryName :: forall eff. CodeCommit.Service -> CodeCommitTypes.UpdateRepositoryNameInput -> Aff (exception :: EXCEPTION | eff) Unit
 updateRepositoryName (CodeCommit.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "updateRepositoryName"

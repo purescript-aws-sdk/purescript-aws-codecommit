@@ -128,7 +128,7 @@ Constructs BatchGetRepositoriesInput's fields from required parameters
 
 ``` purescript
 newtype BatchGetRepositoriesOutput
-  = BatchGetRepositoriesOutput { repositories :: NullOrUndefined (RepositoryMetadataList), repositoriesNotFound :: NullOrUndefined (RepositoryNotFoundList) }
+  = BatchGetRepositoriesOutput { repositories :: Maybe (RepositoryMetadataList), repositoriesNotFound :: Maybe (RepositoryNotFoundList) }
 ```
 
 <p>Represents the output of a batch get repositories operation.</p>
@@ -153,7 +153,7 @@ Constructs BatchGetRepositoriesOutput from required parameters
 #### `newBatchGetRepositoriesOutput'`
 
 ``` purescript
-newBatchGetRepositoriesOutput' :: ({ repositories :: NullOrUndefined (RepositoryMetadataList), repositoriesNotFound :: NullOrUndefined (RepositoryNotFoundList) } -> { repositories :: NullOrUndefined (RepositoryMetadataList), repositoriesNotFound :: NullOrUndefined (RepositoryNotFoundList) }) -> BatchGetRepositoriesOutput
+newBatchGetRepositoriesOutput' :: ({ repositories :: Maybe (RepositoryMetadataList), repositoriesNotFound :: Maybe (RepositoryNotFoundList) } -> { repositories :: Maybe (RepositoryMetadataList), repositoriesNotFound :: Maybe (RepositoryNotFoundList) }) -> BatchGetRepositoriesOutput
 ```
 
 Constructs BatchGetRepositoriesOutput's fields from required parameters
@@ -216,7 +216,7 @@ Encode BlobIdRequiredException
 
 ``` purescript
 newtype BlobMetadata
-  = BlobMetadata { blobId :: NullOrUndefined (ObjectId), path :: NullOrUndefined (Path), mode :: NullOrUndefined (Mode) }
+  = BlobMetadata { blobId :: Maybe (ObjectId), path :: Maybe (Path), mode :: Maybe (Mode) }
 ```
 
 <p>Returns information about a specific Git blob object.</p>
@@ -241,7 +241,7 @@ Constructs BlobMetadata from required parameters
 #### `newBlobMetadata'`
 
 ``` purescript
-newBlobMetadata' :: ({ blobId :: NullOrUndefined (ObjectId), path :: NullOrUndefined (Path), mode :: NullOrUndefined (Mode) } -> { blobId :: NullOrUndefined (ObjectId), path :: NullOrUndefined (Path), mode :: NullOrUndefined (Mode) }) -> BlobMetadata
+newBlobMetadata' :: ({ blobId :: Maybe (ObjectId), path :: Maybe (Path), mode :: Maybe (Mode) } -> { blobId :: Maybe (ObjectId), path :: Maybe (Path), mode :: Maybe (Mode) }) -> BlobMetadata
 ```
 
 Constructs BlobMetadata's fields from required parameters
@@ -268,7 +268,7 @@ Encode BranchDoesNotExistException
 
 ``` purescript
 newtype BranchInfo
-  = BranchInfo { branchName :: NullOrUndefined (BranchName), commitId :: NullOrUndefined (CommitId) }
+  = BranchInfo { branchName :: Maybe (BranchName), commitId :: Maybe (CommitId) }
 ```
 
 <p>Returns information about a branch.</p>
@@ -293,7 +293,7 @@ Constructs BranchInfo from required parameters
 #### `newBranchInfo'`
 
 ``` purescript
-newBranchInfo' :: ({ branchName :: NullOrUndefined (BranchName), commitId :: NullOrUndefined (CommitId) } -> { branchName :: NullOrUndefined (BranchName), commitId :: NullOrUndefined (CommitId) }) -> BranchInfo
+newBranchInfo' :: ({ branchName :: Maybe (BranchName), commitId :: Maybe (CommitId) } -> { branchName :: Maybe (BranchName), commitId :: Maybe (CommitId) }) -> BranchInfo
 ```
 
 Constructs BranchInfo's fields from required parameters
@@ -470,7 +470,7 @@ Encode CloneUrlSsh
 
 ``` purescript
 newtype Comment
-  = Comment { commentId :: NullOrUndefined (CommentId), content :: NullOrUndefined (Content), inReplyTo :: NullOrUndefined (CommentId), creationDate :: NullOrUndefined (CreationDate), lastModifiedDate :: NullOrUndefined (LastModifiedDate), authorArn :: NullOrUndefined (Arn), deleted :: NullOrUndefined (IsCommentDeleted), clientRequestToken :: NullOrUndefined (ClientRequestToken) }
+  = Comment { commentId :: Maybe (CommentId), content :: Maybe (Content), inReplyTo :: Maybe (CommentId), creationDate :: Maybe (CreationDate), lastModifiedDate :: Maybe (LastModifiedDate), authorArn :: Maybe (Arn), deleted :: Maybe (IsCommentDeleted), clientRequestToken :: Maybe (ClientRequestToken) }
 ```
 
 <p>Returns information about a specific comment.</p>
@@ -495,7 +495,7 @@ Constructs Comment from required parameters
 #### `newComment'`
 
 ``` purescript
-newComment' :: ({ commentId :: NullOrUndefined (CommentId), content :: NullOrUndefined (Content), inReplyTo :: NullOrUndefined (CommentId), creationDate :: NullOrUndefined (CreationDate), lastModifiedDate :: NullOrUndefined (LastModifiedDate), authorArn :: NullOrUndefined (Arn), deleted :: NullOrUndefined (IsCommentDeleted), clientRequestToken :: NullOrUndefined (ClientRequestToken) } -> { commentId :: NullOrUndefined (CommentId), content :: NullOrUndefined (Content), inReplyTo :: NullOrUndefined (CommentId), creationDate :: NullOrUndefined (CreationDate), lastModifiedDate :: NullOrUndefined (LastModifiedDate), authorArn :: NullOrUndefined (Arn), deleted :: NullOrUndefined (IsCommentDeleted), clientRequestToken :: NullOrUndefined (ClientRequestToken) }) -> Comment
+newComment' :: ({ commentId :: Maybe (CommentId), content :: Maybe (Content), inReplyTo :: Maybe (CommentId), creationDate :: Maybe (CreationDate), lastModifiedDate :: Maybe (LastModifiedDate), authorArn :: Maybe (Arn), deleted :: Maybe (IsCommentDeleted), clientRequestToken :: Maybe (ClientRequestToken) } -> { commentId :: Maybe (CommentId), content :: Maybe (Content), inReplyTo :: Maybe (CommentId), creationDate :: Maybe (CreationDate), lastModifiedDate :: Maybe (LastModifiedDate), authorArn :: Maybe (Arn), deleted :: Maybe (IsCommentDeleted), clientRequestToken :: Maybe (ClientRequestToken) }) -> Comment
 ```
 
 Constructs Comment's fields from required parameters
@@ -644,7 +644,7 @@ Encode Comments
 
 ``` purescript
 newtype CommentsForComparedCommit
-  = CommentsForComparedCommit { repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comments :: NullOrUndefined (Comments) }
+  = CommentsForComparedCommit { repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comments :: Maybe (Comments) }
 ```
 
 <p>Returns information about comments on the comparison between two commits.</p>
@@ -669,7 +669,7 @@ Constructs CommentsForComparedCommit from required parameters
 #### `newCommentsForComparedCommit'`
 
 ``` purescript
-newCommentsForComparedCommit' :: ({ repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comments :: NullOrUndefined (Comments) } -> { repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comments :: NullOrUndefined (Comments) }) -> CommentsForComparedCommit
+newCommentsForComparedCommit' :: ({ repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comments :: Maybe (Comments) } -> { repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comments :: Maybe (Comments) }) -> CommentsForComparedCommit
 ```
 
 Constructs CommentsForComparedCommit's fields from required parameters
@@ -694,7 +694,7 @@ Encode CommentsForComparedCommitData
 
 ``` purescript
 newtype CommentsForPullRequest
-  = CommentsForPullRequest { pullRequestId :: NullOrUndefined (PullRequestId), repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comments :: NullOrUndefined (Comments) }
+  = CommentsForPullRequest { pullRequestId :: Maybe (PullRequestId), repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comments :: Maybe (Comments) }
 ```
 
 <p>Returns information about comments on a pull request.</p>
@@ -719,7 +719,7 @@ Constructs CommentsForPullRequest from required parameters
 #### `newCommentsForPullRequest'`
 
 ``` purescript
-newCommentsForPullRequest' :: ({ pullRequestId :: NullOrUndefined (PullRequestId), repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comments :: NullOrUndefined (Comments) } -> { pullRequestId :: NullOrUndefined (PullRequestId), repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comments :: NullOrUndefined (Comments) }) -> CommentsForPullRequest
+newCommentsForPullRequest' :: ({ pullRequestId :: Maybe (PullRequestId), repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comments :: Maybe (Comments) } -> { pullRequestId :: Maybe (PullRequestId), repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comments :: Maybe (Comments) }) -> CommentsForPullRequest
 ```
 
 Constructs CommentsForPullRequest's fields from required parameters
@@ -744,7 +744,7 @@ Encode CommentsForPullRequestData
 
 ``` purescript
 newtype Commit
-  = Commit { commitId :: NullOrUndefined (ObjectId), treeId :: NullOrUndefined (ObjectId), parents :: NullOrUndefined (ParentList), message :: NullOrUndefined (Message), author :: NullOrUndefined (UserInfo), committer :: NullOrUndefined (UserInfo), additionalData :: NullOrUndefined (AdditionalData) }
+  = Commit { commitId :: Maybe (ObjectId), treeId :: Maybe (ObjectId), parents :: Maybe (ParentList), message :: Maybe (Message), author :: Maybe (UserInfo), committer :: Maybe (UserInfo), additionalData :: Maybe (AdditionalData) }
 ```
 
 <p>Returns information about a specific commit.</p>
@@ -769,7 +769,7 @@ Constructs Commit from required parameters
 #### `newCommit'`
 
 ``` purescript
-newCommit' :: ({ commitId :: NullOrUndefined (ObjectId), treeId :: NullOrUndefined (ObjectId), parents :: NullOrUndefined (ParentList), message :: NullOrUndefined (Message), author :: NullOrUndefined (UserInfo), committer :: NullOrUndefined (UserInfo), additionalData :: NullOrUndefined (AdditionalData) } -> { commitId :: NullOrUndefined (ObjectId), treeId :: NullOrUndefined (ObjectId), parents :: NullOrUndefined (ParentList), message :: NullOrUndefined (Message), author :: NullOrUndefined (UserInfo), committer :: NullOrUndefined (UserInfo), additionalData :: NullOrUndefined (AdditionalData) }) -> Commit
+newCommit' :: ({ commitId :: Maybe (ObjectId), treeId :: Maybe (ObjectId), parents :: Maybe (ParentList), message :: Maybe (Message), author :: Maybe (UserInfo), committer :: Maybe (UserInfo), additionalData :: Maybe (AdditionalData) } -> { commitId :: Maybe (ObjectId), treeId :: Maybe (ObjectId), parents :: Maybe (ParentList), message :: Maybe (Message), author :: Maybe (UserInfo), committer :: Maybe (UserInfo), additionalData :: Maybe (AdditionalData) }) -> Commit
 ```
 
 Constructs Commit's fields from required parameters
@@ -950,7 +950,7 @@ Constructs CreateBranchInput's fields from required parameters
 
 ``` purescript
 newtype CreatePullRequestInput
-  = CreatePullRequestInput { title :: Title, description :: NullOrUndefined (Description), targets :: TargetList, clientRequestToken :: NullOrUndefined (ClientRequestToken) }
+  = CreatePullRequestInput { title :: Title, description :: Maybe (Description), targets :: TargetList, clientRequestToken :: Maybe (ClientRequestToken) }
 ```
 
 ##### Instances
@@ -973,7 +973,7 @@ Constructs CreatePullRequestInput from required parameters
 #### `newCreatePullRequestInput'`
 
 ``` purescript
-newCreatePullRequestInput' :: TargetList -> Title -> ({ title :: Title, description :: NullOrUndefined (Description), targets :: TargetList, clientRequestToken :: NullOrUndefined (ClientRequestToken) } -> { title :: Title, description :: NullOrUndefined (Description), targets :: TargetList, clientRequestToken :: NullOrUndefined (ClientRequestToken) }) -> CreatePullRequestInput
+newCreatePullRequestInput' :: TargetList -> Title -> ({ title :: Title, description :: Maybe (Description), targets :: TargetList, clientRequestToken :: Maybe (ClientRequestToken) } -> { title :: Title, description :: Maybe (Description), targets :: TargetList, clientRequestToken :: Maybe (ClientRequestToken) }) -> CreatePullRequestInput
 ```
 
 Constructs CreatePullRequestInput's fields from required parameters
@@ -1014,7 +1014,7 @@ Constructs CreatePullRequestOutput's fields from required parameters
 
 ``` purescript
 newtype CreateRepositoryInput
-  = CreateRepositoryInput { repositoryName :: RepositoryName, repositoryDescription :: NullOrUndefined (RepositoryDescription) }
+  = CreateRepositoryInput { repositoryName :: RepositoryName, repositoryDescription :: Maybe (RepositoryDescription) }
 ```
 
 <p>Represents the input of a create repository operation.</p>
@@ -1039,7 +1039,7 @@ Constructs CreateRepositoryInput from required parameters
 #### `newCreateRepositoryInput'`
 
 ``` purescript
-newCreateRepositoryInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, repositoryDescription :: NullOrUndefined (RepositoryDescription) } -> { repositoryName :: RepositoryName, repositoryDescription :: NullOrUndefined (RepositoryDescription) }) -> CreateRepositoryInput
+newCreateRepositoryInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, repositoryDescription :: Maybe (RepositoryDescription) } -> { repositoryName :: RepositoryName, repositoryDescription :: Maybe (RepositoryDescription) }) -> CreateRepositoryInput
 ```
 
 Constructs CreateRepositoryInput's fields from required parameters
@@ -1048,7 +1048,7 @@ Constructs CreateRepositoryInput's fields from required parameters
 
 ``` purescript
 newtype CreateRepositoryOutput
-  = CreateRepositoryOutput { repositoryMetadata :: NullOrUndefined (RepositoryMetadata) }
+  = CreateRepositoryOutput { repositoryMetadata :: Maybe (RepositoryMetadata) }
 ```
 
 <p>Represents the output of a create repository operation.</p>
@@ -1073,7 +1073,7 @@ Constructs CreateRepositoryOutput from required parameters
 #### `newCreateRepositoryOutput'`
 
 ``` purescript
-newCreateRepositoryOutput' :: ({ repositoryMetadata :: NullOrUndefined (RepositoryMetadata) } -> { repositoryMetadata :: NullOrUndefined (RepositoryMetadata) }) -> CreateRepositoryOutput
+newCreateRepositoryOutput' :: ({ repositoryMetadata :: Maybe (RepositoryMetadata) } -> { repositoryMetadata :: Maybe (RepositoryMetadata) }) -> CreateRepositoryOutput
 ```
 
 Constructs CreateRepositoryOutput's fields from required parameters
@@ -1166,7 +1166,7 @@ Constructs DeleteBranchInput's fields from required parameters
 
 ``` purescript
 newtype DeleteBranchOutput
-  = DeleteBranchOutput { deletedBranch :: NullOrUndefined (BranchInfo) }
+  = DeleteBranchOutput { deletedBranch :: Maybe (BranchInfo) }
 ```
 
 <p>Represents the output of a delete branch operation.</p>
@@ -1191,7 +1191,7 @@ Constructs DeleteBranchOutput from required parameters
 #### `newDeleteBranchOutput'`
 
 ``` purescript
-newDeleteBranchOutput' :: ({ deletedBranch :: NullOrUndefined (BranchInfo) } -> { deletedBranch :: NullOrUndefined (BranchInfo) }) -> DeleteBranchOutput
+newDeleteBranchOutput' :: ({ deletedBranch :: Maybe (BranchInfo) } -> { deletedBranch :: Maybe (BranchInfo) }) -> DeleteBranchOutput
 ```
 
 Constructs DeleteBranchOutput's fields from required parameters
@@ -1232,7 +1232,7 @@ Constructs DeleteCommentContentInput's fields from required parameters
 
 ``` purescript
 newtype DeleteCommentContentOutput
-  = DeleteCommentContentOutput { comment :: NullOrUndefined (Comment) }
+  = DeleteCommentContentOutput { comment :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -1255,7 +1255,7 @@ Constructs DeleteCommentContentOutput from required parameters
 #### `newDeleteCommentContentOutput'`
 
 ``` purescript
-newDeleteCommentContentOutput' :: ({ comment :: NullOrUndefined (Comment) } -> { comment :: NullOrUndefined (Comment) }) -> DeleteCommentContentOutput
+newDeleteCommentContentOutput' :: ({ comment :: Maybe (Comment) } -> { comment :: Maybe (Comment) }) -> DeleteCommentContentOutput
 ```
 
 Constructs DeleteCommentContentOutput's fields from required parameters
@@ -1298,7 +1298,7 @@ Constructs DeleteRepositoryInput's fields from required parameters
 
 ``` purescript
 newtype DeleteRepositoryOutput
-  = DeleteRepositoryOutput { repositoryId :: NullOrUndefined (RepositoryId) }
+  = DeleteRepositoryOutput { repositoryId :: Maybe (RepositoryId) }
 ```
 
 <p>Represents the output of a delete repository operation.</p>
@@ -1323,7 +1323,7 @@ Constructs DeleteRepositoryOutput from required parameters
 #### `newDeleteRepositoryOutput'`
 
 ``` purescript
-newDeleteRepositoryOutput' :: ({ repositoryId :: NullOrUndefined (RepositoryId) } -> { repositoryId :: NullOrUndefined (RepositoryId) }) -> DeleteRepositoryOutput
+newDeleteRepositoryOutput' :: ({ repositoryId :: Maybe (RepositoryId) } -> { repositoryId :: Maybe (RepositoryId) }) -> DeleteRepositoryOutput
 ```
 
 Constructs DeleteRepositoryOutput's fields from required parameters
@@ -1332,7 +1332,7 @@ Constructs DeleteRepositoryOutput's fields from required parameters
 
 ``` purescript
 newtype DescribePullRequestEventsInput
-  = DescribePullRequestEventsInput { pullRequestId :: PullRequestId, pullRequestEventType :: NullOrUndefined (PullRequestEventType), actorArn :: NullOrUndefined (Arn), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }
+  = DescribePullRequestEventsInput { pullRequestId :: PullRequestId, pullRequestEventType :: Maybe (PullRequestEventType), actorArn :: Maybe (Arn), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1355,7 +1355,7 @@ Constructs DescribePullRequestEventsInput from required parameters
 #### `newDescribePullRequestEventsInput'`
 
 ``` purescript
-newDescribePullRequestEventsInput' :: PullRequestId -> ({ pullRequestId :: PullRequestId, pullRequestEventType :: NullOrUndefined (PullRequestEventType), actorArn :: NullOrUndefined (Arn), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) } -> { pullRequestId :: PullRequestId, pullRequestEventType :: NullOrUndefined (PullRequestEventType), actorArn :: NullOrUndefined (Arn), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }) -> DescribePullRequestEventsInput
+newDescribePullRequestEventsInput' :: PullRequestId -> ({ pullRequestId :: PullRequestId, pullRequestEventType :: Maybe (PullRequestEventType), actorArn :: Maybe (Arn), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) } -> { pullRequestId :: PullRequestId, pullRequestEventType :: Maybe (PullRequestEventType), actorArn :: Maybe (Arn), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }) -> DescribePullRequestEventsInput
 ```
 
 Constructs DescribePullRequestEventsInput's fields from required parameters
@@ -1364,7 +1364,7 @@ Constructs DescribePullRequestEventsInput's fields from required parameters
 
 ``` purescript
 newtype DescribePullRequestEventsOutput
-  = DescribePullRequestEventsOutput { pullRequestEvents :: PullRequestEventList, nextToken :: NullOrUndefined (NextToken) }
+  = DescribePullRequestEventsOutput { pullRequestEvents :: PullRequestEventList, nextToken :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1387,7 +1387,7 @@ Constructs DescribePullRequestEventsOutput from required parameters
 #### `newDescribePullRequestEventsOutput'`
 
 ``` purescript
-newDescribePullRequestEventsOutput' :: PullRequestEventList -> ({ pullRequestEvents :: PullRequestEventList, nextToken :: NullOrUndefined (NextToken) } -> { pullRequestEvents :: PullRequestEventList, nextToken :: NullOrUndefined (NextToken) }) -> DescribePullRequestEventsOutput
+newDescribePullRequestEventsOutput' :: PullRequestEventList -> ({ pullRequestEvents :: PullRequestEventList, nextToken :: Maybe (NextToken) } -> { pullRequestEvents :: PullRequestEventList, nextToken :: Maybe (NextToken) }) -> DescribePullRequestEventsOutput
 ```
 
 Constructs DescribePullRequestEventsOutput's fields from required parameters
@@ -1412,7 +1412,7 @@ Encode Description
 
 ``` purescript
 newtype Difference
-  = Difference { beforeBlob :: NullOrUndefined (BlobMetadata), afterBlob :: NullOrUndefined (BlobMetadata), changeType :: NullOrUndefined (ChangeTypeEnum) }
+  = Difference { beforeBlob :: Maybe (BlobMetadata), afterBlob :: Maybe (BlobMetadata), changeType :: Maybe (ChangeTypeEnum) }
 ```
 
 <p>Returns information about a set of differences for a commit specifier.</p>
@@ -1437,7 +1437,7 @@ Constructs Difference from required parameters
 #### `newDifference'`
 
 ``` purescript
-newDifference' :: ({ beforeBlob :: NullOrUndefined (BlobMetadata), afterBlob :: NullOrUndefined (BlobMetadata), changeType :: NullOrUndefined (ChangeTypeEnum) } -> { beforeBlob :: NullOrUndefined (BlobMetadata), afterBlob :: NullOrUndefined (BlobMetadata), changeType :: NullOrUndefined (ChangeTypeEnum) }) -> Difference
+newDifference' :: ({ beforeBlob :: Maybe (BlobMetadata), afterBlob :: Maybe (BlobMetadata), changeType :: Maybe (ChangeTypeEnum) } -> { beforeBlob :: Maybe (BlobMetadata), afterBlob :: Maybe (BlobMetadata), changeType :: Maybe (ChangeTypeEnum) }) -> Difference
 ```
 
 Constructs Difference's fields from required parameters
@@ -1774,7 +1774,7 @@ Constructs GetBlobOutput's fields from required parameters
 
 ``` purescript
 newtype GetBranchInput
-  = GetBranchInput { repositoryName :: NullOrUndefined (RepositoryName), branchName :: NullOrUndefined (BranchName) }
+  = GetBranchInput { repositoryName :: Maybe (RepositoryName), branchName :: Maybe (BranchName) }
 ```
 
 <p>Represents the input of a get branch operation.</p>
@@ -1799,7 +1799,7 @@ Constructs GetBranchInput from required parameters
 #### `newGetBranchInput'`
 
 ``` purescript
-newGetBranchInput' :: ({ repositoryName :: NullOrUndefined (RepositoryName), branchName :: NullOrUndefined (BranchName) } -> { repositoryName :: NullOrUndefined (RepositoryName), branchName :: NullOrUndefined (BranchName) }) -> GetBranchInput
+newGetBranchInput' :: ({ repositoryName :: Maybe (RepositoryName), branchName :: Maybe (BranchName) } -> { repositoryName :: Maybe (RepositoryName), branchName :: Maybe (BranchName) }) -> GetBranchInput
 ```
 
 Constructs GetBranchInput's fields from required parameters
@@ -1808,7 +1808,7 @@ Constructs GetBranchInput's fields from required parameters
 
 ``` purescript
 newtype GetBranchOutput
-  = GetBranchOutput { branch :: NullOrUndefined (BranchInfo) }
+  = GetBranchOutput { branch :: Maybe (BranchInfo) }
 ```
 
 <p>Represents the output of a get branch operation.</p>
@@ -1833,7 +1833,7 @@ Constructs GetBranchOutput from required parameters
 #### `newGetBranchOutput'`
 
 ``` purescript
-newGetBranchOutput' :: ({ branch :: NullOrUndefined (BranchInfo) } -> { branch :: NullOrUndefined (BranchInfo) }) -> GetBranchOutput
+newGetBranchOutput' :: ({ branch :: Maybe (BranchInfo) } -> { branch :: Maybe (BranchInfo) }) -> GetBranchOutput
 ```
 
 Constructs GetBranchOutput's fields from required parameters
@@ -1874,7 +1874,7 @@ Constructs GetCommentInput's fields from required parameters
 
 ``` purescript
 newtype GetCommentOutput
-  = GetCommentOutput { comment :: NullOrUndefined (Comment) }
+  = GetCommentOutput { comment :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -1897,7 +1897,7 @@ Constructs GetCommentOutput from required parameters
 #### `newGetCommentOutput'`
 
 ``` purescript
-newGetCommentOutput' :: ({ comment :: NullOrUndefined (Comment) } -> { comment :: NullOrUndefined (Comment) }) -> GetCommentOutput
+newGetCommentOutput' :: ({ comment :: Maybe (Comment) } -> { comment :: Maybe (Comment) }) -> GetCommentOutput
 ```
 
 Constructs GetCommentOutput's fields from required parameters
@@ -1906,7 +1906,7 @@ Constructs GetCommentOutput's fields from required parameters
 
 ``` purescript
 newtype GetCommentsForComparedCommitInput
-  = GetCommentsForComparedCommitInput { repositoryName :: RepositoryName, beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: CommitId, nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }
+  = GetCommentsForComparedCommitInput { repositoryName :: RepositoryName, beforeCommitId :: Maybe (CommitId), afterCommitId :: CommitId, nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1929,7 +1929,7 @@ Constructs GetCommentsForComparedCommitInput from required parameters
 #### `newGetCommentsForComparedCommitInput'`
 
 ``` purescript
-newGetCommentsForComparedCommitInput' :: CommitId -> RepositoryName -> ({ repositoryName :: RepositoryName, beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: CommitId, nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) } -> { repositoryName :: RepositoryName, beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: CommitId, nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }) -> GetCommentsForComparedCommitInput
+newGetCommentsForComparedCommitInput' :: CommitId -> RepositoryName -> ({ repositoryName :: RepositoryName, beforeCommitId :: Maybe (CommitId), afterCommitId :: CommitId, nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) } -> { repositoryName :: RepositoryName, beforeCommitId :: Maybe (CommitId), afterCommitId :: CommitId, nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }) -> GetCommentsForComparedCommitInput
 ```
 
 Constructs GetCommentsForComparedCommitInput's fields from required parameters
@@ -1938,7 +1938,7 @@ Constructs GetCommentsForComparedCommitInput's fields from required parameters
 
 ``` purescript
 newtype GetCommentsForComparedCommitOutput
-  = GetCommentsForComparedCommitOutput { commentsForComparedCommitData :: NullOrUndefined (CommentsForComparedCommitData), nextToken :: NullOrUndefined (NextToken) }
+  = GetCommentsForComparedCommitOutput { commentsForComparedCommitData :: Maybe (CommentsForComparedCommitData), nextToken :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -1961,7 +1961,7 @@ Constructs GetCommentsForComparedCommitOutput from required parameters
 #### `newGetCommentsForComparedCommitOutput'`
 
 ``` purescript
-newGetCommentsForComparedCommitOutput' :: ({ commentsForComparedCommitData :: NullOrUndefined (CommentsForComparedCommitData), nextToken :: NullOrUndefined (NextToken) } -> { commentsForComparedCommitData :: NullOrUndefined (CommentsForComparedCommitData), nextToken :: NullOrUndefined (NextToken) }) -> GetCommentsForComparedCommitOutput
+newGetCommentsForComparedCommitOutput' :: ({ commentsForComparedCommitData :: Maybe (CommentsForComparedCommitData), nextToken :: Maybe (NextToken) } -> { commentsForComparedCommitData :: Maybe (CommentsForComparedCommitData), nextToken :: Maybe (NextToken) }) -> GetCommentsForComparedCommitOutput
 ```
 
 Constructs GetCommentsForComparedCommitOutput's fields from required parameters
@@ -1970,7 +1970,7 @@ Constructs GetCommentsForComparedCommitOutput's fields from required parameters
 
 ``` purescript
 newtype GetCommentsForPullRequestInput
-  = GetCommentsForPullRequestInput { pullRequestId :: PullRequestId, repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }
+  = GetCommentsForPullRequestInput { pullRequestId :: PullRequestId, repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -1993,7 +1993,7 @@ Constructs GetCommentsForPullRequestInput from required parameters
 #### `newGetCommentsForPullRequestInput'`
 
 ``` purescript
-newGetCommentsForPullRequestInput' :: PullRequestId -> ({ pullRequestId :: PullRequestId, repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) } -> { pullRequestId :: PullRequestId, repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }) -> GetCommentsForPullRequestInput
+newGetCommentsForPullRequestInput' :: PullRequestId -> ({ pullRequestId :: PullRequestId, repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) } -> { pullRequestId :: PullRequestId, repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }) -> GetCommentsForPullRequestInput
 ```
 
 Constructs GetCommentsForPullRequestInput's fields from required parameters
@@ -2002,7 +2002,7 @@ Constructs GetCommentsForPullRequestInput's fields from required parameters
 
 ``` purescript
 newtype GetCommentsForPullRequestOutput
-  = GetCommentsForPullRequestOutput { commentsForPullRequestData :: NullOrUndefined (CommentsForPullRequestData), nextToken :: NullOrUndefined (NextToken) }
+  = GetCommentsForPullRequestOutput { commentsForPullRequestData :: Maybe (CommentsForPullRequestData), nextToken :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -2025,7 +2025,7 @@ Constructs GetCommentsForPullRequestOutput from required parameters
 #### `newGetCommentsForPullRequestOutput'`
 
 ``` purescript
-newGetCommentsForPullRequestOutput' :: ({ commentsForPullRequestData :: NullOrUndefined (CommentsForPullRequestData), nextToken :: NullOrUndefined (NextToken) } -> { commentsForPullRequestData :: NullOrUndefined (CommentsForPullRequestData), nextToken :: NullOrUndefined (NextToken) }) -> GetCommentsForPullRequestOutput
+newGetCommentsForPullRequestOutput' :: ({ commentsForPullRequestData :: Maybe (CommentsForPullRequestData), nextToken :: Maybe (NextToken) } -> { commentsForPullRequestData :: Maybe (CommentsForPullRequestData), nextToken :: Maybe (NextToken) }) -> GetCommentsForPullRequestOutput
 ```
 
 Constructs GetCommentsForPullRequestOutput's fields from required parameters
@@ -2102,7 +2102,7 @@ Constructs GetCommitOutput's fields from required parameters
 
 ``` purescript
 newtype GetDifferencesInput
-  = GetDifferencesInput { repositoryName :: RepositoryName, beforeCommitSpecifier :: NullOrUndefined (CommitName), afterCommitSpecifier :: CommitName, beforePath :: NullOrUndefined (Path), afterPath :: NullOrUndefined (Path), "MaxResults" :: NullOrUndefined (Limit), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetDifferencesInput { repositoryName :: RepositoryName, beforeCommitSpecifier :: Maybe (CommitName), afterCommitSpecifier :: CommitName, beforePath :: Maybe (Path), afterPath :: Maybe (Path), "MaxResults" :: Maybe (Limit), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -2125,7 +2125,7 @@ Constructs GetDifferencesInput from required parameters
 #### `newGetDifferencesInput'`
 
 ``` purescript
-newGetDifferencesInput' :: CommitName -> RepositoryName -> ({ repositoryName :: RepositoryName, beforeCommitSpecifier :: NullOrUndefined (CommitName), afterCommitSpecifier :: CommitName, beforePath :: NullOrUndefined (Path), afterPath :: NullOrUndefined (Path), "MaxResults" :: NullOrUndefined (Limit), "NextToken" :: NullOrUndefined (NextToken) } -> { repositoryName :: RepositoryName, beforeCommitSpecifier :: NullOrUndefined (CommitName), afterCommitSpecifier :: CommitName, beforePath :: NullOrUndefined (Path), afterPath :: NullOrUndefined (Path), "MaxResults" :: NullOrUndefined (Limit), "NextToken" :: NullOrUndefined (NextToken) }) -> GetDifferencesInput
+newGetDifferencesInput' :: CommitName -> RepositoryName -> ({ repositoryName :: RepositoryName, beforeCommitSpecifier :: Maybe (CommitName), afterCommitSpecifier :: CommitName, beforePath :: Maybe (Path), afterPath :: Maybe (Path), "MaxResults" :: Maybe (Limit), "NextToken" :: Maybe (NextToken) } -> { repositoryName :: RepositoryName, beforeCommitSpecifier :: Maybe (CommitName), afterCommitSpecifier :: CommitName, beforePath :: Maybe (Path), afterPath :: Maybe (Path), "MaxResults" :: Maybe (Limit), "NextToken" :: Maybe (NextToken) }) -> GetDifferencesInput
 ```
 
 Constructs GetDifferencesInput's fields from required parameters
@@ -2134,7 +2134,7 @@ Constructs GetDifferencesInput's fields from required parameters
 
 ``` purescript
 newtype GetDifferencesOutput
-  = GetDifferencesOutput { differences :: NullOrUndefined (DifferenceList), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetDifferencesOutput { differences :: Maybe (DifferenceList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -2157,7 +2157,7 @@ Constructs GetDifferencesOutput from required parameters
 #### `newGetDifferencesOutput'`
 
 ``` purescript
-newGetDifferencesOutput' :: ({ differences :: NullOrUndefined (DifferenceList), "NextToken" :: NullOrUndefined (NextToken) } -> { differences :: NullOrUndefined (DifferenceList), "NextToken" :: NullOrUndefined (NextToken) }) -> GetDifferencesOutput
+newGetDifferencesOutput' :: ({ differences :: Maybe (DifferenceList), "NextToken" :: Maybe (NextToken) } -> { differences :: Maybe (DifferenceList), "NextToken" :: Maybe (NextToken) }) -> GetDifferencesOutput
 ```
 
 Constructs GetDifferencesOutput's fields from required parameters
@@ -2328,7 +2328,7 @@ Constructs GetRepositoryInput's fields from required parameters
 
 ``` purescript
 newtype GetRepositoryOutput
-  = GetRepositoryOutput { repositoryMetadata :: NullOrUndefined (RepositoryMetadata) }
+  = GetRepositoryOutput { repositoryMetadata :: Maybe (RepositoryMetadata) }
 ```
 
 <p>Represents the output of a get repository operation.</p>
@@ -2353,7 +2353,7 @@ Constructs GetRepositoryOutput from required parameters
 #### `newGetRepositoryOutput'`
 
 ``` purescript
-newGetRepositoryOutput' :: ({ repositoryMetadata :: NullOrUndefined (RepositoryMetadata) } -> { repositoryMetadata :: NullOrUndefined (RepositoryMetadata) }) -> GetRepositoryOutput
+newGetRepositoryOutput' :: ({ repositoryMetadata :: Maybe (RepositoryMetadata) } -> { repositoryMetadata :: Maybe (RepositoryMetadata) }) -> GetRepositoryOutput
 ```
 
 Constructs GetRepositoryOutput's fields from required parameters
@@ -2396,7 +2396,7 @@ Constructs GetRepositoryTriggersInput's fields from required parameters
 
 ``` purescript
 newtype GetRepositoryTriggersOutput
-  = GetRepositoryTriggersOutput { configurationId :: NullOrUndefined (RepositoryTriggersConfigurationId), triggers :: NullOrUndefined (RepositoryTriggersList) }
+  = GetRepositoryTriggersOutput { configurationId :: Maybe (RepositoryTriggersConfigurationId), triggers :: Maybe (RepositoryTriggersList) }
 ```
 
 <p>Represents the output of a get repository triggers operation.</p>
@@ -2421,7 +2421,7 @@ Constructs GetRepositoryTriggersOutput from required parameters
 #### `newGetRepositoryTriggersOutput'`
 
 ``` purescript
-newGetRepositoryTriggersOutput' :: ({ configurationId :: NullOrUndefined (RepositoryTriggersConfigurationId), triggers :: NullOrUndefined (RepositoryTriggersList) } -> { configurationId :: NullOrUndefined (RepositoryTriggersConfigurationId), triggers :: NullOrUndefined (RepositoryTriggersList) }) -> GetRepositoryTriggersOutput
+newGetRepositoryTriggersOutput' :: ({ configurationId :: Maybe (RepositoryTriggersConfigurationId), triggers :: Maybe (RepositoryTriggersList) } -> { configurationId :: Maybe (RepositoryTriggersConfigurationId), triggers :: Maybe (RepositoryTriggersList) }) -> GetRepositoryTriggersOutput
 ```
 
 Constructs GetRepositoryTriggersOutput's fields from required parameters
@@ -3230,7 +3230,7 @@ Encode Limit
 
 ``` purescript
 newtype ListBranchesInput
-  = ListBranchesInput { repositoryName :: RepositoryName, nextToken :: NullOrUndefined (NextToken) }
+  = ListBranchesInput { repositoryName :: RepositoryName, nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the input of a list branches operation.</p>
@@ -3255,7 +3255,7 @@ Constructs ListBranchesInput from required parameters
 #### `newListBranchesInput'`
 
 ``` purescript
-newListBranchesInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, nextToken :: NullOrUndefined (NextToken) } -> { repositoryName :: RepositoryName, nextToken :: NullOrUndefined (NextToken) }) -> ListBranchesInput
+newListBranchesInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, nextToken :: Maybe (NextToken) } -> { repositoryName :: RepositoryName, nextToken :: Maybe (NextToken) }) -> ListBranchesInput
 ```
 
 Constructs ListBranchesInput's fields from required parameters
@@ -3264,7 +3264,7 @@ Constructs ListBranchesInput's fields from required parameters
 
 ``` purescript
 newtype ListBranchesOutput
-  = ListBranchesOutput { branches :: NullOrUndefined (BranchNameList), nextToken :: NullOrUndefined (NextToken) }
+  = ListBranchesOutput { branches :: Maybe (BranchNameList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a list branches operation.</p>
@@ -3289,7 +3289,7 @@ Constructs ListBranchesOutput from required parameters
 #### `newListBranchesOutput'`
 
 ``` purescript
-newListBranchesOutput' :: ({ branches :: NullOrUndefined (BranchNameList), nextToken :: NullOrUndefined (NextToken) } -> { branches :: NullOrUndefined (BranchNameList), nextToken :: NullOrUndefined (NextToken) }) -> ListBranchesOutput
+newListBranchesOutput' :: ({ branches :: Maybe (BranchNameList), nextToken :: Maybe (NextToken) } -> { branches :: Maybe (BranchNameList), nextToken :: Maybe (NextToken) }) -> ListBranchesOutput
 ```
 
 Constructs ListBranchesOutput's fields from required parameters
@@ -3298,7 +3298,7 @@ Constructs ListBranchesOutput's fields from required parameters
 
 ``` purescript
 newtype ListPullRequestsInput
-  = ListPullRequestsInput { repositoryName :: RepositoryName, authorArn :: NullOrUndefined (Arn), pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }
+  = ListPullRequestsInput { repositoryName :: RepositoryName, authorArn :: Maybe (Arn), pullRequestStatus :: Maybe (PullRequestStatusEnum), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -3321,7 +3321,7 @@ Constructs ListPullRequestsInput from required parameters
 #### `newListPullRequestsInput'`
 
 ``` purescript
-newListPullRequestsInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, authorArn :: NullOrUndefined (Arn), pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) } -> { repositoryName :: RepositoryName, authorArn :: NullOrUndefined (Arn), pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }) -> ListPullRequestsInput
+newListPullRequestsInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, authorArn :: Maybe (Arn), pullRequestStatus :: Maybe (PullRequestStatusEnum), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) } -> { repositoryName :: RepositoryName, authorArn :: Maybe (Arn), pullRequestStatus :: Maybe (PullRequestStatusEnum), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }) -> ListPullRequestsInput
 ```
 
 Constructs ListPullRequestsInput's fields from required parameters
@@ -3330,7 +3330,7 @@ Constructs ListPullRequestsInput's fields from required parameters
 
 ``` purescript
 newtype ListPullRequestsOutput
-  = ListPullRequestsOutput { pullRequestIds :: PullRequestIdList, nextToken :: NullOrUndefined (NextToken) }
+  = ListPullRequestsOutput { pullRequestIds :: PullRequestIdList, nextToken :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3353,7 +3353,7 @@ Constructs ListPullRequestsOutput from required parameters
 #### `newListPullRequestsOutput'`
 
 ``` purescript
-newListPullRequestsOutput' :: PullRequestIdList -> ({ pullRequestIds :: PullRequestIdList, nextToken :: NullOrUndefined (NextToken) } -> { pullRequestIds :: PullRequestIdList, nextToken :: NullOrUndefined (NextToken) }) -> ListPullRequestsOutput
+newListPullRequestsOutput' :: PullRequestIdList -> ({ pullRequestIds :: PullRequestIdList, nextToken :: Maybe (NextToken) } -> { pullRequestIds :: PullRequestIdList, nextToken :: Maybe (NextToken) }) -> ListPullRequestsOutput
 ```
 
 Constructs ListPullRequestsOutput's fields from required parameters
@@ -3362,7 +3362,7 @@ Constructs ListPullRequestsOutput's fields from required parameters
 
 ``` purescript
 newtype ListRepositoriesInput
-  = ListRepositoriesInput { nextToken :: NullOrUndefined (NextToken), sortBy :: NullOrUndefined (SortByEnum), order :: NullOrUndefined (OrderEnum) }
+  = ListRepositoriesInput { nextToken :: Maybe (NextToken), sortBy :: Maybe (SortByEnum), order :: Maybe (OrderEnum) }
 ```
 
 <p>Represents the input of a list repositories operation.</p>
@@ -3387,7 +3387,7 @@ Constructs ListRepositoriesInput from required parameters
 #### `newListRepositoriesInput'`
 
 ``` purescript
-newListRepositoriesInput' :: ({ nextToken :: NullOrUndefined (NextToken), sortBy :: NullOrUndefined (SortByEnum), order :: NullOrUndefined (OrderEnum) } -> { nextToken :: NullOrUndefined (NextToken), sortBy :: NullOrUndefined (SortByEnum), order :: NullOrUndefined (OrderEnum) }) -> ListRepositoriesInput
+newListRepositoriesInput' :: ({ nextToken :: Maybe (NextToken), sortBy :: Maybe (SortByEnum), order :: Maybe (OrderEnum) } -> { nextToken :: Maybe (NextToken), sortBy :: Maybe (SortByEnum), order :: Maybe (OrderEnum) }) -> ListRepositoriesInput
 ```
 
 Constructs ListRepositoriesInput's fields from required parameters
@@ -3396,7 +3396,7 @@ Constructs ListRepositoriesInput's fields from required parameters
 
 ``` purescript
 newtype ListRepositoriesOutput
-  = ListRepositoriesOutput { repositories :: NullOrUndefined (RepositoryNameIdPairList), nextToken :: NullOrUndefined (NextToken) }
+  = ListRepositoriesOutput { repositories :: Maybe (RepositoryNameIdPairList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a list repositories operation.</p>
@@ -3421,7 +3421,7 @@ Constructs ListRepositoriesOutput from required parameters
 #### `newListRepositoriesOutput'`
 
 ``` purescript
-newListRepositoriesOutput' :: ({ repositories :: NullOrUndefined (RepositoryNameIdPairList), nextToken :: NullOrUndefined (NextToken) } -> { repositories :: NullOrUndefined (RepositoryNameIdPairList), nextToken :: NullOrUndefined (NextToken) }) -> ListRepositoriesOutput
+newListRepositoriesOutput' :: ({ repositories :: Maybe (RepositoryNameIdPairList), nextToken :: Maybe (NextToken) } -> { repositories :: Maybe (RepositoryNameIdPairList), nextToken :: Maybe (NextToken) }) -> ListRepositoriesOutput
 ```
 
 Constructs ListRepositoriesOutput's fields from required parameters
@@ -3430,7 +3430,7 @@ Constructs ListRepositoriesOutput's fields from required parameters
 
 ``` purescript
 newtype Location
-  = Location { filePath :: NullOrUndefined (Path), filePosition :: NullOrUndefined (Position), relativeFileVersion :: NullOrUndefined (RelativeFileVersionEnum) }
+  = Location { filePath :: Maybe (Path), filePosition :: Maybe (Position), relativeFileVersion :: Maybe (RelativeFileVersionEnum) }
 ```
 
 <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
@@ -3455,7 +3455,7 @@ Constructs Location from required parameters
 #### `newLocation'`
 
 ``` purescript
-newLocation' :: ({ filePath :: NullOrUndefined (Path), filePosition :: NullOrUndefined (Position), relativeFileVersion :: NullOrUndefined (RelativeFileVersionEnum) } -> { filePath :: NullOrUndefined (Path), filePosition :: NullOrUndefined (Position), relativeFileVersion :: NullOrUndefined (RelativeFileVersionEnum) }) -> Location
+newLocation' :: ({ filePath :: Maybe (Path), filePosition :: Maybe (Position), relativeFileVersion :: Maybe (RelativeFileVersionEnum) } -> { filePath :: Maybe (Path), filePosition :: Maybe (Position), relativeFileVersion :: Maybe (RelativeFileVersionEnum) }) -> Location
 ```
 
 Constructs Location's fields from required parameters
@@ -3570,7 +3570,7 @@ Encode MaximumRepositoryTriggersExceededException
 
 ``` purescript
 newtype MergeMetadata
-  = MergeMetadata { isMerged :: NullOrUndefined (IsMerged), mergedBy :: NullOrUndefined (Arn) }
+  = MergeMetadata { isMerged :: Maybe (IsMerged), mergedBy :: Maybe (Arn) }
 ```
 
 <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
@@ -3595,7 +3595,7 @@ Constructs MergeMetadata from required parameters
 #### `newMergeMetadata'`
 
 ``` purescript
-newMergeMetadata' :: ({ isMerged :: NullOrUndefined (IsMerged), mergedBy :: NullOrUndefined (Arn) } -> { isMerged :: NullOrUndefined (IsMerged), mergedBy :: NullOrUndefined (Arn) }) -> MergeMetadata
+newMergeMetadata' :: ({ isMerged :: Maybe (IsMerged), mergedBy :: Maybe (Arn) } -> { isMerged :: Maybe (IsMerged), mergedBy :: Maybe (Arn) }) -> MergeMetadata
 ```
 
 Constructs MergeMetadata's fields from required parameters
@@ -3638,7 +3638,7 @@ Encode MergeOptionTypeEnum
 
 ``` purescript
 newtype MergePullRequestByFastForwardInput
-  = MergePullRequestByFastForwardInput { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, sourceCommitId :: NullOrUndefined (CommitId) }
+  = MergePullRequestByFastForwardInput { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, sourceCommitId :: Maybe (CommitId) }
 ```
 
 ##### Instances
@@ -3661,7 +3661,7 @@ Constructs MergePullRequestByFastForwardInput from required parameters
 #### `newMergePullRequestByFastForwardInput'`
 
 ``` purescript
-newMergePullRequestByFastForwardInput' :: PullRequestId -> RepositoryName -> ({ pullRequestId :: PullRequestId, repositoryName :: RepositoryName, sourceCommitId :: NullOrUndefined (CommitId) } -> { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, sourceCommitId :: NullOrUndefined (CommitId) }) -> MergePullRequestByFastForwardInput
+newMergePullRequestByFastForwardInput' :: PullRequestId -> RepositoryName -> ({ pullRequestId :: PullRequestId, repositoryName :: RepositoryName, sourceCommitId :: Maybe (CommitId) } -> { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, sourceCommitId :: Maybe (CommitId) }) -> MergePullRequestByFastForwardInput
 ```
 
 Constructs MergePullRequestByFastForwardInput's fields from required parameters
@@ -3670,7 +3670,7 @@ Constructs MergePullRequestByFastForwardInput's fields from required parameters
 
 ``` purescript
 newtype MergePullRequestByFastForwardOutput
-  = MergePullRequestByFastForwardOutput { pullRequest :: NullOrUndefined (PullRequest) }
+  = MergePullRequestByFastForwardOutput { pullRequest :: Maybe (PullRequest) }
 ```
 
 ##### Instances
@@ -3693,7 +3693,7 @@ Constructs MergePullRequestByFastForwardOutput from required parameters
 #### `newMergePullRequestByFastForwardOutput'`
 
 ``` purescript
-newMergePullRequestByFastForwardOutput' :: ({ pullRequest :: NullOrUndefined (PullRequest) } -> { pullRequest :: NullOrUndefined (PullRequest) }) -> MergePullRequestByFastForwardOutput
+newMergePullRequestByFastForwardOutput' :: ({ pullRequest :: Maybe (PullRequest) } -> { pullRequest :: Maybe (PullRequest) }) -> MergePullRequestByFastForwardOutput
 ```
 
 Constructs MergePullRequestByFastForwardOutput's fields from required parameters
@@ -3972,7 +3972,7 @@ Encode Position
 
 ``` purescript
 newtype PostCommentForComparedCommitInput
-  = PostCommentForComparedCommitInput { repositoryName :: RepositoryName, beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: CommitId, location :: NullOrUndefined (Location), content :: Content, clientRequestToken :: NullOrUndefined (ClientRequestToken) }
+  = PostCommentForComparedCommitInput { repositoryName :: RepositoryName, beforeCommitId :: Maybe (CommitId), afterCommitId :: CommitId, location :: Maybe (Location), content :: Content, clientRequestToken :: Maybe (ClientRequestToken) }
 ```
 
 ##### Instances
@@ -3995,7 +3995,7 @@ Constructs PostCommentForComparedCommitInput from required parameters
 #### `newPostCommentForComparedCommitInput'`
 
 ``` purescript
-newPostCommentForComparedCommitInput' :: CommitId -> Content -> RepositoryName -> ({ repositoryName :: RepositoryName, beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: CommitId, location :: NullOrUndefined (Location), content :: Content, clientRequestToken :: NullOrUndefined (ClientRequestToken) } -> { repositoryName :: RepositoryName, beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: CommitId, location :: NullOrUndefined (Location), content :: Content, clientRequestToken :: NullOrUndefined (ClientRequestToken) }) -> PostCommentForComparedCommitInput
+newPostCommentForComparedCommitInput' :: CommitId -> Content -> RepositoryName -> ({ repositoryName :: RepositoryName, beforeCommitId :: Maybe (CommitId), afterCommitId :: CommitId, location :: Maybe (Location), content :: Content, clientRequestToken :: Maybe (ClientRequestToken) } -> { repositoryName :: RepositoryName, beforeCommitId :: Maybe (CommitId), afterCommitId :: CommitId, location :: Maybe (Location), content :: Content, clientRequestToken :: Maybe (ClientRequestToken) }) -> PostCommentForComparedCommitInput
 ```
 
 Constructs PostCommentForComparedCommitInput's fields from required parameters
@@ -4004,7 +4004,7 @@ Constructs PostCommentForComparedCommitInput's fields from required parameters
 
 ``` purescript
 newtype PostCommentForComparedCommitOutput
-  = PostCommentForComparedCommitOutput { repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comment :: NullOrUndefined (Comment) }
+  = PostCommentForComparedCommitOutput { repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comment :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -4027,7 +4027,7 @@ Constructs PostCommentForComparedCommitOutput from required parameters
 #### `newPostCommentForComparedCommitOutput'`
 
 ``` purescript
-newPostCommentForComparedCommitOutput' :: ({ repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comment :: NullOrUndefined (Comment) } -> { repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comment :: NullOrUndefined (Comment) }) -> PostCommentForComparedCommitOutput
+newPostCommentForComparedCommitOutput' :: ({ repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comment :: Maybe (Comment) } -> { repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comment :: Maybe (Comment) }) -> PostCommentForComparedCommitOutput
 ```
 
 Constructs PostCommentForComparedCommitOutput's fields from required parameters
@@ -4036,7 +4036,7 @@ Constructs PostCommentForComparedCommitOutput's fields from required parameters
 
 ``` purescript
 newtype PostCommentForPullRequestInput
-  = PostCommentForPullRequestInput { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, beforeCommitId :: CommitId, afterCommitId :: CommitId, location :: NullOrUndefined (Location), content :: Content, clientRequestToken :: NullOrUndefined (ClientRequestToken) }
+  = PostCommentForPullRequestInput { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, beforeCommitId :: CommitId, afterCommitId :: CommitId, location :: Maybe (Location), content :: Content, clientRequestToken :: Maybe (ClientRequestToken) }
 ```
 
 ##### Instances
@@ -4059,7 +4059,7 @@ Constructs PostCommentForPullRequestInput from required parameters
 #### `newPostCommentForPullRequestInput'`
 
 ``` purescript
-newPostCommentForPullRequestInput' :: CommitId -> CommitId -> Content -> PullRequestId -> RepositoryName -> ({ pullRequestId :: PullRequestId, repositoryName :: RepositoryName, beforeCommitId :: CommitId, afterCommitId :: CommitId, location :: NullOrUndefined (Location), content :: Content, clientRequestToken :: NullOrUndefined (ClientRequestToken) } -> { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, beforeCommitId :: CommitId, afterCommitId :: CommitId, location :: NullOrUndefined (Location), content :: Content, clientRequestToken :: NullOrUndefined (ClientRequestToken) }) -> PostCommentForPullRequestInput
+newPostCommentForPullRequestInput' :: CommitId -> CommitId -> Content -> PullRequestId -> RepositoryName -> ({ pullRequestId :: PullRequestId, repositoryName :: RepositoryName, beforeCommitId :: CommitId, afterCommitId :: CommitId, location :: Maybe (Location), content :: Content, clientRequestToken :: Maybe (ClientRequestToken) } -> { pullRequestId :: PullRequestId, repositoryName :: RepositoryName, beforeCommitId :: CommitId, afterCommitId :: CommitId, location :: Maybe (Location), content :: Content, clientRequestToken :: Maybe (ClientRequestToken) }) -> PostCommentForPullRequestInput
 ```
 
 Constructs PostCommentForPullRequestInput's fields from required parameters
@@ -4068,7 +4068,7 @@ Constructs PostCommentForPullRequestInput's fields from required parameters
 
 ``` purescript
 newtype PostCommentForPullRequestOutput
-  = PostCommentForPullRequestOutput { repositoryName :: NullOrUndefined (RepositoryName), pullRequestId :: NullOrUndefined (PullRequestId), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comment :: NullOrUndefined (Comment) }
+  = PostCommentForPullRequestOutput { repositoryName :: Maybe (RepositoryName), pullRequestId :: Maybe (PullRequestId), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comment :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -4091,7 +4091,7 @@ Constructs PostCommentForPullRequestOutput from required parameters
 #### `newPostCommentForPullRequestOutput'`
 
 ``` purescript
-newPostCommentForPullRequestOutput' :: ({ repositoryName :: NullOrUndefined (RepositoryName), pullRequestId :: NullOrUndefined (PullRequestId), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comment :: NullOrUndefined (Comment) } -> { repositoryName :: NullOrUndefined (RepositoryName), pullRequestId :: NullOrUndefined (PullRequestId), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId), beforeBlobId :: NullOrUndefined (ObjectId), afterBlobId :: NullOrUndefined (ObjectId), location :: NullOrUndefined (Location), comment :: NullOrUndefined (Comment) }) -> PostCommentForPullRequestOutput
+newPostCommentForPullRequestOutput' :: ({ repositoryName :: Maybe (RepositoryName), pullRequestId :: Maybe (PullRequestId), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comment :: Maybe (Comment) } -> { repositoryName :: Maybe (RepositoryName), pullRequestId :: Maybe (PullRequestId), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId), beforeBlobId :: Maybe (ObjectId), afterBlobId :: Maybe (ObjectId), location :: Maybe (Location), comment :: Maybe (Comment) }) -> PostCommentForPullRequestOutput
 ```
 
 Constructs PostCommentForPullRequestOutput's fields from required parameters
@@ -4100,7 +4100,7 @@ Constructs PostCommentForPullRequestOutput's fields from required parameters
 
 ``` purescript
 newtype PostCommentReplyInput
-  = PostCommentReplyInput { inReplyTo :: CommentId, clientRequestToken :: NullOrUndefined (ClientRequestToken), content :: Content }
+  = PostCommentReplyInput { inReplyTo :: CommentId, clientRequestToken :: Maybe (ClientRequestToken), content :: Content }
 ```
 
 ##### Instances
@@ -4123,7 +4123,7 @@ Constructs PostCommentReplyInput from required parameters
 #### `newPostCommentReplyInput'`
 
 ``` purescript
-newPostCommentReplyInput' :: Content -> CommentId -> ({ inReplyTo :: CommentId, clientRequestToken :: NullOrUndefined (ClientRequestToken), content :: Content } -> { inReplyTo :: CommentId, clientRequestToken :: NullOrUndefined (ClientRequestToken), content :: Content }) -> PostCommentReplyInput
+newPostCommentReplyInput' :: Content -> CommentId -> ({ inReplyTo :: CommentId, clientRequestToken :: Maybe (ClientRequestToken), content :: Content } -> { inReplyTo :: CommentId, clientRequestToken :: Maybe (ClientRequestToken), content :: Content }) -> PostCommentReplyInput
 ```
 
 Constructs PostCommentReplyInput's fields from required parameters
@@ -4132,7 +4132,7 @@ Constructs PostCommentReplyInput's fields from required parameters
 
 ``` purescript
 newtype PostCommentReplyOutput
-  = PostCommentReplyOutput { comment :: NullOrUndefined (Comment) }
+  = PostCommentReplyOutput { comment :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -4155,7 +4155,7 @@ Constructs PostCommentReplyOutput from required parameters
 #### `newPostCommentReplyOutput'`
 
 ``` purescript
-newPostCommentReplyOutput' :: ({ comment :: NullOrUndefined (Comment) } -> { comment :: NullOrUndefined (Comment) }) -> PostCommentReplyOutput
+newPostCommentReplyOutput' :: ({ comment :: Maybe (Comment) } -> { comment :: Maybe (Comment) }) -> PostCommentReplyOutput
 ```
 
 Constructs PostCommentReplyOutput's fields from required parameters
@@ -4164,7 +4164,7 @@ Constructs PostCommentReplyOutput's fields from required parameters
 
 ``` purescript
 newtype PullRequest
-  = PullRequest { pullRequestId :: NullOrUndefined (PullRequestId), title :: NullOrUndefined (Title), description :: NullOrUndefined (Description), lastActivityDate :: NullOrUndefined (LastModifiedDate), creationDate :: NullOrUndefined (CreationDate), pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum), authorArn :: NullOrUndefined (Arn), pullRequestTargets :: NullOrUndefined (PullRequestTargetList), clientRequestToken :: NullOrUndefined (ClientRequestToken) }
+  = PullRequest { pullRequestId :: Maybe (PullRequestId), title :: Maybe (Title), description :: Maybe (Description), lastActivityDate :: Maybe (LastModifiedDate), creationDate :: Maybe (CreationDate), pullRequestStatus :: Maybe (PullRequestStatusEnum), authorArn :: Maybe (Arn), pullRequestTargets :: Maybe (PullRequestTargetList), clientRequestToken :: Maybe (ClientRequestToken) }
 ```
 
 <p>Returns information about a pull request.</p>
@@ -4189,7 +4189,7 @@ Constructs PullRequest from required parameters
 #### `newPullRequest'`
 
 ``` purescript
-newPullRequest' :: ({ pullRequestId :: NullOrUndefined (PullRequestId), title :: NullOrUndefined (Title), description :: NullOrUndefined (Description), lastActivityDate :: NullOrUndefined (LastModifiedDate), creationDate :: NullOrUndefined (CreationDate), pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum), authorArn :: NullOrUndefined (Arn), pullRequestTargets :: NullOrUndefined (PullRequestTargetList), clientRequestToken :: NullOrUndefined (ClientRequestToken) } -> { pullRequestId :: NullOrUndefined (PullRequestId), title :: NullOrUndefined (Title), description :: NullOrUndefined (Description), lastActivityDate :: NullOrUndefined (LastModifiedDate), creationDate :: NullOrUndefined (CreationDate), pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum), authorArn :: NullOrUndefined (Arn), pullRequestTargets :: NullOrUndefined (PullRequestTargetList), clientRequestToken :: NullOrUndefined (ClientRequestToken) }) -> PullRequest
+newPullRequest' :: ({ pullRequestId :: Maybe (PullRequestId), title :: Maybe (Title), description :: Maybe (Description), lastActivityDate :: Maybe (LastModifiedDate), creationDate :: Maybe (CreationDate), pullRequestStatus :: Maybe (PullRequestStatusEnum), authorArn :: Maybe (Arn), pullRequestTargets :: Maybe (PullRequestTargetList), clientRequestToken :: Maybe (ClientRequestToken) } -> { pullRequestId :: Maybe (PullRequestId), title :: Maybe (Title), description :: Maybe (Description), lastActivityDate :: Maybe (LastModifiedDate), creationDate :: Maybe (CreationDate), pullRequestStatus :: Maybe (PullRequestStatusEnum), authorArn :: Maybe (Arn), pullRequestTargets :: Maybe (PullRequestTargetList), clientRequestToken :: Maybe (ClientRequestToken) }) -> PullRequest
 ```
 
 Constructs PullRequest's fields from required parameters
@@ -4234,7 +4234,7 @@ Encode PullRequestDoesNotExistException
 
 ``` purescript
 newtype PullRequestEvent
-  = PullRequestEvent { pullRequestId :: NullOrUndefined (PullRequestId), eventDate :: NullOrUndefined (EventDate), pullRequestEventType :: NullOrUndefined (PullRequestEventType), actorArn :: NullOrUndefined (Arn), pullRequestStatusChangedEventMetadata :: NullOrUndefined (PullRequestStatusChangedEventMetadata), pullRequestSourceReferenceUpdatedEventMetadata :: NullOrUndefined (PullRequestSourceReferenceUpdatedEventMetadata), pullRequestMergedStateChangedEventMetadata :: NullOrUndefined (PullRequestMergedStateChangedEventMetadata) }
+  = PullRequestEvent { pullRequestId :: Maybe (PullRequestId), eventDate :: Maybe (EventDate), pullRequestEventType :: Maybe (PullRequestEventType), actorArn :: Maybe (Arn), pullRequestStatusChangedEventMetadata :: Maybe (PullRequestStatusChangedEventMetadata), pullRequestSourceReferenceUpdatedEventMetadata :: Maybe (PullRequestSourceReferenceUpdatedEventMetadata), pullRequestMergedStateChangedEventMetadata :: Maybe (PullRequestMergedStateChangedEventMetadata) }
 ```
 
 <p>Returns information about a pull request event.</p>
@@ -4259,7 +4259,7 @@ Constructs PullRequestEvent from required parameters
 #### `newPullRequestEvent'`
 
 ``` purescript
-newPullRequestEvent' :: ({ pullRequestId :: NullOrUndefined (PullRequestId), eventDate :: NullOrUndefined (EventDate), pullRequestEventType :: NullOrUndefined (PullRequestEventType), actorArn :: NullOrUndefined (Arn), pullRequestStatusChangedEventMetadata :: NullOrUndefined (PullRequestStatusChangedEventMetadata), pullRequestSourceReferenceUpdatedEventMetadata :: NullOrUndefined (PullRequestSourceReferenceUpdatedEventMetadata), pullRequestMergedStateChangedEventMetadata :: NullOrUndefined (PullRequestMergedStateChangedEventMetadata) } -> { pullRequestId :: NullOrUndefined (PullRequestId), eventDate :: NullOrUndefined (EventDate), pullRequestEventType :: NullOrUndefined (PullRequestEventType), actorArn :: NullOrUndefined (Arn), pullRequestStatusChangedEventMetadata :: NullOrUndefined (PullRequestStatusChangedEventMetadata), pullRequestSourceReferenceUpdatedEventMetadata :: NullOrUndefined (PullRequestSourceReferenceUpdatedEventMetadata), pullRequestMergedStateChangedEventMetadata :: NullOrUndefined (PullRequestMergedStateChangedEventMetadata) }) -> PullRequestEvent
+newPullRequestEvent' :: ({ pullRequestId :: Maybe (PullRequestId), eventDate :: Maybe (EventDate), pullRequestEventType :: Maybe (PullRequestEventType), actorArn :: Maybe (Arn), pullRequestStatusChangedEventMetadata :: Maybe (PullRequestStatusChangedEventMetadata), pullRequestSourceReferenceUpdatedEventMetadata :: Maybe (PullRequestSourceReferenceUpdatedEventMetadata), pullRequestMergedStateChangedEventMetadata :: Maybe (PullRequestMergedStateChangedEventMetadata) } -> { pullRequestId :: Maybe (PullRequestId), eventDate :: Maybe (EventDate), pullRequestEventType :: Maybe (PullRequestEventType), actorArn :: Maybe (Arn), pullRequestStatusChangedEventMetadata :: Maybe (PullRequestStatusChangedEventMetadata), pullRequestSourceReferenceUpdatedEventMetadata :: Maybe (PullRequestSourceReferenceUpdatedEventMetadata), pullRequestMergedStateChangedEventMetadata :: Maybe (PullRequestMergedStateChangedEventMetadata) }) -> PullRequestEvent
 ```
 
 Constructs PullRequestEvent's fields from required parameters
@@ -4350,7 +4350,7 @@ Encode PullRequestIdRequiredException
 
 ``` purescript
 newtype PullRequestMergedStateChangedEventMetadata
-  = PullRequestMergedStateChangedEventMetadata { repositoryName :: NullOrUndefined (RepositoryName), destinationReference :: NullOrUndefined (ReferenceName), mergeMetadata :: NullOrUndefined (MergeMetadata) }
+  = PullRequestMergedStateChangedEventMetadata { repositoryName :: Maybe (RepositoryName), destinationReference :: Maybe (ReferenceName), mergeMetadata :: Maybe (MergeMetadata) }
 ```
 
 <p>Returns information about the change in the merge state for a pull request event. </p>
@@ -4375,7 +4375,7 @@ Constructs PullRequestMergedStateChangedEventMetadata from required parameters
 #### `newPullRequestMergedStateChangedEventMetadata'`
 
 ``` purescript
-newPullRequestMergedStateChangedEventMetadata' :: ({ repositoryName :: NullOrUndefined (RepositoryName), destinationReference :: NullOrUndefined (ReferenceName), mergeMetadata :: NullOrUndefined (MergeMetadata) } -> { repositoryName :: NullOrUndefined (RepositoryName), destinationReference :: NullOrUndefined (ReferenceName), mergeMetadata :: NullOrUndefined (MergeMetadata) }) -> PullRequestMergedStateChangedEventMetadata
+newPullRequestMergedStateChangedEventMetadata' :: ({ repositoryName :: Maybe (RepositoryName), destinationReference :: Maybe (ReferenceName), mergeMetadata :: Maybe (MergeMetadata) } -> { repositoryName :: Maybe (RepositoryName), destinationReference :: Maybe (ReferenceName), mergeMetadata :: Maybe (MergeMetadata) }) -> PullRequestMergedStateChangedEventMetadata
 ```
 
 Constructs PullRequestMergedStateChangedEventMetadata's fields from required parameters
@@ -4384,7 +4384,7 @@ Constructs PullRequestMergedStateChangedEventMetadata's fields from required par
 
 ``` purescript
 newtype PullRequestSourceReferenceUpdatedEventMetadata
-  = PullRequestSourceReferenceUpdatedEventMetadata { repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId) }
+  = PullRequestSourceReferenceUpdatedEventMetadata { repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId) }
 ```
 
 <p>Information about an update to the source branch of a pull request.</p>
@@ -4409,7 +4409,7 @@ Constructs PullRequestSourceReferenceUpdatedEventMetadata from required paramete
 #### `newPullRequestSourceReferenceUpdatedEventMetadata'`
 
 ``` purescript
-newPullRequestSourceReferenceUpdatedEventMetadata' :: ({ repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId) } -> { repositoryName :: NullOrUndefined (RepositoryName), beforeCommitId :: NullOrUndefined (CommitId), afterCommitId :: NullOrUndefined (CommitId) }) -> PullRequestSourceReferenceUpdatedEventMetadata
+newPullRequestSourceReferenceUpdatedEventMetadata' :: ({ repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId) } -> { repositoryName :: Maybe (RepositoryName), beforeCommitId :: Maybe (CommitId), afterCommitId :: Maybe (CommitId) }) -> PullRequestSourceReferenceUpdatedEventMetadata
 ```
 
 Constructs PullRequestSourceReferenceUpdatedEventMetadata's fields from required parameters
@@ -4418,7 +4418,7 @@ Constructs PullRequestSourceReferenceUpdatedEventMetadata's fields from required
 
 ``` purescript
 newtype PullRequestStatusChangedEventMetadata
-  = PullRequestStatusChangedEventMetadata { pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum) }
+  = PullRequestStatusChangedEventMetadata { pullRequestStatus :: Maybe (PullRequestStatusEnum) }
 ```
 
 <p>Information about a change to the status of a pull request.</p>
@@ -4443,7 +4443,7 @@ Constructs PullRequestStatusChangedEventMetadata from required parameters
 #### `newPullRequestStatusChangedEventMetadata'`
 
 ``` purescript
-newPullRequestStatusChangedEventMetadata' :: ({ pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum) } -> { pullRequestStatus :: NullOrUndefined (PullRequestStatusEnum) }) -> PullRequestStatusChangedEventMetadata
+newPullRequestStatusChangedEventMetadata' :: ({ pullRequestStatus :: Maybe (PullRequestStatusEnum) } -> { pullRequestStatus :: Maybe (PullRequestStatusEnum) }) -> PullRequestStatusChangedEventMetadata
 ```
 
 Constructs PullRequestStatusChangedEventMetadata's fields from required parameters
@@ -4486,7 +4486,7 @@ Encode PullRequestStatusRequiredException
 
 ``` purescript
 newtype PullRequestTarget
-  = PullRequestTarget { repositoryName :: NullOrUndefined (RepositoryName), sourceReference :: NullOrUndefined (ReferenceName), destinationReference :: NullOrUndefined (ReferenceName), destinationCommit :: NullOrUndefined (CommitId), sourceCommit :: NullOrUndefined (CommitId), mergeMetadata :: NullOrUndefined (MergeMetadata) }
+  = PullRequestTarget { repositoryName :: Maybe (RepositoryName), sourceReference :: Maybe (ReferenceName), destinationReference :: Maybe (ReferenceName), destinationCommit :: Maybe (CommitId), sourceCommit :: Maybe (CommitId), mergeMetadata :: Maybe (MergeMetadata) }
 ```
 
 <p>Returns information about a pull request target.</p>
@@ -4511,7 +4511,7 @@ Constructs PullRequestTarget from required parameters
 #### `newPullRequestTarget'`
 
 ``` purescript
-newPullRequestTarget' :: ({ repositoryName :: NullOrUndefined (RepositoryName), sourceReference :: NullOrUndefined (ReferenceName), destinationReference :: NullOrUndefined (ReferenceName), destinationCommit :: NullOrUndefined (CommitId), sourceCommit :: NullOrUndefined (CommitId), mergeMetadata :: NullOrUndefined (MergeMetadata) } -> { repositoryName :: NullOrUndefined (RepositoryName), sourceReference :: NullOrUndefined (ReferenceName), destinationReference :: NullOrUndefined (ReferenceName), destinationCommit :: NullOrUndefined (CommitId), sourceCommit :: NullOrUndefined (CommitId), mergeMetadata :: NullOrUndefined (MergeMetadata) }) -> PullRequestTarget
+newPullRequestTarget' :: ({ repositoryName :: Maybe (RepositoryName), sourceReference :: Maybe (ReferenceName), destinationReference :: Maybe (ReferenceName), destinationCommit :: Maybe (CommitId), sourceCommit :: Maybe (CommitId), mergeMetadata :: Maybe (MergeMetadata) } -> { repositoryName :: Maybe (RepositoryName), sourceReference :: Maybe (ReferenceName), destinationReference :: Maybe (ReferenceName), destinationCommit :: Maybe (CommitId), sourceCommit :: Maybe (CommitId), mergeMetadata :: Maybe (MergeMetadata) }) -> PullRequestTarget
 ```
 
 Constructs PullRequestTarget's fields from required parameters
@@ -4536,7 +4536,7 @@ Encode PullRequestTargetList
 
 ``` purescript
 newtype PutFileInput
-  = PutFileInput { repositoryName :: RepositoryName, branchName :: BranchName, fileContent :: FileContent, filePath :: Path, fileMode :: NullOrUndefined (FileModeTypeEnum), parentCommitId :: NullOrUndefined (CommitId), commitMessage :: NullOrUndefined (Message), name :: NullOrUndefined (Name), email :: NullOrUndefined (Email) }
+  = PutFileInput { repositoryName :: RepositoryName, branchName :: BranchName, fileContent :: FileContent, filePath :: Path, fileMode :: Maybe (FileModeTypeEnum), parentCommitId :: Maybe (CommitId), commitMessage :: Maybe (Message), name :: Maybe (Name), email :: Maybe (Email) }
 ```
 
 ##### Instances
@@ -4559,7 +4559,7 @@ Constructs PutFileInput from required parameters
 #### `newPutFileInput'`
 
 ``` purescript
-newPutFileInput' :: BranchName -> FileContent -> Path -> RepositoryName -> ({ repositoryName :: RepositoryName, branchName :: BranchName, fileContent :: FileContent, filePath :: Path, fileMode :: NullOrUndefined (FileModeTypeEnum), parentCommitId :: NullOrUndefined (CommitId), commitMessage :: NullOrUndefined (Message), name :: NullOrUndefined (Name), email :: NullOrUndefined (Email) } -> { repositoryName :: RepositoryName, branchName :: BranchName, fileContent :: FileContent, filePath :: Path, fileMode :: NullOrUndefined (FileModeTypeEnum), parentCommitId :: NullOrUndefined (CommitId), commitMessage :: NullOrUndefined (Message), name :: NullOrUndefined (Name), email :: NullOrUndefined (Email) }) -> PutFileInput
+newPutFileInput' :: BranchName -> FileContent -> Path -> RepositoryName -> ({ repositoryName :: RepositoryName, branchName :: BranchName, fileContent :: FileContent, filePath :: Path, fileMode :: Maybe (FileModeTypeEnum), parentCommitId :: Maybe (CommitId), commitMessage :: Maybe (Message), name :: Maybe (Name), email :: Maybe (Email) } -> { repositoryName :: RepositoryName, branchName :: BranchName, fileContent :: FileContent, filePath :: Path, fileMode :: Maybe (FileModeTypeEnum), parentCommitId :: Maybe (CommitId), commitMessage :: Maybe (Message), name :: Maybe (Name), email :: Maybe (Email) }) -> PutFileInput
 ```
 
 Constructs PutFileInput's fields from required parameters
@@ -4634,7 +4634,7 @@ Constructs PutRepositoryTriggersInput's fields from required parameters
 
 ``` purescript
 newtype PutRepositoryTriggersOutput
-  = PutRepositoryTriggersOutput { configurationId :: NullOrUndefined (RepositoryTriggersConfigurationId) }
+  = PutRepositoryTriggersOutput { configurationId :: Maybe (RepositoryTriggersConfigurationId) }
 ```
 
 <p>Represents the output of a put repository triggers operation.</p>
@@ -4659,7 +4659,7 @@ Constructs PutRepositoryTriggersOutput from required parameters
 #### `newPutRepositoryTriggersOutput'`
 
 ``` purescript
-newPutRepositoryTriggersOutput' :: ({ configurationId :: NullOrUndefined (RepositoryTriggersConfigurationId) } -> { configurationId :: NullOrUndefined (RepositoryTriggersConfigurationId) }) -> PutRepositoryTriggersOutput
+newPutRepositoryTriggersOutput' :: ({ configurationId :: Maybe (RepositoryTriggersConfigurationId) } -> { configurationId :: Maybe (RepositoryTriggersConfigurationId) }) -> PutRepositoryTriggersOutput
 ```
 
 Constructs PutRepositoryTriggersOutput's fields from required parameters
@@ -4822,7 +4822,7 @@ Encode RepositoryLimitExceededException
 
 ``` purescript
 newtype RepositoryMetadata
-  = RepositoryMetadata { accountId :: NullOrUndefined (AccountId), repositoryId :: NullOrUndefined (RepositoryId), repositoryName :: NullOrUndefined (RepositoryName), repositoryDescription :: NullOrUndefined (RepositoryDescription), defaultBranch :: NullOrUndefined (BranchName), lastModifiedDate :: NullOrUndefined (LastModifiedDate), creationDate :: NullOrUndefined (CreationDate), cloneUrlHttp :: NullOrUndefined (CloneUrlHttp), cloneUrlSsh :: NullOrUndefined (CloneUrlSsh), "Arn" :: NullOrUndefined (Arn) }
+  = RepositoryMetadata { accountId :: Maybe (AccountId), repositoryId :: Maybe (RepositoryId), repositoryName :: Maybe (RepositoryName), repositoryDescription :: Maybe (RepositoryDescription), defaultBranch :: Maybe (BranchName), lastModifiedDate :: Maybe (LastModifiedDate), creationDate :: Maybe (CreationDate), cloneUrlHttp :: Maybe (CloneUrlHttp), cloneUrlSsh :: Maybe (CloneUrlSsh), "Arn" :: Maybe (Arn) }
 ```
 
 <p>Information about a repository.</p>
@@ -4847,7 +4847,7 @@ Constructs RepositoryMetadata from required parameters
 #### `newRepositoryMetadata'`
 
 ``` purescript
-newRepositoryMetadata' :: ({ accountId :: NullOrUndefined (AccountId), repositoryId :: NullOrUndefined (RepositoryId), repositoryName :: NullOrUndefined (RepositoryName), repositoryDescription :: NullOrUndefined (RepositoryDescription), defaultBranch :: NullOrUndefined (BranchName), lastModifiedDate :: NullOrUndefined (LastModifiedDate), creationDate :: NullOrUndefined (CreationDate), cloneUrlHttp :: NullOrUndefined (CloneUrlHttp), cloneUrlSsh :: NullOrUndefined (CloneUrlSsh), "Arn" :: NullOrUndefined (Arn) } -> { accountId :: NullOrUndefined (AccountId), repositoryId :: NullOrUndefined (RepositoryId), repositoryName :: NullOrUndefined (RepositoryName), repositoryDescription :: NullOrUndefined (RepositoryDescription), defaultBranch :: NullOrUndefined (BranchName), lastModifiedDate :: NullOrUndefined (LastModifiedDate), creationDate :: NullOrUndefined (CreationDate), cloneUrlHttp :: NullOrUndefined (CloneUrlHttp), cloneUrlSsh :: NullOrUndefined (CloneUrlSsh), "Arn" :: NullOrUndefined (Arn) }) -> RepositoryMetadata
+newRepositoryMetadata' :: ({ accountId :: Maybe (AccountId), repositoryId :: Maybe (RepositoryId), repositoryName :: Maybe (RepositoryName), repositoryDescription :: Maybe (RepositoryDescription), defaultBranch :: Maybe (BranchName), lastModifiedDate :: Maybe (LastModifiedDate), creationDate :: Maybe (CreationDate), cloneUrlHttp :: Maybe (CloneUrlHttp), cloneUrlSsh :: Maybe (CloneUrlSsh), "Arn" :: Maybe (Arn) } -> { accountId :: Maybe (AccountId), repositoryId :: Maybe (RepositoryId), repositoryName :: Maybe (RepositoryName), repositoryDescription :: Maybe (RepositoryDescription), defaultBranch :: Maybe (BranchName), lastModifiedDate :: Maybe (LastModifiedDate), creationDate :: Maybe (CreationDate), cloneUrlHttp :: Maybe (CloneUrlHttp), cloneUrlSsh :: Maybe (CloneUrlSsh), "Arn" :: Maybe (Arn) }) -> RepositoryMetadata
 ```
 
 Constructs RepositoryMetadata's fields from required parameters
@@ -4906,7 +4906,7 @@ Encode RepositoryNameExistsException
 
 ``` purescript
 newtype RepositoryNameIdPair
-  = RepositoryNameIdPair { repositoryName :: NullOrUndefined (RepositoryName), repositoryId :: NullOrUndefined (RepositoryId) }
+  = RepositoryNameIdPair { repositoryName :: Maybe (RepositoryName), repositoryId :: Maybe (RepositoryId) }
 ```
 
 <p>Information about a repository name and ID.</p>
@@ -4931,7 +4931,7 @@ Constructs RepositoryNameIdPair from required parameters
 #### `newRepositoryNameIdPair'`
 
 ``` purescript
-newRepositoryNameIdPair' :: ({ repositoryName :: NullOrUndefined (RepositoryName), repositoryId :: NullOrUndefined (RepositoryId) } -> { repositoryName :: NullOrUndefined (RepositoryName), repositoryId :: NullOrUndefined (RepositoryId) }) -> RepositoryNameIdPair
+newRepositoryNameIdPair' :: ({ repositoryName :: Maybe (RepositoryName), repositoryId :: Maybe (RepositoryId) } -> { repositoryName :: Maybe (RepositoryName), repositoryId :: Maybe (RepositoryId) }) -> RepositoryNameIdPair
 ```
 
 Constructs RepositoryNameIdPair's fields from required parameters
@@ -5042,7 +5042,7 @@ Encode RepositoryNotFoundList
 
 ``` purescript
 newtype RepositoryTrigger
-  = RepositoryTrigger { name :: RepositoryTriggerName, destinationArn :: Arn, customData :: NullOrUndefined (RepositoryTriggerCustomData), branches :: NullOrUndefined (BranchNameList), events :: RepositoryTriggerEventList }
+  = RepositoryTrigger { name :: RepositoryTriggerName, destinationArn :: Arn, customData :: Maybe (RepositoryTriggerCustomData), branches :: Maybe (BranchNameList), events :: RepositoryTriggerEventList }
 ```
 
 <p>Information about a trigger for a repository.</p>
@@ -5067,7 +5067,7 @@ Constructs RepositoryTrigger from required parameters
 #### `newRepositoryTrigger'`
 
 ``` purescript
-newRepositoryTrigger' :: Arn -> RepositoryTriggerEventList -> RepositoryTriggerName -> ({ name :: RepositoryTriggerName, destinationArn :: Arn, customData :: NullOrUndefined (RepositoryTriggerCustomData), branches :: NullOrUndefined (BranchNameList), events :: RepositoryTriggerEventList } -> { name :: RepositoryTriggerName, destinationArn :: Arn, customData :: NullOrUndefined (RepositoryTriggerCustomData), branches :: NullOrUndefined (BranchNameList), events :: RepositoryTriggerEventList }) -> RepositoryTrigger
+newRepositoryTrigger' :: Arn -> RepositoryTriggerEventList -> RepositoryTriggerName -> ({ name :: RepositoryTriggerName, destinationArn :: Arn, customData :: Maybe (RepositoryTriggerCustomData), branches :: Maybe (BranchNameList), events :: RepositoryTriggerEventList } -> { name :: RepositoryTriggerName, destinationArn :: Arn, customData :: Maybe (RepositoryTriggerCustomData), branches :: Maybe (BranchNameList), events :: RepositoryTriggerEventList }) -> RepositoryTrigger
 ```
 
 Constructs RepositoryTrigger's fields from required parameters
@@ -5178,7 +5178,7 @@ Encode RepositoryTriggerEventsListRequiredException
 
 ``` purescript
 newtype RepositoryTriggerExecutionFailure
-  = RepositoryTriggerExecutionFailure { trigger :: NullOrUndefined (RepositoryTriggerName), failureMessage :: NullOrUndefined (RepositoryTriggerExecutionFailureMessage) }
+  = RepositoryTriggerExecutionFailure { trigger :: Maybe (RepositoryTriggerName), failureMessage :: Maybe (RepositoryTriggerExecutionFailureMessage) }
 ```
 
 <p>A trigger failed to run.</p>
@@ -5203,7 +5203,7 @@ Constructs RepositoryTriggerExecutionFailure from required parameters
 #### `newRepositoryTriggerExecutionFailure'`
 
 ``` purescript
-newRepositoryTriggerExecutionFailure' :: ({ trigger :: NullOrUndefined (RepositoryTriggerName), failureMessage :: NullOrUndefined (RepositoryTriggerExecutionFailureMessage) } -> { trigger :: NullOrUndefined (RepositoryTriggerName), failureMessage :: NullOrUndefined (RepositoryTriggerExecutionFailureMessage) }) -> RepositoryTriggerExecutionFailure
+newRepositoryTriggerExecutionFailure' :: ({ trigger :: Maybe (RepositoryTriggerName), failureMessage :: Maybe (RepositoryTriggerExecutionFailureMessage) } -> { trigger :: Maybe (RepositoryTriggerName), failureMessage :: Maybe (RepositoryTriggerExecutionFailureMessage) }) -> RepositoryTriggerExecutionFailure
 ```
 
 Constructs RepositoryTriggerExecutionFailure's fields from required parameters
@@ -5396,7 +5396,7 @@ Encode SourceAndDestinationAreSameException
 
 ``` purescript
 newtype Target
-  = Target { repositoryName :: RepositoryName, sourceReference :: ReferenceName, destinationReference :: NullOrUndefined (ReferenceName) }
+  = Target { repositoryName :: RepositoryName, sourceReference :: ReferenceName, destinationReference :: Maybe (ReferenceName) }
 ```
 
 <p>Returns information about a target for a pull request.</p>
@@ -5421,7 +5421,7 @@ Constructs Target from required parameters
 #### `newTarget'`
 
 ``` purescript
-newTarget' :: RepositoryName -> ReferenceName -> ({ repositoryName :: RepositoryName, sourceReference :: ReferenceName, destinationReference :: NullOrUndefined (ReferenceName) } -> { repositoryName :: RepositoryName, sourceReference :: ReferenceName, destinationReference :: NullOrUndefined (ReferenceName) }) -> Target
+newTarget' :: RepositoryName -> ReferenceName -> ({ repositoryName :: RepositoryName, sourceReference :: ReferenceName, destinationReference :: Maybe (ReferenceName) } -> { repositoryName :: RepositoryName, sourceReference :: ReferenceName, destinationReference :: Maybe (ReferenceName) }) -> Target
 ```
 
 Constructs Target's fields from required parameters
@@ -5516,7 +5516,7 @@ Constructs TestRepositoryTriggersInput's fields from required parameters
 
 ``` purescript
 newtype TestRepositoryTriggersOutput
-  = TestRepositoryTriggersOutput { successfulExecutions :: NullOrUndefined (RepositoryTriggerNameList), failedExecutions :: NullOrUndefined (RepositoryTriggerExecutionFailureList) }
+  = TestRepositoryTriggersOutput { successfulExecutions :: Maybe (RepositoryTriggerNameList), failedExecutions :: Maybe (RepositoryTriggerExecutionFailureList) }
 ```
 
 <p>Represents the output of a test repository triggers operation.</p>
@@ -5541,7 +5541,7 @@ Constructs TestRepositoryTriggersOutput from required parameters
 #### `newTestRepositoryTriggersOutput'`
 
 ``` purescript
-newTestRepositoryTriggersOutput' :: ({ successfulExecutions :: NullOrUndefined (RepositoryTriggerNameList), failedExecutions :: NullOrUndefined (RepositoryTriggerExecutionFailureList) } -> { successfulExecutions :: NullOrUndefined (RepositoryTriggerNameList), failedExecutions :: NullOrUndefined (RepositoryTriggerExecutionFailureList) }) -> TestRepositoryTriggersOutput
+newTestRepositoryTriggersOutput' :: ({ successfulExecutions :: Maybe (RepositoryTriggerNameList), failedExecutions :: Maybe (RepositoryTriggerExecutionFailureList) } -> { successfulExecutions :: Maybe (RepositoryTriggerNameList), failedExecutions :: Maybe (RepositoryTriggerExecutionFailureList) }) -> TestRepositoryTriggersOutput
 ```
 
 Constructs TestRepositoryTriggersOutput's fields from required parameters
@@ -5652,7 +5652,7 @@ Constructs UpdateCommentInput's fields from required parameters
 
 ``` purescript
 newtype UpdateCommentOutput
-  = UpdateCommentOutput { comment :: NullOrUndefined (Comment) }
+  = UpdateCommentOutput { comment :: Maybe (Comment) }
 ```
 
 ##### Instances
@@ -5675,7 +5675,7 @@ Constructs UpdateCommentOutput from required parameters
 #### `newUpdateCommentOutput'`
 
 ``` purescript
-newUpdateCommentOutput' :: ({ comment :: NullOrUndefined (Comment) } -> { comment :: NullOrUndefined (Comment) }) -> UpdateCommentOutput
+newUpdateCommentOutput' :: ({ comment :: Maybe (Comment) } -> { comment :: Maybe (Comment) }) -> UpdateCommentOutput
 ```
 
 Constructs UpdateCommentOutput's fields from required parameters
@@ -5910,7 +5910,7 @@ Constructs UpdatePullRequestTitleOutput's fields from required parameters
 
 ``` purescript
 newtype UpdateRepositoryDescriptionInput
-  = UpdateRepositoryDescriptionInput { repositoryName :: RepositoryName, repositoryDescription :: NullOrUndefined (RepositoryDescription) }
+  = UpdateRepositoryDescriptionInput { repositoryName :: RepositoryName, repositoryDescription :: Maybe (RepositoryDescription) }
 ```
 
 <p>Represents the input of an update repository description operation.</p>
@@ -5935,7 +5935,7 @@ Constructs UpdateRepositoryDescriptionInput from required parameters
 #### `newUpdateRepositoryDescriptionInput'`
 
 ``` purescript
-newUpdateRepositoryDescriptionInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, repositoryDescription :: NullOrUndefined (RepositoryDescription) } -> { repositoryName :: RepositoryName, repositoryDescription :: NullOrUndefined (RepositoryDescription) }) -> UpdateRepositoryDescriptionInput
+newUpdateRepositoryDescriptionInput' :: RepositoryName -> ({ repositoryName :: RepositoryName, repositoryDescription :: Maybe (RepositoryDescription) } -> { repositoryName :: RepositoryName, repositoryDescription :: Maybe (RepositoryDescription) }) -> UpdateRepositoryDescriptionInput
 ```
 
 Constructs UpdateRepositoryDescriptionInput's fields from required parameters
@@ -5978,7 +5978,7 @@ Constructs UpdateRepositoryNameInput's fields from required parameters
 
 ``` purescript
 newtype UserInfo
-  = UserInfo { name :: NullOrUndefined (Name), email :: NullOrUndefined (Email), date :: NullOrUndefined (Date) }
+  = UserInfo { name :: Maybe (Name), email :: Maybe (Email), date :: Maybe (Date) }
 ```
 
 <p>Information about the user who made a specified commit.</p>
@@ -6003,7 +6003,7 @@ Constructs UserInfo from required parameters
 #### `newUserInfo'`
 
 ``` purescript
-newUserInfo' :: ({ name :: NullOrUndefined (Name), email :: NullOrUndefined (Email), date :: NullOrUndefined (Date) } -> { name :: NullOrUndefined (Name), email :: NullOrUndefined (Email), date :: NullOrUndefined (Date) }) -> UserInfo
+newUserInfo' :: ({ name :: Maybe (Name), email :: Maybe (Email), date :: Maybe (Date) } -> { name :: Maybe (Name), email :: Maybe (Email), date :: Maybe (Date) }) -> UserInfo
 ```
 
 Constructs UserInfo's fields from required parameters

@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -88,8 +87,8 @@ newBatchGetRepositoriesInput' _repositoryNames customize = (BatchGetRepositories
 
 -- | <p>Represents the output of a batch get repositories operation.</p>
 newtype BatchGetRepositoriesOutput = BatchGetRepositoriesOutput 
-  { "repositories" :: NullOrUndefined (RepositoryMetadataList)
-  , "repositoriesNotFound" :: NullOrUndefined (RepositoryNotFoundList)
+  { "repositories" :: Maybe (RepositoryMetadataList)
+  , "repositoriesNotFound" :: Maybe (RepositoryNotFoundList)
   }
 derive instance newtypeBatchGetRepositoriesOutput :: Newtype BatchGetRepositoriesOutput _
 derive instance repGenericBatchGetRepositoriesOutput :: Generic BatchGetRepositoriesOutput _
@@ -99,12 +98,12 @@ instance encodeBatchGetRepositoriesOutput :: Encode BatchGetRepositoriesOutput w
 
 -- | Constructs BatchGetRepositoriesOutput from required parameters
 newBatchGetRepositoriesOutput :: BatchGetRepositoriesOutput
-newBatchGetRepositoriesOutput  = BatchGetRepositoriesOutput { "repositories": (NullOrUndefined Nothing), "repositoriesNotFound": (NullOrUndefined Nothing) }
+newBatchGetRepositoriesOutput  = BatchGetRepositoriesOutput { "repositories": Nothing, "repositoriesNotFound": Nothing }
 
 -- | Constructs BatchGetRepositoriesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetRepositoriesOutput' :: ( { "repositories" :: NullOrUndefined (RepositoryMetadataList) , "repositoriesNotFound" :: NullOrUndefined (RepositoryNotFoundList) } -> {"repositories" :: NullOrUndefined (RepositoryMetadataList) , "repositoriesNotFound" :: NullOrUndefined (RepositoryNotFoundList) } ) -> BatchGetRepositoriesOutput
-newBatchGetRepositoriesOutput'  customize = (BatchGetRepositoriesOutput <<< customize) { "repositories": (NullOrUndefined Nothing), "repositoriesNotFound": (NullOrUndefined Nothing) }
+newBatchGetRepositoriesOutput' :: ( { "repositories" :: Maybe (RepositoryMetadataList) , "repositoriesNotFound" :: Maybe (RepositoryNotFoundList) } -> {"repositories" :: Maybe (RepositoryMetadataList) , "repositoriesNotFound" :: Maybe (RepositoryNotFoundList) } ) -> BatchGetRepositoriesOutput
+newBatchGetRepositoriesOutput'  customize = (BatchGetRepositoriesOutput <<< customize) { "repositories": Nothing, "repositoriesNotFound": Nothing }
 
 
 
@@ -140,9 +139,9 @@ instance encodeBlobIdRequiredException :: Encode BlobIdRequiredException where e
 
 -- | <p>Returns information about a specific Git blob object.</p>
 newtype BlobMetadata = BlobMetadata 
-  { "blobId" :: NullOrUndefined (ObjectId)
-  , "path" :: NullOrUndefined (Path)
-  , "mode" :: NullOrUndefined (Mode)
+  { "blobId" :: Maybe (ObjectId)
+  , "path" :: Maybe (Path)
+  , "mode" :: Maybe (Mode)
   }
 derive instance newtypeBlobMetadata :: Newtype BlobMetadata _
 derive instance repGenericBlobMetadata :: Generic BlobMetadata _
@@ -152,12 +151,12 @@ instance encodeBlobMetadata :: Encode BlobMetadata where encode = genericEncode 
 
 -- | Constructs BlobMetadata from required parameters
 newBlobMetadata :: BlobMetadata
-newBlobMetadata  = BlobMetadata { "blobId": (NullOrUndefined Nothing), "mode": (NullOrUndefined Nothing), "path": (NullOrUndefined Nothing) }
+newBlobMetadata  = BlobMetadata { "blobId": Nothing, "mode": Nothing, "path": Nothing }
 
 -- | Constructs BlobMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBlobMetadata' :: ( { "blobId" :: NullOrUndefined (ObjectId) , "path" :: NullOrUndefined (Path) , "mode" :: NullOrUndefined (Mode) } -> {"blobId" :: NullOrUndefined (ObjectId) , "path" :: NullOrUndefined (Path) , "mode" :: NullOrUndefined (Mode) } ) -> BlobMetadata
-newBlobMetadata'  customize = (BlobMetadata <<< customize) { "blobId": (NullOrUndefined Nothing), "mode": (NullOrUndefined Nothing), "path": (NullOrUndefined Nothing) }
+newBlobMetadata' :: ( { "blobId" :: Maybe (ObjectId) , "path" :: Maybe (Path) , "mode" :: Maybe (Mode) } -> {"blobId" :: Maybe (ObjectId) , "path" :: Maybe (Path) , "mode" :: Maybe (Mode) } ) -> BlobMetadata
+newBlobMetadata'  customize = (BlobMetadata <<< customize) { "blobId": Nothing, "mode": Nothing, "path": Nothing }
 
 
 
@@ -173,8 +172,8 @@ instance encodeBranchDoesNotExistException :: Encode BranchDoesNotExistException
 
 -- | <p>Returns information about a branch.</p>
 newtype BranchInfo = BranchInfo 
-  { "branchName" :: NullOrUndefined (BranchName)
-  , "commitId" :: NullOrUndefined (CommitId)
+  { "branchName" :: Maybe (BranchName)
+  , "commitId" :: Maybe (CommitId)
   }
 derive instance newtypeBranchInfo :: Newtype BranchInfo _
 derive instance repGenericBranchInfo :: Generic BranchInfo _
@@ -184,12 +183,12 @@ instance encodeBranchInfo :: Encode BranchInfo where encode = genericEncode opti
 
 -- | Constructs BranchInfo from required parameters
 newBranchInfo :: BranchInfo
-newBranchInfo  = BranchInfo { "branchName": (NullOrUndefined Nothing), "commitId": (NullOrUndefined Nothing) }
+newBranchInfo  = BranchInfo { "branchName": Nothing, "commitId": Nothing }
 
 -- | Constructs BranchInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBranchInfo' :: ( { "branchName" :: NullOrUndefined (BranchName) , "commitId" :: NullOrUndefined (CommitId) } -> {"branchName" :: NullOrUndefined (BranchName) , "commitId" :: NullOrUndefined (CommitId) } ) -> BranchInfo
-newBranchInfo'  customize = (BranchInfo <<< customize) { "branchName": (NullOrUndefined Nothing), "commitId": (NullOrUndefined Nothing) }
+newBranchInfo' :: ( { "branchName" :: Maybe (BranchName) , "commitId" :: Maybe (CommitId) } -> {"branchName" :: Maybe (BranchName) , "commitId" :: Maybe (CommitId) } ) -> BranchInfo
+newBranchInfo'  customize = (BranchInfo <<< customize) { "branchName": Nothing, "commitId": Nothing }
 
 
 
@@ -289,14 +288,14 @@ instance encodeCloneUrlSsh :: Encode CloneUrlSsh where encode = genericEncode op
 
 -- | <p>Returns information about a specific comment.</p>
 newtype Comment = Comment 
-  { "commentId" :: NullOrUndefined (CommentId)
-  , "content" :: NullOrUndefined (Content)
-  , "inReplyTo" :: NullOrUndefined (CommentId)
-  , "creationDate" :: NullOrUndefined (CreationDate)
-  , "lastModifiedDate" :: NullOrUndefined (LastModifiedDate)
-  , "authorArn" :: NullOrUndefined (Arn)
-  , "deleted" :: NullOrUndefined (IsCommentDeleted)
-  , "clientRequestToken" :: NullOrUndefined (ClientRequestToken)
+  { "commentId" :: Maybe (CommentId)
+  , "content" :: Maybe (Content)
+  , "inReplyTo" :: Maybe (CommentId)
+  , "creationDate" :: Maybe (CreationDate)
+  , "lastModifiedDate" :: Maybe (LastModifiedDate)
+  , "authorArn" :: Maybe (Arn)
+  , "deleted" :: Maybe (IsCommentDeleted)
+  , "clientRequestToken" :: Maybe (ClientRequestToken)
   }
 derive instance newtypeComment :: Newtype Comment _
 derive instance repGenericComment :: Generic Comment _
@@ -306,12 +305,12 @@ instance encodeComment :: Encode Comment where encode = genericEncode options
 
 -- | Constructs Comment from required parameters
 newComment :: Comment
-newComment  = Comment { "authorArn": (NullOrUndefined Nothing), "clientRequestToken": (NullOrUndefined Nothing), "commentId": (NullOrUndefined Nothing), "content": (NullOrUndefined Nothing), "creationDate": (NullOrUndefined Nothing), "deleted": (NullOrUndefined Nothing), "inReplyTo": (NullOrUndefined Nothing), "lastModifiedDate": (NullOrUndefined Nothing) }
+newComment  = Comment { "authorArn": Nothing, "clientRequestToken": Nothing, "commentId": Nothing, "content": Nothing, "creationDate": Nothing, "deleted": Nothing, "inReplyTo": Nothing, "lastModifiedDate": Nothing }
 
 -- | Constructs Comment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComment' :: ( { "commentId" :: NullOrUndefined (CommentId) , "content" :: NullOrUndefined (Content) , "inReplyTo" :: NullOrUndefined (CommentId) , "creationDate" :: NullOrUndefined (CreationDate) , "lastModifiedDate" :: NullOrUndefined (LastModifiedDate) , "authorArn" :: NullOrUndefined (Arn) , "deleted" :: NullOrUndefined (IsCommentDeleted) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } -> {"commentId" :: NullOrUndefined (CommentId) , "content" :: NullOrUndefined (Content) , "inReplyTo" :: NullOrUndefined (CommentId) , "creationDate" :: NullOrUndefined (CreationDate) , "lastModifiedDate" :: NullOrUndefined (LastModifiedDate) , "authorArn" :: NullOrUndefined (Arn) , "deleted" :: NullOrUndefined (IsCommentDeleted) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } ) -> Comment
-newComment'  customize = (Comment <<< customize) { "authorArn": (NullOrUndefined Nothing), "clientRequestToken": (NullOrUndefined Nothing), "commentId": (NullOrUndefined Nothing), "content": (NullOrUndefined Nothing), "creationDate": (NullOrUndefined Nothing), "deleted": (NullOrUndefined Nothing), "inReplyTo": (NullOrUndefined Nothing), "lastModifiedDate": (NullOrUndefined Nothing) }
+newComment' :: ( { "commentId" :: Maybe (CommentId) , "content" :: Maybe (Content) , "inReplyTo" :: Maybe (CommentId) , "creationDate" :: Maybe (CreationDate) , "lastModifiedDate" :: Maybe (LastModifiedDate) , "authorArn" :: Maybe (Arn) , "deleted" :: Maybe (IsCommentDeleted) , "clientRequestToken" :: Maybe (ClientRequestToken) } -> {"commentId" :: Maybe (CommentId) , "content" :: Maybe (Content) , "inReplyTo" :: Maybe (CommentId) , "creationDate" :: Maybe (CreationDate) , "lastModifiedDate" :: Maybe (LastModifiedDate) , "authorArn" :: Maybe (Arn) , "deleted" :: Maybe (IsCommentDeleted) , "clientRequestToken" :: Maybe (ClientRequestToken) } ) -> Comment
+newComment'  customize = (Comment <<< customize) { "authorArn": Nothing, "clientRequestToken": Nothing, "commentId": Nothing, "content": Nothing, "creationDate": Nothing, "deleted": Nothing, "inReplyTo": Nothing, "lastModifiedDate": Nothing }
 
 
 
@@ -395,13 +394,13 @@ instance encodeComments :: Encode Comments where encode = genericEncode options
 
 -- | <p>Returns information about comments on the comparison between two commits.</p>
 newtype CommentsForComparedCommit = CommentsForComparedCommit 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
-  , "afterCommitId" :: NullOrUndefined (CommitId)
-  , "beforeBlobId" :: NullOrUndefined (ObjectId)
-  , "afterBlobId" :: NullOrUndefined (ObjectId)
-  , "location" :: NullOrUndefined (Location)
-  , "comments" :: NullOrUndefined (Comments)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "beforeCommitId" :: Maybe (CommitId)
+  , "afterCommitId" :: Maybe (CommitId)
+  , "beforeBlobId" :: Maybe (ObjectId)
+  , "afterBlobId" :: Maybe (ObjectId)
+  , "location" :: Maybe (Location)
+  , "comments" :: Maybe (Comments)
   }
 derive instance newtypeCommentsForComparedCommit :: Newtype CommentsForComparedCommit _
 derive instance repGenericCommentsForComparedCommit :: Generic CommentsForComparedCommit _
@@ -411,12 +410,12 @@ instance encodeCommentsForComparedCommit :: Encode CommentsForComparedCommit whe
 
 -- | Constructs CommentsForComparedCommit from required parameters
 newCommentsForComparedCommit :: CommentsForComparedCommit
-newCommentsForComparedCommit  = CommentsForComparedCommit { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comments": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newCommentsForComparedCommit  = CommentsForComparedCommit { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comments": Nothing, "location": Nothing, "repositoryName": Nothing }
 
 -- | Constructs CommentsForComparedCommit's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommentsForComparedCommit' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comments" :: NullOrUndefined (Comments) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comments" :: NullOrUndefined (Comments) } ) -> CommentsForComparedCommit
-newCommentsForComparedCommit'  customize = (CommentsForComparedCommit <<< customize) { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comments": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newCommentsForComparedCommit' :: ( { "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comments" :: Maybe (Comments) } -> {"repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comments" :: Maybe (Comments) } ) -> CommentsForComparedCommit
+newCommentsForComparedCommit'  customize = (CommentsForComparedCommit <<< customize) { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comments": Nothing, "location": Nothing, "repositoryName": Nothing }
 
 
 
@@ -431,14 +430,14 @@ instance encodeCommentsForComparedCommitData :: Encode CommentsForComparedCommit
 
 -- | <p>Returns information about comments on a pull request.</p>
 newtype CommentsForPullRequest = CommentsForPullRequest 
-  { "pullRequestId" :: NullOrUndefined (PullRequestId)
-  , "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
-  , "afterCommitId" :: NullOrUndefined (CommitId)
-  , "beforeBlobId" :: NullOrUndefined (ObjectId)
-  , "afterBlobId" :: NullOrUndefined (ObjectId)
-  , "location" :: NullOrUndefined (Location)
-  , "comments" :: NullOrUndefined (Comments)
+  { "pullRequestId" :: Maybe (PullRequestId)
+  , "repositoryName" :: Maybe (RepositoryName)
+  , "beforeCommitId" :: Maybe (CommitId)
+  , "afterCommitId" :: Maybe (CommitId)
+  , "beforeBlobId" :: Maybe (ObjectId)
+  , "afterBlobId" :: Maybe (ObjectId)
+  , "location" :: Maybe (Location)
+  , "comments" :: Maybe (Comments)
   }
 derive instance newtypeCommentsForPullRequest :: Newtype CommentsForPullRequest _
 derive instance repGenericCommentsForPullRequest :: Generic CommentsForPullRequest _
@@ -448,12 +447,12 @@ instance encodeCommentsForPullRequest :: Encode CommentsForPullRequest where enc
 
 -- | Constructs CommentsForPullRequest from required parameters
 newCommentsForPullRequest :: CommentsForPullRequest
-newCommentsForPullRequest  = CommentsForPullRequest { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comments": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newCommentsForPullRequest  = CommentsForPullRequest { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comments": Nothing, "location": Nothing, "pullRequestId": Nothing, "repositoryName": Nothing }
 
 -- | Constructs CommentsForPullRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommentsForPullRequest' :: ( { "pullRequestId" :: NullOrUndefined (PullRequestId) , "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comments" :: NullOrUndefined (Comments) } -> {"pullRequestId" :: NullOrUndefined (PullRequestId) , "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comments" :: NullOrUndefined (Comments) } ) -> CommentsForPullRequest
-newCommentsForPullRequest'  customize = (CommentsForPullRequest <<< customize) { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comments": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newCommentsForPullRequest' :: ( { "pullRequestId" :: Maybe (PullRequestId) , "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comments" :: Maybe (Comments) } -> {"pullRequestId" :: Maybe (PullRequestId) , "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comments" :: Maybe (Comments) } ) -> CommentsForPullRequest
+newCommentsForPullRequest'  customize = (CommentsForPullRequest <<< customize) { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comments": Nothing, "location": Nothing, "pullRequestId": Nothing, "repositoryName": Nothing }
 
 
 
@@ -468,13 +467,13 @@ instance encodeCommentsForPullRequestData :: Encode CommentsForPullRequestData w
 
 -- | <p>Returns information about a specific commit.</p>
 newtype Commit = Commit 
-  { "commitId" :: NullOrUndefined (ObjectId)
-  , "treeId" :: NullOrUndefined (ObjectId)
-  , "parents" :: NullOrUndefined (ParentList)
-  , "message" :: NullOrUndefined (Message)
-  , "author" :: NullOrUndefined (UserInfo)
-  , "committer" :: NullOrUndefined (UserInfo)
-  , "additionalData" :: NullOrUndefined (AdditionalData)
+  { "commitId" :: Maybe (ObjectId)
+  , "treeId" :: Maybe (ObjectId)
+  , "parents" :: Maybe (ParentList)
+  , "message" :: Maybe (Message)
+  , "author" :: Maybe (UserInfo)
+  , "committer" :: Maybe (UserInfo)
+  , "additionalData" :: Maybe (AdditionalData)
   }
 derive instance newtypeCommit :: Newtype Commit _
 derive instance repGenericCommit :: Generic Commit _
@@ -484,12 +483,12 @@ instance encodeCommit :: Encode Commit where encode = genericEncode options
 
 -- | Constructs Commit from required parameters
 newCommit :: Commit
-newCommit  = Commit { "additionalData": (NullOrUndefined Nothing), "author": (NullOrUndefined Nothing), "commitId": (NullOrUndefined Nothing), "committer": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "parents": (NullOrUndefined Nothing), "treeId": (NullOrUndefined Nothing) }
+newCommit  = Commit { "additionalData": Nothing, "author": Nothing, "commitId": Nothing, "committer": Nothing, "message": Nothing, "parents": Nothing, "treeId": Nothing }
 
 -- | Constructs Commit's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommit' :: ( { "commitId" :: NullOrUndefined (ObjectId) , "treeId" :: NullOrUndefined (ObjectId) , "parents" :: NullOrUndefined (ParentList) , "message" :: NullOrUndefined (Message) , "author" :: NullOrUndefined (UserInfo) , "committer" :: NullOrUndefined (UserInfo) , "additionalData" :: NullOrUndefined (AdditionalData) } -> {"commitId" :: NullOrUndefined (ObjectId) , "treeId" :: NullOrUndefined (ObjectId) , "parents" :: NullOrUndefined (ParentList) , "message" :: NullOrUndefined (Message) , "author" :: NullOrUndefined (UserInfo) , "committer" :: NullOrUndefined (UserInfo) , "additionalData" :: NullOrUndefined (AdditionalData) } ) -> Commit
-newCommit'  customize = (Commit <<< customize) { "additionalData": (NullOrUndefined Nothing), "author": (NullOrUndefined Nothing), "commitId": (NullOrUndefined Nothing), "committer": (NullOrUndefined Nothing), "message": (NullOrUndefined Nothing), "parents": (NullOrUndefined Nothing), "treeId": (NullOrUndefined Nothing) }
+newCommit' :: ( { "commitId" :: Maybe (ObjectId) , "treeId" :: Maybe (ObjectId) , "parents" :: Maybe (ParentList) , "message" :: Maybe (Message) , "author" :: Maybe (UserInfo) , "committer" :: Maybe (UserInfo) , "additionalData" :: Maybe (AdditionalData) } -> {"commitId" :: Maybe (ObjectId) , "treeId" :: Maybe (ObjectId) , "parents" :: Maybe (ParentList) , "message" :: Maybe (Message) , "author" :: Maybe (UserInfo) , "committer" :: Maybe (UserInfo) , "additionalData" :: Maybe (AdditionalData) } ) -> Commit
+newCommit'  customize = (Commit <<< customize) { "additionalData": Nothing, "author": Nothing, "commitId": Nothing, "committer": Nothing, "message": Nothing, "parents": Nothing, "treeId": Nothing }
 
 
 
@@ -595,9 +594,9 @@ newCreateBranchInput' _branchName _commitId _repositoryName customize = (CreateB
 
 newtype CreatePullRequestInput = CreatePullRequestInput 
   { "title" :: (Title)
-  , "description" :: NullOrUndefined (Description)
+  , "description" :: Maybe (Description)
   , "targets" :: (TargetList)
-  , "clientRequestToken" :: NullOrUndefined (ClientRequestToken)
+  , "clientRequestToken" :: Maybe (ClientRequestToken)
   }
 derive instance newtypeCreatePullRequestInput :: Newtype CreatePullRequestInput _
 derive instance repGenericCreatePullRequestInput :: Generic CreatePullRequestInput _
@@ -607,12 +606,12 @@ instance encodeCreatePullRequestInput :: Encode CreatePullRequestInput where enc
 
 -- | Constructs CreatePullRequestInput from required parameters
 newCreatePullRequestInput :: TargetList -> Title -> CreatePullRequestInput
-newCreatePullRequestInput _targets _title = CreatePullRequestInput { "targets": _targets, "title": _title, "clientRequestToken": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing) }
+newCreatePullRequestInput _targets _title = CreatePullRequestInput { "targets": _targets, "title": _title, "clientRequestToken": Nothing, "description": Nothing }
 
 -- | Constructs CreatePullRequestInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePullRequestInput' :: TargetList -> Title -> ( { "title" :: (Title) , "description" :: NullOrUndefined (Description) , "targets" :: (TargetList) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } -> {"title" :: (Title) , "description" :: NullOrUndefined (Description) , "targets" :: (TargetList) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } ) -> CreatePullRequestInput
-newCreatePullRequestInput' _targets _title customize = (CreatePullRequestInput <<< customize) { "targets": _targets, "title": _title, "clientRequestToken": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing) }
+newCreatePullRequestInput' :: TargetList -> Title -> ( { "title" :: (Title) , "description" :: Maybe (Description) , "targets" :: (TargetList) , "clientRequestToken" :: Maybe (ClientRequestToken) } -> {"title" :: (Title) , "description" :: Maybe (Description) , "targets" :: (TargetList) , "clientRequestToken" :: Maybe (ClientRequestToken) } ) -> CreatePullRequestInput
+newCreatePullRequestInput' _targets _title customize = (CreatePullRequestInput <<< customize) { "targets": _targets, "title": _title, "clientRequestToken": Nothing, "description": Nothing }
 
 
 
@@ -639,7 +638,7 @@ newCreatePullRequestOutput' _pullRequest customize = (CreatePullRequestOutput <<
 -- | <p>Represents the input of a create repository operation.</p>
 newtype CreateRepositoryInput = CreateRepositoryInput 
   { "repositoryName" :: (RepositoryName)
-  , "repositoryDescription" :: NullOrUndefined (RepositoryDescription)
+  , "repositoryDescription" :: Maybe (RepositoryDescription)
   }
 derive instance newtypeCreateRepositoryInput :: Newtype CreateRepositoryInput _
 derive instance repGenericCreateRepositoryInput :: Generic CreateRepositoryInput _
@@ -649,18 +648,18 @@ instance encodeCreateRepositoryInput :: Encode CreateRepositoryInput where encod
 
 -- | Constructs CreateRepositoryInput from required parameters
 newCreateRepositoryInput :: RepositoryName -> CreateRepositoryInput
-newCreateRepositoryInput _repositoryName = CreateRepositoryInput { "repositoryName": _repositoryName, "repositoryDescription": (NullOrUndefined Nothing) }
+newCreateRepositoryInput _repositoryName = CreateRepositoryInput { "repositoryName": _repositoryName, "repositoryDescription": Nothing }
 
 -- | Constructs CreateRepositoryInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateRepositoryInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "repositoryDescription" :: NullOrUndefined (RepositoryDescription) } -> {"repositoryName" :: (RepositoryName) , "repositoryDescription" :: NullOrUndefined (RepositoryDescription) } ) -> CreateRepositoryInput
-newCreateRepositoryInput' _repositoryName customize = (CreateRepositoryInput <<< customize) { "repositoryName": _repositoryName, "repositoryDescription": (NullOrUndefined Nothing) }
+newCreateRepositoryInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "repositoryDescription" :: Maybe (RepositoryDescription) } -> {"repositoryName" :: (RepositoryName) , "repositoryDescription" :: Maybe (RepositoryDescription) } ) -> CreateRepositoryInput
+newCreateRepositoryInput' _repositoryName customize = (CreateRepositoryInput <<< customize) { "repositoryName": _repositoryName, "repositoryDescription": Nothing }
 
 
 
 -- | <p>Represents the output of a create repository operation.</p>
 newtype CreateRepositoryOutput = CreateRepositoryOutput 
-  { "repositoryMetadata" :: NullOrUndefined (RepositoryMetadata)
+  { "repositoryMetadata" :: Maybe (RepositoryMetadata)
   }
 derive instance newtypeCreateRepositoryOutput :: Newtype CreateRepositoryOutput _
 derive instance repGenericCreateRepositoryOutput :: Generic CreateRepositoryOutput _
@@ -670,12 +669,12 @@ instance encodeCreateRepositoryOutput :: Encode CreateRepositoryOutput where enc
 
 -- | Constructs CreateRepositoryOutput from required parameters
 newCreateRepositoryOutput :: CreateRepositoryOutput
-newCreateRepositoryOutput  = CreateRepositoryOutput { "repositoryMetadata": (NullOrUndefined Nothing) }
+newCreateRepositoryOutput  = CreateRepositoryOutput { "repositoryMetadata": Nothing }
 
 -- | Constructs CreateRepositoryOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateRepositoryOutput' :: ( { "repositoryMetadata" :: NullOrUndefined (RepositoryMetadata) } -> {"repositoryMetadata" :: NullOrUndefined (RepositoryMetadata) } ) -> CreateRepositoryOutput
-newCreateRepositoryOutput'  customize = (CreateRepositoryOutput <<< customize) { "repositoryMetadata": (NullOrUndefined Nothing) }
+newCreateRepositoryOutput' :: ( { "repositoryMetadata" :: Maybe (RepositoryMetadata) } -> {"repositoryMetadata" :: Maybe (RepositoryMetadata) } ) -> CreateRepositoryOutput
+newCreateRepositoryOutput'  customize = (CreateRepositoryOutput <<< customize) { "repositoryMetadata": Nothing }
 
 
 
@@ -731,7 +730,7 @@ newDeleteBranchInput' _branchName _repositoryName customize = (DeleteBranchInput
 
 -- | <p>Represents the output of a delete branch operation.</p>
 newtype DeleteBranchOutput = DeleteBranchOutput 
-  { "deletedBranch" :: NullOrUndefined (BranchInfo)
+  { "deletedBranch" :: Maybe (BranchInfo)
   }
 derive instance newtypeDeleteBranchOutput :: Newtype DeleteBranchOutput _
 derive instance repGenericDeleteBranchOutput :: Generic DeleteBranchOutput _
@@ -741,12 +740,12 @@ instance encodeDeleteBranchOutput :: Encode DeleteBranchOutput where encode = ge
 
 -- | Constructs DeleteBranchOutput from required parameters
 newDeleteBranchOutput :: DeleteBranchOutput
-newDeleteBranchOutput  = DeleteBranchOutput { "deletedBranch": (NullOrUndefined Nothing) }
+newDeleteBranchOutput  = DeleteBranchOutput { "deletedBranch": Nothing }
 
 -- | Constructs DeleteBranchOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteBranchOutput' :: ( { "deletedBranch" :: NullOrUndefined (BranchInfo) } -> {"deletedBranch" :: NullOrUndefined (BranchInfo) } ) -> DeleteBranchOutput
-newDeleteBranchOutput'  customize = (DeleteBranchOutput <<< customize) { "deletedBranch": (NullOrUndefined Nothing) }
+newDeleteBranchOutput' :: ( { "deletedBranch" :: Maybe (BranchInfo) } -> {"deletedBranch" :: Maybe (BranchInfo) } ) -> DeleteBranchOutput
+newDeleteBranchOutput'  customize = (DeleteBranchOutput <<< customize) { "deletedBranch": Nothing }
 
 
 
@@ -771,7 +770,7 @@ newDeleteCommentContentInput' _commentId customize = (DeleteCommentContentInput 
 
 
 newtype DeleteCommentContentOutput = DeleteCommentContentOutput 
-  { "comment" :: NullOrUndefined (Comment)
+  { "comment" :: Maybe (Comment)
   }
 derive instance newtypeDeleteCommentContentOutput :: Newtype DeleteCommentContentOutput _
 derive instance repGenericDeleteCommentContentOutput :: Generic DeleteCommentContentOutput _
@@ -781,12 +780,12 @@ instance encodeDeleteCommentContentOutput :: Encode DeleteCommentContentOutput w
 
 -- | Constructs DeleteCommentContentOutput from required parameters
 newDeleteCommentContentOutput :: DeleteCommentContentOutput
-newDeleteCommentContentOutput  = DeleteCommentContentOutput { "comment": (NullOrUndefined Nothing) }
+newDeleteCommentContentOutput  = DeleteCommentContentOutput { "comment": Nothing }
 
 -- | Constructs DeleteCommentContentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteCommentContentOutput' :: ( { "comment" :: NullOrUndefined (Comment) } -> {"comment" :: NullOrUndefined (Comment) } ) -> DeleteCommentContentOutput
-newDeleteCommentContentOutput'  customize = (DeleteCommentContentOutput <<< customize) { "comment": (NullOrUndefined Nothing) }
+newDeleteCommentContentOutput' :: ( { "comment" :: Maybe (Comment) } -> {"comment" :: Maybe (Comment) } ) -> DeleteCommentContentOutput
+newDeleteCommentContentOutput'  customize = (DeleteCommentContentOutput <<< customize) { "comment": Nothing }
 
 
 
@@ -813,7 +812,7 @@ newDeleteRepositoryInput' _repositoryName customize = (DeleteRepositoryInput <<<
 
 -- | <p>Represents the output of a delete repository operation.</p>
 newtype DeleteRepositoryOutput = DeleteRepositoryOutput 
-  { "repositoryId" :: NullOrUndefined (RepositoryId)
+  { "repositoryId" :: Maybe (RepositoryId)
   }
 derive instance newtypeDeleteRepositoryOutput :: Newtype DeleteRepositoryOutput _
 derive instance repGenericDeleteRepositoryOutput :: Generic DeleteRepositoryOutput _
@@ -823,21 +822,21 @@ instance encodeDeleteRepositoryOutput :: Encode DeleteRepositoryOutput where enc
 
 -- | Constructs DeleteRepositoryOutput from required parameters
 newDeleteRepositoryOutput :: DeleteRepositoryOutput
-newDeleteRepositoryOutput  = DeleteRepositoryOutput { "repositoryId": (NullOrUndefined Nothing) }
+newDeleteRepositoryOutput  = DeleteRepositoryOutput { "repositoryId": Nothing }
 
 -- | Constructs DeleteRepositoryOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteRepositoryOutput' :: ( { "repositoryId" :: NullOrUndefined (RepositoryId) } -> {"repositoryId" :: NullOrUndefined (RepositoryId) } ) -> DeleteRepositoryOutput
-newDeleteRepositoryOutput'  customize = (DeleteRepositoryOutput <<< customize) { "repositoryId": (NullOrUndefined Nothing) }
+newDeleteRepositoryOutput' :: ( { "repositoryId" :: Maybe (RepositoryId) } -> {"repositoryId" :: Maybe (RepositoryId) } ) -> DeleteRepositoryOutput
+newDeleteRepositoryOutput'  customize = (DeleteRepositoryOutput <<< customize) { "repositoryId": Nothing }
 
 
 
 newtype DescribePullRequestEventsInput = DescribePullRequestEventsInput 
   { "pullRequestId" :: (PullRequestId)
-  , "pullRequestEventType" :: NullOrUndefined (PullRequestEventType)
-  , "actorArn" :: NullOrUndefined (Arn)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "maxResults" :: NullOrUndefined (MaxResults)
+  , "pullRequestEventType" :: Maybe (PullRequestEventType)
+  , "actorArn" :: Maybe (Arn)
+  , "nextToken" :: Maybe (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeDescribePullRequestEventsInput :: Newtype DescribePullRequestEventsInput _
 derive instance repGenericDescribePullRequestEventsInput :: Generic DescribePullRequestEventsInput _
@@ -847,18 +846,18 @@ instance encodeDescribePullRequestEventsInput :: Encode DescribePullRequestEvent
 
 -- | Constructs DescribePullRequestEventsInput from required parameters
 newDescribePullRequestEventsInput :: PullRequestId -> DescribePullRequestEventsInput
-newDescribePullRequestEventsInput _pullRequestId = DescribePullRequestEventsInput { "pullRequestId": _pullRequestId, "actorArn": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "pullRequestEventType": (NullOrUndefined Nothing) }
+newDescribePullRequestEventsInput _pullRequestId = DescribePullRequestEventsInput { "pullRequestId": _pullRequestId, "actorArn": Nothing, "maxResults": Nothing, "nextToken": Nothing, "pullRequestEventType": Nothing }
 
 -- | Constructs DescribePullRequestEventsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePullRequestEventsInput' :: PullRequestId -> ( { "pullRequestId" :: (PullRequestId) , "pullRequestEventType" :: NullOrUndefined (PullRequestEventType) , "actorArn" :: NullOrUndefined (Arn) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } -> {"pullRequestId" :: (PullRequestId) , "pullRequestEventType" :: NullOrUndefined (PullRequestEventType) , "actorArn" :: NullOrUndefined (Arn) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } ) -> DescribePullRequestEventsInput
-newDescribePullRequestEventsInput' _pullRequestId customize = (DescribePullRequestEventsInput <<< customize) { "pullRequestId": _pullRequestId, "actorArn": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "pullRequestEventType": (NullOrUndefined Nothing) }
+newDescribePullRequestEventsInput' :: PullRequestId -> ( { "pullRequestId" :: (PullRequestId) , "pullRequestEventType" :: Maybe (PullRequestEventType) , "actorArn" :: Maybe (Arn) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } -> {"pullRequestId" :: (PullRequestId) , "pullRequestEventType" :: Maybe (PullRequestEventType) , "actorArn" :: Maybe (Arn) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } ) -> DescribePullRequestEventsInput
+newDescribePullRequestEventsInput' _pullRequestId customize = (DescribePullRequestEventsInput <<< customize) { "pullRequestId": _pullRequestId, "actorArn": Nothing, "maxResults": Nothing, "nextToken": Nothing, "pullRequestEventType": Nothing }
 
 
 
 newtype DescribePullRequestEventsOutput = DescribePullRequestEventsOutput 
   { "pullRequestEvents" :: (PullRequestEventList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribePullRequestEventsOutput :: Newtype DescribePullRequestEventsOutput _
 derive instance repGenericDescribePullRequestEventsOutput :: Generic DescribePullRequestEventsOutput _
@@ -868,12 +867,12 @@ instance encodeDescribePullRequestEventsOutput :: Encode DescribePullRequestEven
 
 -- | Constructs DescribePullRequestEventsOutput from required parameters
 newDescribePullRequestEventsOutput :: PullRequestEventList -> DescribePullRequestEventsOutput
-newDescribePullRequestEventsOutput _pullRequestEvents = DescribePullRequestEventsOutput { "pullRequestEvents": _pullRequestEvents, "nextToken": (NullOrUndefined Nothing) }
+newDescribePullRequestEventsOutput _pullRequestEvents = DescribePullRequestEventsOutput { "pullRequestEvents": _pullRequestEvents, "nextToken": Nothing }
 
 -- | Constructs DescribePullRequestEventsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePullRequestEventsOutput' :: PullRequestEventList -> ( { "pullRequestEvents" :: (PullRequestEventList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"pullRequestEvents" :: (PullRequestEventList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> DescribePullRequestEventsOutput
-newDescribePullRequestEventsOutput' _pullRequestEvents customize = (DescribePullRequestEventsOutput <<< customize) { "pullRequestEvents": _pullRequestEvents, "nextToken": (NullOrUndefined Nothing) }
+newDescribePullRequestEventsOutput' :: PullRequestEventList -> ( { "pullRequestEvents" :: (PullRequestEventList) , "nextToken" :: Maybe (NextToken) } -> {"pullRequestEvents" :: (PullRequestEventList) , "nextToken" :: Maybe (NextToken) } ) -> DescribePullRequestEventsOutput
+newDescribePullRequestEventsOutput' _pullRequestEvents customize = (DescribePullRequestEventsOutput <<< customize) { "pullRequestEvents": _pullRequestEvents, "nextToken": Nothing }
 
 
 
@@ -888,9 +887,9 @@ instance encodeDescription :: Encode Description where encode = genericEncode op
 
 -- | <p>Returns information about a set of differences for a commit specifier.</p>
 newtype Difference = Difference 
-  { "beforeBlob" :: NullOrUndefined (BlobMetadata)
-  , "afterBlob" :: NullOrUndefined (BlobMetadata)
-  , "changeType" :: NullOrUndefined (ChangeTypeEnum)
+  { "beforeBlob" :: Maybe (BlobMetadata)
+  , "afterBlob" :: Maybe (BlobMetadata)
+  , "changeType" :: Maybe (ChangeTypeEnum)
   }
 derive instance newtypeDifference :: Newtype Difference _
 derive instance repGenericDifference :: Generic Difference _
@@ -900,12 +899,12 @@ instance encodeDifference :: Encode Difference where encode = genericEncode opti
 
 -- | Constructs Difference from required parameters
 newDifference :: Difference
-newDifference  = Difference { "afterBlob": (NullOrUndefined Nothing), "beforeBlob": (NullOrUndefined Nothing), "changeType": (NullOrUndefined Nothing) }
+newDifference  = Difference { "afterBlob": Nothing, "beforeBlob": Nothing, "changeType": Nothing }
 
 -- | Constructs Difference's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDifference' :: ( { "beforeBlob" :: NullOrUndefined (BlobMetadata) , "afterBlob" :: NullOrUndefined (BlobMetadata) , "changeType" :: NullOrUndefined (ChangeTypeEnum) } -> {"beforeBlob" :: NullOrUndefined (BlobMetadata) , "afterBlob" :: NullOrUndefined (BlobMetadata) , "changeType" :: NullOrUndefined (ChangeTypeEnum) } ) -> Difference
-newDifference'  customize = (Difference <<< customize) { "afterBlob": (NullOrUndefined Nothing), "beforeBlob": (NullOrUndefined Nothing), "changeType": (NullOrUndefined Nothing) }
+newDifference' :: ( { "beforeBlob" :: Maybe (BlobMetadata) , "afterBlob" :: Maybe (BlobMetadata) , "changeType" :: Maybe (ChangeTypeEnum) } -> {"beforeBlob" :: Maybe (BlobMetadata) , "afterBlob" :: Maybe (BlobMetadata) , "changeType" :: Maybe (ChangeTypeEnum) } ) -> Difference
+newDifference'  customize = (Difference <<< customize) { "afterBlob": Nothing, "beforeBlob": Nothing, "changeType": Nothing }
 
 
 
@@ -1099,8 +1098,8 @@ newGetBlobOutput' _content customize = (GetBlobOutput <<< customize) { "content"
 
 -- | <p>Represents the input of a get branch operation.</p>
 newtype GetBranchInput = GetBranchInput 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "branchName" :: NullOrUndefined (BranchName)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "branchName" :: Maybe (BranchName)
   }
 derive instance newtypeGetBranchInput :: Newtype GetBranchInput _
 derive instance repGenericGetBranchInput :: Generic GetBranchInput _
@@ -1110,18 +1109,18 @@ instance encodeGetBranchInput :: Encode GetBranchInput where encode = genericEnc
 
 -- | Constructs GetBranchInput from required parameters
 newGetBranchInput :: GetBranchInput
-newGetBranchInput  = GetBranchInput { "branchName": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newGetBranchInput  = GetBranchInput { "branchName": Nothing, "repositoryName": Nothing }
 
 -- | Constructs GetBranchInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBranchInput' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "branchName" :: NullOrUndefined (BranchName) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "branchName" :: NullOrUndefined (BranchName) } ) -> GetBranchInput
-newGetBranchInput'  customize = (GetBranchInput <<< customize) { "branchName": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newGetBranchInput' :: ( { "repositoryName" :: Maybe (RepositoryName) , "branchName" :: Maybe (BranchName) } -> {"repositoryName" :: Maybe (RepositoryName) , "branchName" :: Maybe (BranchName) } ) -> GetBranchInput
+newGetBranchInput'  customize = (GetBranchInput <<< customize) { "branchName": Nothing, "repositoryName": Nothing }
 
 
 
 -- | <p>Represents the output of a get branch operation.</p>
 newtype GetBranchOutput = GetBranchOutput 
-  { "branch" :: NullOrUndefined (BranchInfo)
+  { "branch" :: Maybe (BranchInfo)
   }
 derive instance newtypeGetBranchOutput :: Newtype GetBranchOutput _
 derive instance repGenericGetBranchOutput :: Generic GetBranchOutput _
@@ -1131,12 +1130,12 @@ instance encodeGetBranchOutput :: Encode GetBranchOutput where encode = genericE
 
 -- | Constructs GetBranchOutput from required parameters
 newGetBranchOutput :: GetBranchOutput
-newGetBranchOutput  = GetBranchOutput { "branch": (NullOrUndefined Nothing) }
+newGetBranchOutput  = GetBranchOutput { "branch": Nothing }
 
 -- | Constructs GetBranchOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBranchOutput' :: ( { "branch" :: NullOrUndefined (BranchInfo) } -> {"branch" :: NullOrUndefined (BranchInfo) } ) -> GetBranchOutput
-newGetBranchOutput'  customize = (GetBranchOutput <<< customize) { "branch": (NullOrUndefined Nothing) }
+newGetBranchOutput' :: ( { "branch" :: Maybe (BranchInfo) } -> {"branch" :: Maybe (BranchInfo) } ) -> GetBranchOutput
+newGetBranchOutput'  customize = (GetBranchOutput <<< customize) { "branch": Nothing }
 
 
 
@@ -1161,7 +1160,7 @@ newGetCommentInput' _commentId customize = (GetCommentInput <<< customize) { "co
 
 
 newtype GetCommentOutput = GetCommentOutput 
-  { "comment" :: NullOrUndefined (Comment)
+  { "comment" :: Maybe (Comment)
   }
 derive instance newtypeGetCommentOutput :: Newtype GetCommentOutput _
 derive instance repGenericGetCommentOutput :: Generic GetCommentOutput _
@@ -1171,21 +1170,21 @@ instance encodeGetCommentOutput :: Encode GetCommentOutput where encode = generi
 
 -- | Constructs GetCommentOutput from required parameters
 newGetCommentOutput :: GetCommentOutput
-newGetCommentOutput  = GetCommentOutput { "comment": (NullOrUndefined Nothing) }
+newGetCommentOutput  = GetCommentOutput { "comment": Nothing }
 
 -- | Constructs GetCommentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommentOutput' :: ( { "comment" :: NullOrUndefined (Comment) } -> {"comment" :: NullOrUndefined (Comment) } ) -> GetCommentOutput
-newGetCommentOutput'  customize = (GetCommentOutput <<< customize) { "comment": (NullOrUndefined Nothing) }
+newGetCommentOutput' :: ( { "comment" :: Maybe (Comment) } -> {"comment" :: Maybe (Comment) } ) -> GetCommentOutput
+newGetCommentOutput'  customize = (GetCommentOutput <<< customize) { "comment": Nothing }
 
 
 
 newtype GetCommentsForComparedCommitInput = GetCommentsForComparedCommitInput 
   { "repositoryName" :: (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
+  , "beforeCommitId" :: Maybe (CommitId)
   , "afterCommitId" :: (CommitId)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "maxResults" :: NullOrUndefined (MaxResults)
+  , "nextToken" :: Maybe (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeGetCommentsForComparedCommitInput :: Newtype GetCommentsForComparedCommitInput _
 derive instance repGenericGetCommentsForComparedCommitInput :: Generic GetCommentsForComparedCommitInput _
@@ -1195,18 +1194,18 @@ instance encodeGetCommentsForComparedCommitInput :: Encode GetCommentsForCompare
 
 -- | Constructs GetCommentsForComparedCommitInput from required parameters
 newGetCommentsForComparedCommitInput :: CommitId -> RepositoryName -> GetCommentsForComparedCommitInput
-newGetCommentsForComparedCommitInput _afterCommitId _repositoryName = GetCommentsForComparedCommitInput { "afterCommitId": _afterCommitId, "repositoryName": _repositoryName, "beforeCommitId": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newGetCommentsForComparedCommitInput _afterCommitId _repositoryName = GetCommentsForComparedCommitInput { "afterCommitId": _afterCommitId, "repositoryName": _repositoryName, "beforeCommitId": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs GetCommentsForComparedCommitInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommentsForComparedCommitInput' :: CommitId -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: (CommitId) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } -> {"repositoryName" :: (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: (CommitId) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } ) -> GetCommentsForComparedCommitInput
-newGetCommentsForComparedCommitInput' _afterCommitId _repositoryName customize = (GetCommentsForComparedCommitInput <<< customize) { "afterCommitId": _afterCommitId, "repositoryName": _repositoryName, "beforeCommitId": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newGetCommentsForComparedCommitInput' :: CommitId -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: (CommitId) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } -> {"repositoryName" :: (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: (CommitId) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } ) -> GetCommentsForComparedCommitInput
+newGetCommentsForComparedCommitInput' _afterCommitId _repositoryName customize = (GetCommentsForComparedCommitInput <<< customize) { "afterCommitId": _afterCommitId, "repositoryName": _repositoryName, "beforeCommitId": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 newtype GetCommentsForComparedCommitOutput = GetCommentsForComparedCommitOutput 
-  { "commentsForComparedCommitData" :: NullOrUndefined (CommentsForComparedCommitData)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "commentsForComparedCommitData" :: Maybe (CommentsForComparedCommitData)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetCommentsForComparedCommitOutput :: Newtype GetCommentsForComparedCommitOutput _
 derive instance repGenericGetCommentsForComparedCommitOutput :: Generic GetCommentsForComparedCommitOutput _
@@ -1216,22 +1215,22 @@ instance encodeGetCommentsForComparedCommitOutput :: Encode GetCommentsForCompar
 
 -- | Constructs GetCommentsForComparedCommitOutput from required parameters
 newGetCommentsForComparedCommitOutput :: GetCommentsForComparedCommitOutput
-newGetCommentsForComparedCommitOutput  = GetCommentsForComparedCommitOutput { "commentsForComparedCommitData": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newGetCommentsForComparedCommitOutput  = GetCommentsForComparedCommitOutput { "commentsForComparedCommitData": Nothing, "nextToken": Nothing }
 
 -- | Constructs GetCommentsForComparedCommitOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommentsForComparedCommitOutput' :: ( { "commentsForComparedCommitData" :: NullOrUndefined (CommentsForComparedCommitData) , "nextToken" :: NullOrUndefined (NextToken) } -> {"commentsForComparedCommitData" :: NullOrUndefined (CommentsForComparedCommitData) , "nextToken" :: NullOrUndefined (NextToken) } ) -> GetCommentsForComparedCommitOutput
-newGetCommentsForComparedCommitOutput'  customize = (GetCommentsForComparedCommitOutput <<< customize) { "commentsForComparedCommitData": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newGetCommentsForComparedCommitOutput' :: ( { "commentsForComparedCommitData" :: Maybe (CommentsForComparedCommitData) , "nextToken" :: Maybe (NextToken) } -> {"commentsForComparedCommitData" :: Maybe (CommentsForComparedCommitData) , "nextToken" :: Maybe (NextToken) } ) -> GetCommentsForComparedCommitOutput
+newGetCommentsForComparedCommitOutput'  customize = (GetCommentsForComparedCommitOutput <<< customize) { "commentsForComparedCommitData": Nothing, "nextToken": Nothing }
 
 
 
 newtype GetCommentsForPullRequestInput = GetCommentsForPullRequestInput 
   { "pullRequestId" :: (PullRequestId)
-  , "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
-  , "afterCommitId" :: NullOrUndefined (CommitId)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "maxResults" :: NullOrUndefined (MaxResults)
+  , "repositoryName" :: Maybe (RepositoryName)
+  , "beforeCommitId" :: Maybe (CommitId)
+  , "afterCommitId" :: Maybe (CommitId)
+  , "nextToken" :: Maybe (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeGetCommentsForPullRequestInput :: Newtype GetCommentsForPullRequestInput _
 derive instance repGenericGetCommentsForPullRequestInput :: Generic GetCommentsForPullRequestInput _
@@ -1241,18 +1240,18 @@ instance encodeGetCommentsForPullRequestInput :: Encode GetCommentsForPullReques
 
 -- | Constructs GetCommentsForPullRequestInput from required parameters
 newGetCommentsForPullRequestInput :: PullRequestId -> GetCommentsForPullRequestInput
-newGetCommentsForPullRequestInput _pullRequestId = GetCommentsForPullRequestInput { "pullRequestId": _pullRequestId, "afterCommitId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newGetCommentsForPullRequestInput _pullRequestId = GetCommentsForPullRequestInput { "pullRequestId": _pullRequestId, "afterCommitId": Nothing, "beforeCommitId": Nothing, "maxResults": Nothing, "nextToken": Nothing, "repositoryName": Nothing }
 
 -- | Constructs GetCommentsForPullRequestInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommentsForPullRequestInput' :: PullRequestId -> ( { "pullRequestId" :: (PullRequestId) , "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } -> {"pullRequestId" :: (PullRequestId) , "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } ) -> GetCommentsForPullRequestInput
-newGetCommentsForPullRequestInput' _pullRequestId customize = (GetCommentsForPullRequestInput <<< customize) { "pullRequestId": _pullRequestId, "afterCommitId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newGetCommentsForPullRequestInput' :: PullRequestId -> ( { "pullRequestId" :: (PullRequestId) , "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } -> {"pullRequestId" :: (PullRequestId) , "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } ) -> GetCommentsForPullRequestInput
+newGetCommentsForPullRequestInput' _pullRequestId customize = (GetCommentsForPullRequestInput <<< customize) { "pullRequestId": _pullRequestId, "afterCommitId": Nothing, "beforeCommitId": Nothing, "maxResults": Nothing, "nextToken": Nothing, "repositoryName": Nothing }
 
 
 
 newtype GetCommentsForPullRequestOutput = GetCommentsForPullRequestOutput 
-  { "commentsForPullRequestData" :: NullOrUndefined (CommentsForPullRequestData)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "commentsForPullRequestData" :: Maybe (CommentsForPullRequestData)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetCommentsForPullRequestOutput :: Newtype GetCommentsForPullRequestOutput _
 derive instance repGenericGetCommentsForPullRequestOutput :: Generic GetCommentsForPullRequestOutput _
@@ -1262,12 +1261,12 @@ instance encodeGetCommentsForPullRequestOutput :: Encode GetCommentsForPullReque
 
 -- | Constructs GetCommentsForPullRequestOutput from required parameters
 newGetCommentsForPullRequestOutput :: GetCommentsForPullRequestOutput
-newGetCommentsForPullRequestOutput  = GetCommentsForPullRequestOutput { "commentsForPullRequestData": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newGetCommentsForPullRequestOutput  = GetCommentsForPullRequestOutput { "commentsForPullRequestData": Nothing, "nextToken": Nothing }
 
 -- | Constructs GetCommentsForPullRequestOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommentsForPullRequestOutput' :: ( { "commentsForPullRequestData" :: NullOrUndefined (CommentsForPullRequestData) , "nextToken" :: NullOrUndefined (NextToken) } -> {"commentsForPullRequestData" :: NullOrUndefined (CommentsForPullRequestData) , "nextToken" :: NullOrUndefined (NextToken) } ) -> GetCommentsForPullRequestOutput
-newGetCommentsForPullRequestOutput'  customize = (GetCommentsForPullRequestOutput <<< customize) { "commentsForPullRequestData": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newGetCommentsForPullRequestOutput' :: ( { "commentsForPullRequestData" :: Maybe (CommentsForPullRequestData) , "nextToken" :: Maybe (NextToken) } -> {"commentsForPullRequestData" :: Maybe (CommentsForPullRequestData) , "nextToken" :: Maybe (NextToken) } ) -> GetCommentsForPullRequestOutput
+newGetCommentsForPullRequestOutput'  customize = (GetCommentsForPullRequestOutput <<< customize) { "commentsForPullRequestData": Nothing, "nextToken": Nothing }
 
 
 
@@ -1316,12 +1315,12 @@ newGetCommitOutput' _commit customize = (GetCommitOutput <<< customize) { "commi
 
 newtype GetDifferencesInput = GetDifferencesInput 
   { "repositoryName" :: (RepositoryName)
-  , "beforeCommitSpecifier" :: NullOrUndefined (CommitName)
+  , "beforeCommitSpecifier" :: Maybe (CommitName)
   , "afterCommitSpecifier" :: (CommitName)
-  , "beforePath" :: NullOrUndefined (Path)
-  , "afterPath" :: NullOrUndefined (Path)
-  , "MaxResults" :: NullOrUndefined (Limit)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "beforePath" :: Maybe (Path)
+  , "afterPath" :: Maybe (Path)
+  , "MaxResults" :: Maybe (Limit)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetDifferencesInput :: Newtype GetDifferencesInput _
 derive instance repGenericGetDifferencesInput :: Generic GetDifferencesInput _
@@ -1331,18 +1330,18 @@ instance encodeGetDifferencesInput :: Encode GetDifferencesInput where encode = 
 
 -- | Constructs GetDifferencesInput from required parameters
 newGetDifferencesInput :: CommitName -> RepositoryName -> GetDifferencesInput
-newGetDifferencesInput _afterCommitSpecifier _repositoryName = GetDifferencesInput { "afterCommitSpecifier": _afterCommitSpecifier, "repositoryName": _repositoryName, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "afterPath": (NullOrUndefined Nothing), "beforeCommitSpecifier": (NullOrUndefined Nothing), "beforePath": (NullOrUndefined Nothing) }
+newGetDifferencesInput _afterCommitSpecifier _repositoryName = GetDifferencesInput { "afterCommitSpecifier": _afterCommitSpecifier, "repositoryName": _repositoryName, "MaxResults": Nothing, "NextToken": Nothing, "afterPath": Nothing, "beforeCommitSpecifier": Nothing, "beforePath": Nothing }
 
 -- | Constructs GetDifferencesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDifferencesInput' :: CommitName -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "beforeCommitSpecifier" :: NullOrUndefined (CommitName) , "afterCommitSpecifier" :: (CommitName) , "beforePath" :: NullOrUndefined (Path) , "afterPath" :: NullOrUndefined (Path) , "MaxResults" :: NullOrUndefined (Limit) , "NextToken" :: NullOrUndefined (NextToken) } -> {"repositoryName" :: (RepositoryName) , "beforeCommitSpecifier" :: NullOrUndefined (CommitName) , "afterCommitSpecifier" :: (CommitName) , "beforePath" :: NullOrUndefined (Path) , "afterPath" :: NullOrUndefined (Path) , "MaxResults" :: NullOrUndefined (Limit) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetDifferencesInput
-newGetDifferencesInput' _afterCommitSpecifier _repositoryName customize = (GetDifferencesInput <<< customize) { "afterCommitSpecifier": _afterCommitSpecifier, "repositoryName": _repositoryName, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "afterPath": (NullOrUndefined Nothing), "beforeCommitSpecifier": (NullOrUndefined Nothing), "beforePath": (NullOrUndefined Nothing) }
+newGetDifferencesInput' :: CommitName -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "beforeCommitSpecifier" :: Maybe (CommitName) , "afterCommitSpecifier" :: (CommitName) , "beforePath" :: Maybe (Path) , "afterPath" :: Maybe (Path) , "MaxResults" :: Maybe (Limit) , "NextToken" :: Maybe (NextToken) } -> {"repositoryName" :: (RepositoryName) , "beforeCommitSpecifier" :: Maybe (CommitName) , "afterCommitSpecifier" :: (CommitName) , "beforePath" :: Maybe (Path) , "afterPath" :: Maybe (Path) , "MaxResults" :: Maybe (Limit) , "NextToken" :: Maybe (NextToken) } ) -> GetDifferencesInput
+newGetDifferencesInput' _afterCommitSpecifier _repositoryName customize = (GetDifferencesInput <<< customize) { "afterCommitSpecifier": _afterCommitSpecifier, "repositoryName": _repositoryName, "MaxResults": Nothing, "NextToken": Nothing, "afterPath": Nothing, "beforeCommitSpecifier": Nothing, "beforePath": Nothing }
 
 
 
 newtype GetDifferencesOutput = GetDifferencesOutput 
-  { "differences" :: NullOrUndefined (DifferenceList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "differences" :: Maybe (DifferenceList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetDifferencesOutput :: Newtype GetDifferencesOutput _
 derive instance repGenericGetDifferencesOutput :: Generic GetDifferencesOutput _
@@ -1352,12 +1351,12 @@ instance encodeGetDifferencesOutput :: Encode GetDifferencesOutput where encode 
 
 -- | Constructs GetDifferencesOutput from required parameters
 newGetDifferencesOutput :: GetDifferencesOutput
-newGetDifferencesOutput  = GetDifferencesOutput { "NextToken": (NullOrUndefined Nothing), "differences": (NullOrUndefined Nothing) }
+newGetDifferencesOutput  = GetDifferencesOutput { "NextToken": Nothing, "differences": Nothing }
 
 -- | Constructs GetDifferencesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDifferencesOutput' :: ( { "differences" :: NullOrUndefined (DifferenceList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"differences" :: NullOrUndefined (DifferenceList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetDifferencesOutput
-newGetDifferencesOutput'  customize = (GetDifferencesOutput <<< customize) { "NextToken": (NullOrUndefined Nothing), "differences": (NullOrUndefined Nothing) }
+newGetDifferencesOutput' :: ( { "differences" :: Maybe (DifferenceList) , "NextToken" :: Maybe (NextToken) } -> {"differences" :: Maybe (DifferenceList) , "NextToken" :: Maybe (NextToken) } ) -> GetDifferencesOutput
+newGetDifferencesOutput'  customize = (GetDifferencesOutput <<< customize) { "NextToken": Nothing, "differences": Nothing }
 
 
 
@@ -1469,7 +1468,7 @@ newGetRepositoryInput' _repositoryName customize = (GetRepositoryInput <<< custo
 
 -- | <p>Represents the output of a get repository operation.</p>
 newtype GetRepositoryOutput = GetRepositoryOutput 
-  { "repositoryMetadata" :: NullOrUndefined (RepositoryMetadata)
+  { "repositoryMetadata" :: Maybe (RepositoryMetadata)
   }
 derive instance newtypeGetRepositoryOutput :: Newtype GetRepositoryOutput _
 derive instance repGenericGetRepositoryOutput :: Generic GetRepositoryOutput _
@@ -1479,12 +1478,12 @@ instance encodeGetRepositoryOutput :: Encode GetRepositoryOutput where encode = 
 
 -- | Constructs GetRepositoryOutput from required parameters
 newGetRepositoryOutput :: GetRepositoryOutput
-newGetRepositoryOutput  = GetRepositoryOutput { "repositoryMetadata": (NullOrUndefined Nothing) }
+newGetRepositoryOutput  = GetRepositoryOutput { "repositoryMetadata": Nothing }
 
 -- | Constructs GetRepositoryOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetRepositoryOutput' :: ( { "repositoryMetadata" :: NullOrUndefined (RepositoryMetadata) } -> {"repositoryMetadata" :: NullOrUndefined (RepositoryMetadata) } ) -> GetRepositoryOutput
-newGetRepositoryOutput'  customize = (GetRepositoryOutput <<< customize) { "repositoryMetadata": (NullOrUndefined Nothing) }
+newGetRepositoryOutput' :: ( { "repositoryMetadata" :: Maybe (RepositoryMetadata) } -> {"repositoryMetadata" :: Maybe (RepositoryMetadata) } ) -> GetRepositoryOutput
+newGetRepositoryOutput'  customize = (GetRepositoryOutput <<< customize) { "repositoryMetadata": Nothing }
 
 
 
@@ -1511,8 +1510,8 @@ newGetRepositoryTriggersInput' _repositoryName customize = (GetRepositoryTrigger
 
 -- | <p>Represents the output of a get repository triggers operation.</p>
 newtype GetRepositoryTriggersOutput = GetRepositoryTriggersOutput 
-  { "configurationId" :: NullOrUndefined (RepositoryTriggersConfigurationId)
-  , "triggers" :: NullOrUndefined (RepositoryTriggersList)
+  { "configurationId" :: Maybe (RepositoryTriggersConfigurationId)
+  , "triggers" :: Maybe (RepositoryTriggersList)
   }
 derive instance newtypeGetRepositoryTriggersOutput :: Newtype GetRepositoryTriggersOutput _
 derive instance repGenericGetRepositoryTriggersOutput :: Generic GetRepositoryTriggersOutput _
@@ -1522,12 +1521,12 @@ instance encodeGetRepositoryTriggersOutput :: Encode GetRepositoryTriggersOutput
 
 -- | Constructs GetRepositoryTriggersOutput from required parameters
 newGetRepositoryTriggersOutput :: GetRepositoryTriggersOutput
-newGetRepositoryTriggersOutput  = GetRepositoryTriggersOutput { "configurationId": (NullOrUndefined Nothing), "triggers": (NullOrUndefined Nothing) }
+newGetRepositoryTriggersOutput  = GetRepositoryTriggersOutput { "configurationId": Nothing, "triggers": Nothing }
 
 -- | Constructs GetRepositoryTriggersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetRepositoryTriggersOutput' :: ( { "configurationId" :: NullOrUndefined (RepositoryTriggersConfigurationId) , "triggers" :: NullOrUndefined (RepositoryTriggersList) } -> {"configurationId" :: NullOrUndefined (RepositoryTriggersConfigurationId) , "triggers" :: NullOrUndefined (RepositoryTriggersList) } ) -> GetRepositoryTriggersOutput
-newGetRepositoryTriggersOutput'  customize = (GetRepositoryTriggersOutput <<< customize) { "configurationId": (NullOrUndefined Nothing), "triggers": (NullOrUndefined Nothing) }
+newGetRepositoryTriggersOutput' :: ( { "configurationId" :: Maybe (RepositoryTriggersConfigurationId) , "triggers" :: Maybe (RepositoryTriggersList) } -> {"configurationId" :: Maybe (RepositoryTriggersConfigurationId) , "triggers" :: Maybe (RepositoryTriggersList) } ) -> GetRepositoryTriggersOutput
+newGetRepositoryTriggersOutput'  customize = (GetRepositoryTriggersOutput <<< customize) { "configurationId": Nothing, "triggers": Nothing }
 
 
 
@@ -1979,7 +1978,7 @@ instance encodeLimit :: Encode Limit where encode = genericEncode options
 -- | <p>Represents the input of a list branches operation.</p>
 newtype ListBranchesInput = ListBranchesInput 
   { "repositoryName" :: (RepositoryName)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListBranchesInput :: Newtype ListBranchesInput _
 derive instance repGenericListBranchesInput :: Generic ListBranchesInput _
@@ -1989,19 +1988,19 @@ instance encodeListBranchesInput :: Encode ListBranchesInput where encode = gene
 
 -- | Constructs ListBranchesInput from required parameters
 newListBranchesInput :: RepositoryName -> ListBranchesInput
-newListBranchesInput _repositoryName = ListBranchesInput { "repositoryName": _repositoryName, "nextToken": (NullOrUndefined Nothing) }
+newListBranchesInput _repositoryName = ListBranchesInput { "repositoryName": _repositoryName, "nextToken": Nothing }
 
 -- | Constructs ListBranchesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBranchesInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "nextToken" :: NullOrUndefined (NextToken) } -> {"repositoryName" :: (RepositoryName) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListBranchesInput
-newListBranchesInput' _repositoryName customize = (ListBranchesInput <<< customize) { "repositoryName": _repositoryName, "nextToken": (NullOrUndefined Nothing) }
+newListBranchesInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "nextToken" :: Maybe (NextToken) } -> {"repositoryName" :: (RepositoryName) , "nextToken" :: Maybe (NextToken) } ) -> ListBranchesInput
+newListBranchesInput' _repositoryName customize = (ListBranchesInput <<< customize) { "repositoryName": _repositoryName, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a list branches operation.</p>
 newtype ListBranchesOutput = ListBranchesOutput 
-  { "branches" :: NullOrUndefined (BranchNameList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "branches" :: Maybe (BranchNameList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListBranchesOutput :: Newtype ListBranchesOutput _
 derive instance repGenericListBranchesOutput :: Generic ListBranchesOutput _
@@ -2011,21 +2010,21 @@ instance encodeListBranchesOutput :: Encode ListBranchesOutput where encode = ge
 
 -- | Constructs ListBranchesOutput from required parameters
 newListBranchesOutput :: ListBranchesOutput
-newListBranchesOutput  = ListBranchesOutput { "branches": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBranchesOutput  = ListBranchesOutput { "branches": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListBranchesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBranchesOutput' :: ( { "branches" :: NullOrUndefined (BranchNameList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"branches" :: NullOrUndefined (BranchNameList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListBranchesOutput
-newListBranchesOutput'  customize = (ListBranchesOutput <<< customize) { "branches": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBranchesOutput' :: ( { "branches" :: Maybe (BranchNameList) , "nextToken" :: Maybe (NextToken) } -> {"branches" :: Maybe (BranchNameList) , "nextToken" :: Maybe (NextToken) } ) -> ListBranchesOutput
+newListBranchesOutput'  customize = (ListBranchesOutput <<< customize) { "branches": Nothing, "nextToken": Nothing }
 
 
 
 newtype ListPullRequestsInput = ListPullRequestsInput 
   { "repositoryName" :: (RepositoryName)
-  , "authorArn" :: NullOrUndefined (Arn)
-  , "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "maxResults" :: NullOrUndefined (MaxResults)
+  , "authorArn" :: Maybe (Arn)
+  , "pullRequestStatus" :: Maybe (PullRequestStatusEnum)
+  , "nextToken" :: Maybe (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListPullRequestsInput :: Newtype ListPullRequestsInput _
 derive instance repGenericListPullRequestsInput :: Generic ListPullRequestsInput _
@@ -2035,18 +2034,18 @@ instance encodeListPullRequestsInput :: Encode ListPullRequestsInput where encod
 
 -- | Constructs ListPullRequestsInput from required parameters
 newListPullRequestsInput :: RepositoryName -> ListPullRequestsInput
-newListPullRequestsInput _repositoryName = ListPullRequestsInput { "repositoryName": _repositoryName, "authorArn": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "pullRequestStatus": (NullOrUndefined Nothing) }
+newListPullRequestsInput _repositoryName = ListPullRequestsInput { "repositoryName": _repositoryName, "authorArn": Nothing, "maxResults": Nothing, "nextToken": Nothing, "pullRequestStatus": Nothing }
 
 -- | Constructs ListPullRequestsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPullRequestsInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "authorArn" :: NullOrUndefined (Arn) , "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } -> {"repositoryName" :: (RepositoryName) , "authorArn" :: NullOrUndefined (Arn) , "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } ) -> ListPullRequestsInput
-newListPullRequestsInput' _repositoryName customize = (ListPullRequestsInput <<< customize) { "repositoryName": _repositoryName, "authorArn": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing), "pullRequestStatus": (NullOrUndefined Nothing) }
+newListPullRequestsInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "authorArn" :: Maybe (Arn) , "pullRequestStatus" :: Maybe (PullRequestStatusEnum) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } -> {"repositoryName" :: (RepositoryName) , "authorArn" :: Maybe (Arn) , "pullRequestStatus" :: Maybe (PullRequestStatusEnum) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } ) -> ListPullRequestsInput
+newListPullRequestsInput' _repositoryName customize = (ListPullRequestsInput <<< customize) { "repositoryName": _repositoryName, "authorArn": Nothing, "maxResults": Nothing, "nextToken": Nothing, "pullRequestStatus": Nothing }
 
 
 
 newtype ListPullRequestsOutput = ListPullRequestsOutput 
   { "pullRequestIds" :: (PullRequestIdList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPullRequestsOutput :: Newtype ListPullRequestsOutput _
 derive instance repGenericListPullRequestsOutput :: Generic ListPullRequestsOutput _
@@ -2056,20 +2055,20 @@ instance encodeListPullRequestsOutput :: Encode ListPullRequestsOutput where enc
 
 -- | Constructs ListPullRequestsOutput from required parameters
 newListPullRequestsOutput :: PullRequestIdList -> ListPullRequestsOutput
-newListPullRequestsOutput _pullRequestIds = ListPullRequestsOutput { "pullRequestIds": _pullRequestIds, "nextToken": (NullOrUndefined Nothing) }
+newListPullRequestsOutput _pullRequestIds = ListPullRequestsOutput { "pullRequestIds": _pullRequestIds, "nextToken": Nothing }
 
 -- | Constructs ListPullRequestsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPullRequestsOutput' :: PullRequestIdList -> ( { "pullRequestIds" :: (PullRequestIdList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"pullRequestIds" :: (PullRequestIdList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListPullRequestsOutput
-newListPullRequestsOutput' _pullRequestIds customize = (ListPullRequestsOutput <<< customize) { "pullRequestIds": _pullRequestIds, "nextToken": (NullOrUndefined Nothing) }
+newListPullRequestsOutput' :: PullRequestIdList -> ( { "pullRequestIds" :: (PullRequestIdList) , "nextToken" :: Maybe (NextToken) } -> {"pullRequestIds" :: (PullRequestIdList) , "nextToken" :: Maybe (NextToken) } ) -> ListPullRequestsOutput
+newListPullRequestsOutput' _pullRequestIds customize = (ListPullRequestsOutput <<< customize) { "pullRequestIds": _pullRequestIds, "nextToken": Nothing }
 
 
 
 -- | <p>Represents the input of a list repositories operation.</p>
 newtype ListRepositoriesInput = ListRepositoriesInput 
-  { "nextToken" :: NullOrUndefined (NextToken)
-  , "sortBy" :: NullOrUndefined (SortByEnum)
-  , "order" :: NullOrUndefined (OrderEnum)
+  { "nextToken" :: Maybe (NextToken)
+  , "sortBy" :: Maybe (SortByEnum)
+  , "order" :: Maybe (OrderEnum)
   }
 derive instance newtypeListRepositoriesInput :: Newtype ListRepositoriesInput _
 derive instance repGenericListRepositoriesInput :: Generic ListRepositoriesInput _
@@ -2079,19 +2078,19 @@ instance encodeListRepositoriesInput :: Encode ListRepositoriesInput where encod
 
 -- | Constructs ListRepositoriesInput from required parameters
 newListRepositoriesInput :: ListRepositoriesInput
-newListRepositoriesInput  = ListRepositoriesInput { "nextToken": (NullOrUndefined Nothing), "order": (NullOrUndefined Nothing), "sortBy": (NullOrUndefined Nothing) }
+newListRepositoriesInput  = ListRepositoriesInput { "nextToken": Nothing, "order": Nothing, "sortBy": Nothing }
 
 -- | Constructs ListRepositoriesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListRepositoriesInput' :: ( { "nextToken" :: NullOrUndefined (NextToken) , "sortBy" :: NullOrUndefined (SortByEnum) , "order" :: NullOrUndefined (OrderEnum) } -> {"nextToken" :: NullOrUndefined (NextToken) , "sortBy" :: NullOrUndefined (SortByEnum) , "order" :: NullOrUndefined (OrderEnum) } ) -> ListRepositoriesInput
-newListRepositoriesInput'  customize = (ListRepositoriesInput <<< customize) { "nextToken": (NullOrUndefined Nothing), "order": (NullOrUndefined Nothing), "sortBy": (NullOrUndefined Nothing) }
+newListRepositoriesInput' :: ( { "nextToken" :: Maybe (NextToken) , "sortBy" :: Maybe (SortByEnum) , "order" :: Maybe (OrderEnum) } -> {"nextToken" :: Maybe (NextToken) , "sortBy" :: Maybe (SortByEnum) , "order" :: Maybe (OrderEnum) } ) -> ListRepositoriesInput
+newListRepositoriesInput'  customize = (ListRepositoriesInput <<< customize) { "nextToken": Nothing, "order": Nothing, "sortBy": Nothing }
 
 
 
 -- | <p>Represents the output of a list repositories operation.</p>
 newtype ListRepositoriesOutput = ListRepositoriesOutput 
-  { "repositories" :: NullOrUndefined (RepositoryNameIdPairList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "repositories" :: Maybe (RepositoryNameIdPairList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListRepositoriesOutput :: Newtype ListRepositoriesOutput _
 derive instance repGenericListRepositoriesOutput :: Generic ListRepositoriesOutput _
@@ -2101,20 +2100,20 @@ instance encodeListRepositoriesOutput :: Encode ListRepositoriesOutput where enc
 
 -- | Constructs ListRepositoriesOutput from required parameters
 newListRepositoriesOutput :: ListRepositoriesOutput
-newListRepositoriesOutput  = ListRepositoriesOutput { "nextToken": (NullOrUndefined Nothing), "repositories": (NullOrUndefined Nothing) }
+newListRepositoriesOutput  = ListRepositoriesOutput { "nextToken": Nothing, "repositories": Nothing }
 
 -- | Constructs ListRepositoriesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListRepositoriesOutput' :: ( { "repositories" :: NullOrUndefined (RepositoryNameIdPairList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"repositories" :: NullOrUndefined (RepositoryNameIdPairList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListRepositoriesOutput
-newListRepositoriesOutput'  customize = (ListRepositoriesOutput <<< customize) { "nextToken": (NullOrUndefined Nothing), "repositories": (NullOrUndefined Nothing) }
+newListRepositoriesOutput' :: ( { "repositories" :: Maybe (RepositoryNameIdPairList) , "nextToken" :: Maybe (NextToken) } -> {"repositories" :: Maybe (RepositoryNameIdPairList) , "nextToken" :: Maybe (NextToken) } ) -> ListRepositoriesOutput
+newListRepositoriesOutput'  customize = (ListRepositoriesOutput <<< customize) { "nextToken": Nothing, "repositories": Nothing }
 
 
 
 -- | <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
 newtype Location = Location 
-  { "filePath" :: NullOrUndefined (Path)
-  , "filePosition" :: NullOrUndefined (Position)
-  , "relativeFileVersion" :: NullOrUndefined (RelativeFileVersionEnum)
+  { "filePath" :: Maybe (Path)
+  , "filePosition" :: Maybe (Position)
+  , "relativeFileVersion" :: Maybe (RelativeFileVersionEnum)
   }
 derive instance newtypeLocation :: Newtype Location _
 derive instance repGenericLocation :: Generic Location _
@@ -2124,12 +2123,12 @@ instance encodeLocation :: Encode Location where encode = genericEncode options
 
 -- | Constructs Location from required parameters
 newLocation :: Location
-newLocation  = Location { "filePath": (NullOrUndefined Nothing), "filePosition": (NullOrUndefined Nothing), "relativeFileVersion": (NullOrUndefined Nothing) }
+newLocation  = Location { "filePath": Nothing, "filePosition": Nothing, "relativeFileVersion": Nothing }
 
 -- | Constructs Location's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLocation' :: ( { "filePath" :: NullOrUndefined (Path) , "filePosition" :: NullOrUndefined (Position) , "relativeFileVersion" :: NullOrUndefined (RelativeFileVersionEnum) } -> {"filePath" :: NullOrUndefined (Path) , "filePosition" :: NullOrUndefined (Position) , "relativeFileVersion" :: NullOrUndefined (RelativeFileVersionEnum) } ) -> Location
-newLocation'  customize = (Location <<< customize) { "filePath": (NullOrUndefined Nothing), "filePosition": (NullOrUndefined Nothing), "relativeFileVersion": (NullOrUndefined Nothing) }
+newLocation' :: ( { "filePath" :: Maybe (Path) , "filePosition" :: Maybe (Position) , "relativeFileVersion" :: Maybe (RelativeFileVersionEnum) } -> {"filePath" :: Maybe (Path) , "filePosition" :: Maybe (Position) , "relativeFileVersion" :: Maybe (RelativeFileVersionEnum) } ) -> Location
+newLocation'  customize = (Location <<< customize) { "filePath": Nothing, "filePosition": Nothing, "relativeFileVersion": Nothing }
 
 
 
@@ -2194,8 +2193,8 @@ instance encodeMaximumRepositoryTriggersExceededException :: Encode MaximumRepos
 
 -- | <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
 newtype MergeMetadata = MergeMetadata 
-  { "isMerged" :: NullOrUndefined (IsMerged)
-  , "mergedBy" :: NullOrUndefined (Arn)
+  { "isMerged" :: Maybe (IsMerged)
+  , "mergedBy" :: Maybe (Arn)
   }
 derive instance newtypeMergeMetadata :: Newtype MergeMetadata _
 derive instance repGenericMergeMetadata :: Generic MergeMetadata _
@@ -2205,12 +2204,12 @@ instance encodeMergeMetadata :: Encode MergeMetadata where encode = genericEncod
 
 -- | Constructs MergeMetadata from required parameters
 newMergeMetadata :: MergeMetadata
-newMergeMetadata  = MergeMetadata { "isMerged": (NullOrUndefined Nothing), "mergedBy": (NullOrUndefined Nothing) }
+newMergeMetadata  = MergeMetadata { "isMerged": Nothing, "mergedBy": Nothing }
 
 -- | Constructs MergeMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMergeMetadata' :: ( { "isMerged" :: NullOrUndefined (IsMerged) , "mergedBy" :: NullOrUndefined (Arn) } -> {"isMerged" :: NullOrUndefined (IsMerged) , "mergedBy" :: NullOrUndefined (Arn) } ) -> MergeMetadata
-newMergeMetadata'  customize = (MergeMetadata <<< customize) { "isMerged": (NullOrUndefined Nothing), "mergedBy": (NullOrUndefined Nothing) }
+newMergeMetadata' :: ( { "isMerged" :: Maybe (IsMerged) , "mergedBy" :: Maybe (Arn) } -> {"isMerged" :: Maybe (IsMerged) , "mergedBy" :: Maybe (Arn) } ) -> MergeMetadata
+newMergeMetadata'  customize = (MergeMetadata <<< customize) { "isMerged": Nothing, "mergedBy": Nothing }
 
 
 
@@ -2236,7 +2235,7 @@ instance encodeMergeOptionTypeEnum :: Encode MergeOptionTypeEnum where encode = 
 newtype MergePullRequestByFastForwardInput = MergePullRequestByFastForwardInput 
   { "pullRequestId" :: (PullRequestId)
   , "repositoryName" :: (RepositoryName)
-  , "sourceCommitId" :: NullOrUndefined (CommitId)
+  , "sourceCommitId" :: Maybe (CommitId)
   }
 derive instance newtypeMergePullRequestByFastForwardInput :: Newtype MergePullRequestByFastForwardInput _
 derive instance repGenericMergePullRequestByFastForwardInput :: Generic MergePullRequestByFastForwardInput _
@@ -2246,17 +2245,17 @@ instance encodeMergePullRequestByFastForwardInput :: Encode MergePullRequestByFa
 
 -- | Constructs MergePullRequestByFastForwardInput from required parameters
 newMergePullRequestByFastForwardInput :: PullRequestId -> RepositoryName -> MergePullRequestByFastForwardInput
-newMergePullRequestByFastForwardInput _pullRequestId _repositoryName = MergePullRequestByFastForwardInput { "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "sourceCommitId": (NullOrUndefined Nothing) }
+newMergePullRequestByFastForwardInput _pullRequestId _repositoryName = MergePullRequestByFastForwardInput { "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "sourceCommitId": Nothing }
 
 -- | Constructs MergePullRequestByFastForwardInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMergePullRequestByFastForwardInput' :: PullRequestId -> RepositoryName -> ( { "pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "sourceCommitId" :: NullOrUndefined (CommitId) } -> {"pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "sourceCommitId" :: NullOrUndefined (CommitId) } ) -> MergePullRequestByFastForwardInput
-newMergePullRequestByFastForwardInput' _pullRequestId _repositoryName customize = (MergePullRequestByFastForwardInput <<< customize) { "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "sourceCommitId": (NullOrUndefined Nothing) }
+newMergePullRequestByFastForwardInput' :: PullRequestId -> RepositoryName -> ( { "pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "sourceCommitId" :: Maybe (CommitId) } -> {"pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "sourceCommitId" :: Maybe (CommitId) } ) -> MergePullRequestByFastForwardInput
+newMergePullRequestByFastForwardInput' _pullRequestId _repositoryName customize = (MergePullRequestByFastForwardInput <<< customize) { "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "sourceCommitId": Nothing }
 
 
 
 newtype MergePullRequestByFastForwardOutput = MergePullRequestByFastForwardOutput 
-  { "pullRequest" :: NullOrUndefined (PullRequest)
+  { "pullRequest" :: Maybe (PullRequest)
   }
 derive instance newtypeMergePullRequestByFastForwardOutput :: Newtype MergePullRequestByFastForwardOutput _
 derive instance repGenericMergePullRequestByFastForwardOutput :: Generic MergePullRequestByFastForwardOutput _
@@ -2266,12 +2265,12 @@ instance encodeMergePullRequestByFastForwardOutput :: Encode MergePullRequestByF
 
 -- | Constructs MergePullRequestByFastForwardOutput from required parameters
 newMergePullRequestByFastForwardOutput :: MergePullRequestByFastForwardOutput
-newMergePullRequestByFastForwardOutput  = MergePullRequestByFastForwardOutput { "pullRequest": (NullOrUndefined Nothing) }
+newMergePullRequestByFastForwardOutput  = MergePullRequestByFastForwardOutput { "pullRequest": Nothing }
 
 -- | Constructs MergePullRequestByFastForwardOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMergePullRequestByFastForwardOutput' :: ( { "pullRequest" :: NullOrUndefined (PullRequest) } -> {"pullRequest" :: NullOrUndefined (PullRequest) } ) -> MergePullRequestByFastForwardOutput
-newMergePullRequestByFastForwardOutput'  customize = (MergePullRequestByFastForwardOutput <<< customize) { "pullRequest": (NullOrUndefined Nothing) }
+newMergePullRequestByFastForwardOutput' :: ( { "pullRequest" :: Maybe (PullRequest) } -> {"pullRequest" :: Maybe (PullRequest) } ) -> MergePullRequestByFastForwardOutput
+newMergePullRequestByFastForwardOutput'  customize = (MergePullRequestByFastForwardOutput <<< customize) { "pullRequest": Nothing }
 
 
 
@@ -2428,11 +2427,11 @@ instance encodePosition :: Encode Position where encode = genericEncode options
 
 newtype PostCommentForComparedCommitInput = PostCommentForComparedCommitInput 
   { "repositoryName" :: (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
+  , "beforeCommitId" :: Maybe (CommitId)
   , "afterCommitId" :: (CommitId)
-  , "location" :: NullOrUndefined (Location)
+  , "location" :: Maybe (Location)
   , "content" :: (Content)
-  , "clientRequestToken" :: NullOrUndefined (ClientRequestToken)
+  , "clientRequestToken" :: Maybe (ClientRequestToken)
   }
 derive instance newtypePostCommentForComparedCommitInput :: Newtype PostCommentForComparedCommitInput _
 derive instance repGenericPostCommentForComparedCommitInput :: Generic PostCommentForComparedCommitInput _
@@ -2442,23 +2441,23 @@ instance encodePostCommentForComparedCommitInput :: Encode PostCommentForCompare
 
 -- | Constructs PostCommentForComparedCommitInput from required parameters
 newPostCommentForComparedCommitInput :: CommitId -> Content -> RepositoryName -> PostCommentForComparedCommitInput
-newPostCommentForComparedCommitInput _afterCommitId _content _repositoryName = PostCommentForComparedCommitInput { "afterCommitId": _afterCommitId, "content": _content, "repositoryName": _repositoryName, "beforeCommitId": (NullOrUndefined Nothing), "clientRequestToken": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing) }
+newPostCommentForComparedCommitInput _afterCommitId _content _repositoryName = PostCommentForComparedCommitInput { "afterCommitId": _afterCommitId, "content": _content, "repositoryName": _repositoryName, "beforeCommitId": Nothing, "clientRequestToken": Nothing, "location": Nothing }
 
 -- | Constructs PostCommentForComparedCommitInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostCommentForComparedCommitInput' :: CommitId -> Content -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: (CommitId) , "location" :: NullOrUndefined (Location) , "content" :: (Content) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } -> {"repositoryName" :: (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: (CommitId) , "location" :: NullOrUndefined (Location) , "content" :: (Content) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } ) -> PostCommentForComparedCommitInput
-newPostCommentForComparedCommitInput' _afterCommitId _content _repositoryName customize = (PostCommentForComparedCommitInput <<< customize) { "afterCommitId": _afterCommitId, "content": _content, "repositoryName": _repositoryName, "beforeCommitId": (NullOrUndefined Nothing), "clientRequestToken": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing) }
+newPostCommentForComparedCommitInput' :: CommitId -> Content -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: (CommitId) , "location" :: Maybe (Location) , "content" :: (Content) , "clientRequestToken" :: Maybe (ClientRequestToken) } -> {"repositoryName" :: (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: (CommitId) , "location" :: Maybe (Location) , "content" :: (Content) , "clientRequestToken" :: Maybe (ClientRequestToken) } ) -> PostCommentForComparedCommitInput
+newPostCommentForComparedCommitInput' _afterCommitId _content _repositoryName customize = (PostCommentForComparedCommitInput <<< customize) { "afterCommitId": _afterCommitId, "content": _content, "repositoryName": _repositoryName, "beforeCommitId": Nothing, "clientRequestToken": Nothing, "location": Nothing }
 
 
 
 newtype PostCommentForComparedCommitOutput = PostCommentForComparedCommitOutput 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
-  , "afterCommitId" :: NullOrUndefined (CommitId)
-  , "beforeBlobId" :: NullOrUndefined (ObjectId)
-  , "afterBlobId" :: NullOrUndefined (ObjectId)
-  , "location" :: NullOrUndefined (Location)
-  , "comment" :: NullOrUndefined (Comment)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "beforeCommitId" :: Maybe (CommitId)
+  , "afterCommitId" :: Maybe (CommitId)
+  , "beforeBlobId" :: Maybe (ObjectId)
+  , "afterBlobId" :: Maybe (ObjectId)
+  , "location" :: Maybe (Location)
+  , "comment" :: Maybe (Comment)
   }
 derive instance newtypePostCommentForComparedCommitOutput :: Newtype PostCommentForComparedCommitOutput _
 derive instance repGenericPostCommentForComparedCommitOutput :: Generic PostCommentForComparedCommitOutput _
@@ -2468,12 +2467,12 @@ instance encodePostCommentForComparedCommitOutput :: Encode PostCommentForCompar
 
 -- | Constructs PostCommentForComparedCommitOutput from required parameters
 newPostCommentForComparedCommitOutput :: PostCommentForComparedCommitOutput
-newPostCommentForComparedCommitOutput  = PostCommentForComparedCommitOutput { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comment": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPostCommentForComparedCommitOutput  = PostCommentForComparedCommitOutput { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comment": Nothing, "location": Nothing, "repositoryName": Nothing }
 
 -- | Constructs PostCommentForComparedCommitOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostCommentForComparedCommitOutput' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comment" :: NullOrUndefined (Comment) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comment" :: NullOrUndefined (Comment) } ) -> PostCommentForComparedCommitOutput
-newPostCommentForComparedCommitOutput'  customize = (PostCommentForComparedCommitOutput <<< customize) { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comment": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPostCommentForComparedCommitOutput' :: ( { "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comment" :: Maybe (Comment) } -> {"repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comment" :: Maybe (Comment) } ) -> PostCommentForComparedCommitOutput
+newPostCommentForComparedCommitOutput'  customize = (PostCommentForComparedCommitOutput <<< customize) { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comment": Nothing, "location": Nothing, "repositoryName": Nothing }
 
 
 
@@ -2482,9 +2481,9 @@ newtype PostCommentForPullRequestInput = PostCommentForPullRequestInput
   , "repositoryName" :: (RepositoryName)
   , "beforeCommitId" :: (CommitId)
   , "afterCommitId" :: (CommitId)
-  , "location" :: NullOrUndefined (Location)
+  , "location" :: Maybe (Location)
   , "content" :: (Content)
-  , "clientRequestToken" :: NullOrUndefined (ClientRequestToken)
+  , "clientRequestToken" :: Maybe (ClientRequestToken)
   }
 derive instance newtypePostCommentForPullRequestInput :: Newtype PostCommentForPullRequestInput _
 derive instance repGenericPostCommentForPullRequestInput :: Generic PostCommentForPullRequestInput _
@@ -2494,24 +2493,24 @@ instance encodePostCommentForPullRequestInput :: Encode PostCommentForPullReques
 
 -- | Constructs PostCommentForPullRequestInput from required parameters
 newPostCommentForPullRequestInput :: CommitId -> CommitId -> Content -> PullRequestId -> RepositoryName -> PostCommentForPullRequestInput
-newPostCommentForPullRequestInput _afterCommitId _beforeCommitId _content _pullRequestId _repositoryName = PostCommentForPullRequestInput { "afterCommitId": _afterCommitId, "beforeCommitId": _beforeCommitId, "content": _content, "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "clientRequestToken": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing) }
+newPostCommentForPullRequestInput _afterCommitId _beforeCommitId _content _pullRequestId _repositoryName = PostCommentForPullRequestInput { "afterCommitId": _afterCommitId, "beforeCommitId": _beforeCommitId, "content": _content, "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "clientRequestToken": Nothing, "location": Nothing }
 
 -- | Constructs PostCommentForPullRequestInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostCommentForPullRequestInput' :: CommitId -> CommitId -> Content -> PullRequestId -> RepositoryName -> ( { "pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "beforeCommitId" :: (CommitId) , "afterCommitId" :: (CommitId) , "location" :: NullOrUndefined (Location) , "content" :: (Content) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } -> {"pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "beforeCommitId" :: (CommitId) , "afterCommitId" :: (CommitId) , "location" :: NullOrUndefined (Location) , "content" :: (Content) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } ) -> PostCommentForPullRequestInput
-newPostCommentForPullRequestInput' _afterCommitId _beforeCommitId _content _pullRequestId _repositoryName customize = (PostCommentForPullRequestInput <<< customize) { "afterCommitId": _afterCommitId, "beforeCommitId": _beforeCommitId, "content": _content, "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "clientRequestToken": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing) }
+newPostCommentForPullRequestInput' :: CommitId -> CommitId -> Content -> PullRequestId -> RepositoryName -> ( { "pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "beforeCommitId" :: (CommitId) , "afterCommitId" :: (CommitId) , "location" :: Maybe (Location) , "content" :: (Content) , "clientRequestToken" :: Maybe (ClientRequestToken) } -> {"pullRequestId" :: (PullRequestId) , "repositoryName" :: (RepositoryName) , "beforeCommitId" :: (CommitId) , "afterCommitId" :: (CommitId) , "location" :: Maybe (Location) , "content" :: (Content) , "clientRequestToken" :: Maybe (ClientRequestToken) } ) -> PostCommentForPullRequestInput
+newPostCommentForPullRequestInput' _afterCommitId _beforeCommitId _content _pullRequestId _repositoryName customize = (PostCommentForPullRequestInput <<< customize) { "afterCommitId": _afterCommitId, "beforeCommitId": _beforeCommitId, "content": _content, "pullRequestId": _pullRequestId, "repositoryName": _repositoryName, "clientRequestToken": Nothing, "location": Nothing }
 
 
 
 newtype PostCommentForPullRequestOutput = PostCommentForPullRequestOutput 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "pullRequestId" :: NullOrUndefined (PullRequestId)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
-  , "afterCommitId" :: NullOrUndefined (CommitId)
-  , "beforeBlobId" :: NullOrUndefined (ObjectId)
-  , "afterBlobId" :: NullOrUndefined (ObjectId)
-  , "location" :: NullOrUndefined (Location)
-  , "comment" :: NullOrUndefined (Comment)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "pullRequestId" :: Maybe (PullRequestId)
+  , "beforeCommitId" :: Maybe (CommitId)
+  , "afterCommitId" :: Maybe (CommitId)
+  , "beforeBlobId" :: Maybe (ObjectId)
+  , "afterBlobId" :: Maybe (ObjectId)
+  , "location" :: Maybe (Location)
+  , "comment" :: Maybe (Comment)
   }
 derive instance newtypePostCommentForPullRequestOutput :: Newtype PostCommentForPullRequestOutput _
 derive instance repGenericPostCommentForPullRequestOutput :: Generic PostCommentForPullRequestOutput _
@@ -2521,18 +2520,18 @@ instance encodePostCommentForPullRequestOutput :: Encode PostCommentForPullReque
 
 -- | Constructs PostCommentForPullRequestOutput from required parameters
 newPostCommentForPullRequestOutput :: PostCommentForPullRequestOutput
-newPostCommentForPullRequestOutput  = PostCommentForPullRequestOutput { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comment": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPostCommentForPullRequestOutput  = PostCommentForPullRequestOutput { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comment": Nothing, "location": Nothing, "pullRequestId": Nothing, "repositoryName": Nothing }
 
 -- | Constructs PostCommentForPullRequestOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostCommentForPullRequestOutput' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "pullRequestId" :: NullOrUndefined (PullRequestId) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comment" :: NullOrUndefined (Comment) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "pullRequestId" :: NullOrUndefined (PullRequestId) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) , "beforeBlobId" :: NullOrUndefined (ObjectId) , "afterBlobId" :: NullOrUndefined (ObjectId) , "location" :: NullOrUndefined (Location) , "comment" :: NullOrUndefined (Comment) } ) -> PostCommentForPullRequestOutput
-newPostCommentForPullRequestOutput'  customize = (PostCommentForPullRequestOutput <<< customize) { "afterBlobId": (NullOrUndefined Nothing), "afterCommitId": (NullOrUndefined Nothing), "beforeBlobId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "comment": (NullOrUndefined Nothing), "location": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPostCommentForPullRequestOutput' :: ( { "repositoryName" :: Maybe (RepositoryName) , "pullRequestId" :: Maybe (PullRequestId) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comment" :: Maybe (Comment) } -> {"repositoryName" :: Maybe (RepositoryName) , "pullRequestId" :: Maybe (PullRequestId) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) , "beforeBlobId" :: Maybe (ObjectId) , "afterBlobId" :: Maybe (ObjectId) , "location" :: Maybe (Location) , "comment" :: Maybe (Comment) } ) -> PostCommentForPullRequestOutput
+newPostCommentForPullRequestOutput'  customize = (PostCommentForPullRequestOutput <<< customize) { "afterBlobId": Nothing, "afterCommitId": Nothing, "beforeBlobId": Nothing, "beforeCommitId": Nothing, "comment": Nothing, "location": Nothing, "pullRequestId": Nothing, "repositoryName": Nothing }
 
 
 
 newtype PostCommentReplyInput = PostCommentReplyInput 
   { "inReplyTo" :: (CommentId)
-  , "clientRequestToken" :: NullOrUndefined (ClientRequestToken)
+  , "clientRequestToken" :: Maybe (ClientRequestToken)
   , "content" :: (Content)
   }
 derive instance newtypePostCommentReplyInput :: Newtype PostCommentReplyInput _
@@ -2543,17 +2542,17 @@ instance encodePostCommentReplyInput :: Encode PostCommentReplyInput where encod
 
 -- | Constructs PostCommentReplyInput from required parameters
 newPostCommentReplyInput :: Content -> CommentId -> PostCommentReplyInput
-newPostCommentReplyInput _content _inReplyTo = PostCommentReplyInput { "content": _content, "inReplyTo": _inReplyTo, "clientRequestToken": (NullOrUndefined Nothing) }
+newPostCommentReplyInput _content _inReplyTo = PostCommentReplyInput { "content": _content, "inReplyTo": _inReplyTo, "clientRequestToken": Nothing }
 
 -- | Constructs PostCommentReplyInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostCommentReplyInput' :: Content -> CommentId -> ( { "inReplyTo" :: (CommentId) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) , "content" :: (Content) } -> {"inReplyTo" :: (CommentId) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) , "content" :: (Content) } ) -> PostCommentReplyInput
-newPostCommentReplyInput' _content _inReplyTo customize = (PostCommentReplyInput <<< customize) { "content": _content, "inReplyTo": _inReplyTo, "clientRequestToken": (NullOrUndefined Nothing) }
+newPostCommentReplyInput' :: Content -> CommentId -> ( { "inReplyTo" :: (CommentId) , "clientRequestToken" :: Maybe (ClientRequestToken) , "content" :: (Content) } -> {"inReplyTo" :: (CommentId) , "clientRequestToken" :: Maybe (ClientRequestToken) , "content" :: (Content) } ) -> PostCommentReplyInput
+newPostCommentReplyInput' _content _inReplyTo customize = (PostCommentReplyInput <<< customize) { "content": _content, "inReplyTo": _inReplyTo, "clientRequestToken": Nothing }
 
 
 
 newtype PostCommentReplyOutput = PostCommentReplyOutput 
-  { "comment" :: NullOrUndefined (Comment)
+  { "comment" :: Maybe (Comment)
   }
 derive instance newtypePostCommentReplyOutput :: Newtype PostCommentReplyOutput _
 derive instance repGenericPostCommentReplyOutput :: Generic PostCommentReplyOutput _
@@ -2563,26 +2562,26 @@ instance encodePostCommentReplyOutput :: Encode PostCommentReplyOutput where enc
 
 -- | Constructs PostCommentReplyOutput from required parameters
 newPostCommentReplyOutput :: PostCommentReplyOutput
-newPostCommentReplyOutput  = PostCommentReplyOutput { "comment": (NullOrUndefined Nothing) }
+newPostCommentReplyOutput  = PostCommentReplyOutput { "comment": Nothing }
 
 -- | Constructs PostCommentReplyOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPostCommentReplyOutput' :: ( { "comment" :: NullOrUndefined (Comment) } -> {"comment" :: NullOrUndefined (Comment) } ) -> PostCommentReplyOutput
-newPostCommentReplyOutput'  customize = (PostCommentReplyOutput <<< customize) { "comment": (NullOrUndefined Nothing) }
+newPostCommentReplyOutput' :: ( { "comment" :: Maybe (Comment) } -> {"comment" :: Maybe (Comment) } ) -> PostCommentReplyOutput
+newPostCommentReplyOutput'  customize = (PostCommentReplyOutput <<< customize) { "comment": Nothing }
 
 
 
 -- | <p>Returns information about a pull request.</p>
 newtype PullRequest = PullRequest 
-  { "pullRequestId" :: NullOrUndefined (PullRequestId)
-  , "title" :: NullOrUndefined (Title)
-  , "description" :: NullOrUndefined (Description)
-  , "lastActivityDate" :: NullOrUndefined (LastModifiedDate)
-  , "creationDate" :: NullOrUndefined (CreationDate)
-  , "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum)
-  , "authorArn" :: NullOrUndefined (Arn)
-  , "pullRequestTargets" :: NullOrUndefined (PullRequestTargetList)
-  , "clientRequestToken" :: NullOrUndefined (ClientRequestToken)
+  { "pullRequestId" :: Maybe (PullRequestId)
+  , "title" :: Maybe (Title)
+  , "description" :: Maybe (Description)
+  , "lastActivityDate" :: Maybe (LastModifiedDate)
+  , "creationDate" :: Maybe (CreationDate)
+  , "pullRequestStatus" :: Maybe (PullRequestStatusEnum)
+  , "authorArn" :: Maybe (Arn)
+  , "pullRequestTargets" :: Maybe (PullRequestTargetList)
+  , "clientRequestToken" :: Maybe (ClientRequestToken)
   }
 derive instance newtypePullRequest :: Newtype PullRequest _
 derive instance repGenericPullRequest :: Generic PullRequest _
@@ -2592,12 +2591,12 @@ instance encodePullRequest :: Encode PullRequest where encode = genericEncode op
 
 -- | Constructs PullRequest from required parameters
 newPullRequest :: PullRequest
-newPullRequest  = PullRequest { "authorArn": (NullOrUndefined Nothing), "clientRequestToken": (NullOrUndefined Nothing), "creationDate": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "lastActivityDate": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "pullRequestStatus": (NullOrUndefined Nothing), "pullRequestTargets": (NullOrUndefined Nothing), "title": (NullOrUndefined Nothing) }
+newPullRequest  = PullRequest { "authorArn": Nothing, "clientRequestToken": Nothing, "creationDate": Nothing, "description": Nothing, "lastActivityDate": Nothing, "pullRequestId": Nothing, "pullRequestStatus": Nothing, "pullRequestTargets": Nothing, "title": Nothing }
 
 -- | Constructs PullRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPullRequest' :: ( { "pullRequestId" :: NullOrUndefined (PullRequestId) , "title" :: NullOrUndefined (Title) , "description" :: NullOrUndefined (Description) , "lastActivityDate" :: NullOrUndefined (LastModifiedDate) , "creationDate" :: NullOrUndefined (CreationDate) , "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum) , "authorArn" :: NullOrUndefined (Arn) , "pullRequestTargets" :: NullOrUndefined (PullRequestTargetList) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } -> {"pullRequestId" :: NullOrUndefined (PullRequestId) , "title" :: NullOrUndefined (Title) , "description" :: NullOrUndefined (Description) , "lastActivityDate" :: NullOrUndefined (LastModifiedDate) , "creationDate" :: NullOrUndefined (CreationDate) , "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum) , "authorArn" :: NullOrUndefined (Arn) , "pullRequestTargets" :: NullOrUndefined (PullRequestTargetList) , "clientRequestToken" :: NullOrUndefined (ClientRequestToken) } ) -> PullRequest
-newPullRequest'  customize = (PullRequest <<< customize) { "authorArn": (NullOrUndefined Nothing), "clientRequestToken": (NullOrUndefined Nothing), "creationDate": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "lastActivityDate": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "pullRequestStatus": (NullOrUndefined Nothing), "pullRequestTargets": (NullOrUndefined Nothing), "title": (NullOrUndefined Nothing) }
+newPullRequest' :: ( { "pullRequestId" :: Maybe (PullRequestId) , "title" :: Maybe (Title) , "description" :: Maybe (Description) , "lastActivityDate" :: Maybe (LastModifiedDate) , "creationDate" :: Maybe (CreationDate) , "pullRequestStatus" :: Maybe (PullRequestStatusEnum) , "authorArn" :: Maybe (Arn) , "pullRequestTargets" :: Maybe (PullRequestTargetList) , "clientRequestToken" :: Maybe (ClientRequestToken) } -> {"pullRequestId" :: Maybe (PullRequestId) , "title" :: Maybe (Title) , "description" :: Maybe (Description) , "lastActivityDate" :: Maybe (LastModifiedDate) , "creationDate" :: Maybe (CreationDate) , "pullRequestStatus" :: Maybe (PullRequestStatusEnum) , "authorArn" :: Maybe (Arn) , "pullRequestTargets" :: Maybe (PullRequestTargetList) , "clientRequestToken" :: Maybe (ClientRequestToken) } ) -> PullRequest
+newPullRequest'  customize = (PullRequest <<< customize) { "authorArn": Nothing, "clientRequestToken": Nothing, "creationDate": Nothing, "description": Nothing, "lastActivityDate": Nothing, "pullRequestId": Nothing, "pullRequestStatus": Nothing, "pullRequestTargets": Nothing, "title": Nothing }
 
 
 
@@ -2623,13 +2622,13 @@ instance encodePullRequestDoesNotExistException :: Encode PullRequestDoesNotExis
 
 -- | <p>Returns information about a pull request event.</p>
 newtype PullRequestEvent = PullRequestEvent 
-  { "pullRequestId" :: NullOrUndefined (PullRequestId)
-  , "eventDate" :: NullOrUndefined (EventDate)
-  , "pullRequestEventType" :: NullOrUndefined (PullRequestEventType)
-  , "actorArn" :: NullOrUndefined (Arn)
-  , "pullRequestStatusChangedEventMetadata" :: NullOrUndefined (PullRequestStatusChangedEventMetadata)
-  , "pullRequestSourceReferenceUpdatedEventMetadata" :: NullOrUndefined (PullRequestSourceReferenceUpdatedEventMetadata)
-  , "pullRequestMergedStateChangedEventMetadata" :: NullOrUndefined (PullRequestMergedStateChangedEventMetadata)
+  { "pullRequestId" :: Maybe (PullRequestId)
+  , "eventDate" :: Maybe (EventDate)
+  , "pullRequestEventType" :: Maybe (PullRequestEventType)
+  , "actorArn" :: Maybe (Arn)
+  , "pullRequestStatusChangedEventMetadata" :: Maybe (PullRequestStatusChangedEventMetadata)
+  , "pullRequestSourceReferenceUpdatedEventMetadata" :: Maybe (PullRequestSourceReferenceUpdatedEventMetadata)
+  , "pullRequestMergedStateChangedEventMetadata" :: Maybe (PullRequestMergedStateChangedEventMetadata)
   }
 derive instance newtypePullRequestEvent :: Newtype PullRequestEvent _
 derive instance repGenericPullRequestEvent :: Generic PullRequestEvent _
@@ -2639,12 +2638,12 @@ instance encodePullRequestEvent :: Encode PullRequestEvent where encode = generi
 
 -- | Constructs PullRequestEvent from required parameters
 newPullRequestEvent :: PullRequestEvent
-newPullRequestEvent  = PullRequestEvent { "actorArn": (NullOrUndefined Nothing), "eventDate": (NullOrUndefined Nothing), "pullRequestEventType": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "pullRequestMergedStateChangedEventMetadata": (NullOrUndefined Nothing), "pullRequestSourceReferenceUpdatedEventMetadata": (NullOrUndefined Nothing), "pullRequestStatusChangedEventMetadata": (NullOrUndefined Nothing) }
+newPullRequestEvent  = PullRequestEvent { "actorArn": Nothing, "eventDate": Nothing, "pullRequestEventType": Nothing, "pullRequestId": Nothing, "pullRequestMergedStateChangedEventMetadata": Nothing, "pullRequestSourceReferenceUpdatedEventMetadata": Nothing, "pullRequestStatusChangedEventMetadata": Nothing }
 
 -- | Constructs PullRequestEvent's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPullRequestEvent' :: ( { "pullRequestId" :: NullOrUndefined (PullRequestId) , "eventDate" :: NullOrUndefined (EventDate) , "pullRequestEventType" :: NullOrUndefined (PullRequestEventType) , "actorArn" :: NullOrUndefined (Arn) , "pullRequestStatusChangedEventMetadata" :: NullOrUndefined (PullRequestStatusChangedEventMetadata) , "pullRequestSourceReferenceUpdatedEventMetadata" :: NullOrUndefined (PullRequestSourceReferenceUpdatedEventMetadata) , "pullRequestMergedStateChangedEventMetadata" :: NullOrUndefined (PullRequestMergedStateChangedEventMetadata) } -> {"pullRequestId" :: NullOrUndefined (PullRequestId) , "eventDate" :: NullOrUndefined (EventDate) , "pullRequestEventType" :: NullOrUndefined (PullRequestEventType) , "actorArn" :: NullOrUndefined (Arn) , "pullRequestStatusChangedEventMetadata" :: NullOrUndefined (PullRequestStatusChangedEventMetadata) , "pullRequestSourceReferenceUpdatedEventMetadata" :: NullOrUndefined (PullRequestSourceReferenceUpdatedEventMetadata) , "pullRequestMergedStateChangedEventMetadata" :: NullOrUndefined (PullRequestMergedStateChangedEventMetadata) } ) -> PullRequestEvent
-newPullRequestEvent'  customize = (PullRequestEvent <<< customize) { "actorArn": (NullOrUndefined Nothing), "eventDate": (NullOrUndefined Nothing), "pullRequestEventType": (NullOrUndefined Nothing), "pullRequestId": (NullOrUndefined Nothing), "pullRequestMergedStateChangedEventMetadata": (NullOrUndefined Nothing), "pullRequestSourceReferenceUpdatedEventMetadata": (NullOrUndefined Nothing), "pullRequestStatusChangedEventMetadata": (NullOrUndefined Nothing) }
+newPullRequestEvent' :: ( { "pullRequestId" :: Maybe (PullRequestId) , "eventDate" :: Maybe (EventDate) , "pullRequestEventType" :: Maybe (PullRequestEventType) , "actorArn" :: Maybe (Arn) , "pullRequestStatusChangedEventMetadata" :: Maybe (PullRequestStatusChangedEventMetadata) , "pullRequestSourceReferenceUpdatedEventMetadata" :: Maybe (PullRequestSourceReferenceUpdatedEventMetadata) , "pullRequestMergedStateChangedEventMetadata" :: Maybe (PullRequestMergedStateChangedEventMetadata) } -> {"pullRequestId" :: Maybe (PullRequestId) , "eventDate" :: Maybe (EventDate) , "pullRequestEventType" :: Maybe (PullRequestEventType) , "actorArn" :: Maybe (Arn) , "pullRequestStatusChangedEventMetadata" :: Maybe (PullRequestStatusChangedEventMetadata) , "pullRequestSourceReferenceUpdatedEventMetadata" :: Maybe (PullRequestSourceReferenceUpdatedEventMetadata) , "pullRequestMergedStateChangedEventMetadata" :: Maybe (PullRequestMergedStateChangedEventMetadata) } ) -> PullRequestEvent
+newPullRequestEvent'  customize = (PullRequestEvent <<< customize) { "actorArn": Nothing, "eventDate": Nothing, "pullRequestEventType": Nothing, "pullRequestId": Nothing, "pullRequestMergedStateChangedEventMetadata": Nothing, "pullRequestSourceReferenceUpdatedEventMetadata": Nothing, "pullRequestStatusChangedEventMetadata": Nothing }
 
 
 
@@ -2696,9 +2695,9 @@ instance encodePullRequestIdRequiredException :: Encode PullRequestIdRequiredExc
 
 -- | <p>Returns information about the change in the merge state for a pull request event. </p>
 newtype PullRequestMergedStateChangedEventMetadata = PullRequestMergedStateChangedEventMetadata 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "destinationReference" :: NullOrUndefined (ReferenceName)
-  , "mergeMetadata" :: NullOrUndefined (MergeMetadata)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "destinationReference" :: Maybe (ReferenceName)
+  , "mergeMetadata" :: Maybe (MergeMetadata)
   }
 derive instance newtypePullRequestMergedStateChangedEventMetadata :: Newtype PullRequestMergedStateChangedEventMetadata _
 derive instance repGenericPullRequestMergedStateChangedEventMetadata :: Generic PullRequestMergedStateChangedEventMetadata _
@@ -2708,20 +2707,20 @@ instance encodePullRequestMergedStateChangedEventMetadata :: Encode PullRequestM
 
 -- | Constructs PullRequestMergedStateChangedEventMetadata from required parameters
 newPullRequestMergedStateChangedEventMetadata :: PullRequestMergedStateChangedEventMetadata
-newPullRequestMergedStateChangedEventMetadata  = PullRequestMergedStateChangedEventMetadata { "destinationReference": (NullOrUndefined Nothing), "mergeMetadata": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPullRequestMergedStateChangedEventMetadata  = PullRequestMergedStateChangedEventMetadata { "destinationReference": Nothing, "mergeMetadata": Nothing, "repositoryName": Nothing }
 
 -- | Constructs PullRequestMergedStateChangedEventMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPullRequestMergedStateChangedEventMetadata' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "destinationReference" :: NullOrUndefined (ReferenceName) , "mergeMetadata" :: NullOrUndefined (MergeMetadata) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "destinationReference" :: NullOrUndefined (ReferenceName) , "mergeMetadata" :: NullOrUndefined (MergeMetadata) } ) -> PullRequestMergedStateChangedEventMetadata
-newPullRequestMergedStateChangedEventMetadata'  customize = (PullRequestMergedStateChangedEventMetadata <<< customize) { "destinationReference": (NullOrUndefined Nothing), "mergeMetadata": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPullRequestMergedStateChangedEventMetadata' :: ( { "repositoryName" :: Maybe (RepositoryName) , "destinationReference" :: Maybe (ReferenceName) , "mergeMetadata" :: Maybe (MergeMetadata) } -> {"repositoryName" :: Maybe (RepositoryName) , "destinationReference" :: Maybe (ReferenceName) , "mergeMetadata" :: Maybe (MergeMetadata) } ) -> PullRequestMergedStateChangedEventMetadata
+newPullRequestMergedStateChangedEventMetadata'  customize = (PullRequestMergedStateChangedEventMetadata <<< customize) { "destinationReference": Nothing, "mergeMetadata": Nothing, "repositoryName": Nothing }
 
 
 
 -- | <p>Information about an update to the source branch of a pull request.</p>
 newtype PullRequestSourceReferenceUpdatedEventMetadata = PullRequestSourceReferenceUpdatedEventMetadata 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "beforeCommitId" :: NullOrUndefined (CommitId)
-  , "afterCommitId" :: NullOrUndefined (CommitId)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "beforeCommitId" :: Maybe (CommitId)
+  , "afterCommitId" :: Maybe (CommitId)
   }
 derive instance newtypePullRequestSourceReferenceUpdatedEventMetadata :: Newtype PullRequestSourceReferenceUpdatedEventMetadata _
 derive instance repGenericPullRequestSourceReferenceUpdatedEventMetadata :: Generic PullRequestSourceReferenceUpdatedEventMetadata _
@@ -2731,18 +2730,18 @@ instance encodePullRequestSourceReferenceUpdatedEventMetadata :: Encode PullRequ
 
 -- | Constructs PullRequestSourceReferenceUpdatedEventMetadata from required parameters
 newPullRequestSourceReferenceUpdatedEventMetadata :: PullRequestSourceReferenceUpdatedEventMetadata
-newPullRequestSourceReferenceUpdatedEventMetadata  = PullRequestSourceReferenceUpdatedEventMetadata { "afterCommitId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPullRequestSourceReferenceUpdatedEventMetadata  = PullRequestSourceReferenceUpdatedEventMetadata { "afterCommitId": Nothing, "beforeCommitId": Nothing, "repositoryName": Nothing }
 
 -- | Constructs PullRequestSourceReferenceUpdatedEventMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPullRequestSourceReferenceUpdatedEventMetadata' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "beforeCommitId" :: NullOrUndefined (CommitId) , "afterCommitId" :: NullOrUndefined (CommitId) } ) -> PullRequestSourceReferenceUpdatedEventMetadata
-newPullRequestSourceReferenceUpdatedEventMetadata'  customize = (PullRequestSourceReferenceUpdatedEventMetadata <<< customize) { "afterCommitId": (NullOrUndefined Nothing), "beforeCommitId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newPullRequestSourceReferenceUpdatedEventMetadata' :: ( { "repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) } -> {"repositoryName" :: Maybe (RepositoryName) , "beforeCommitId" :: Maybe (CommitId) , "afterCommitId" :: Maybe (CommitId) } ) -> PullRequestSourceReferenceUpdatedEventMetadata
+newPullRequestSourceReferenceUpdatedEventMetadata'  customize = (PullRequestSourceReferenceUpdatedEventMetadata <<< customize) { "afterCommitId": Nothing, "beforeCommitId": Nothing, "repositoryName": Nothing }
 
 
 
 -- | <p>Information about a change to the status of a pull request.</p>
 newtype PullRequestStatusChangedEventMetadata = PullRequestStatusChangedEventMetadata 
-  { "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum)
+  { "pullRequestStatus" :: Maybe (PullRequestStatusEnum)
   }
 derive instance newtypePullRequestStatusChangedEventMetadata :: Newtype PullRequestStatusChangedEventMetadata _
 derive instance repGenericPullRequestStatusChangedEventMetadata :: Generic PullRequestStatusChangedEventMetadata _
@@ -2752,12 +2751,12 @@ instance encodePullRequestStatusChangedEventMetadata :: Encode PullRequestStatus
 
 -- | Constructs PullRequestStatusChangedEventMetadata from required parameters
 newPullRequestStatusChangedEventMetadata :: PullRequestStatusChangedEventMetadata
-newPullRequestStatusChangedEventMetadata  = PullRequestStatusChangedEventMetadata { "pullRequestStatus": (NullOrUndefined Nothing) }
+newPullRequestStatusChangedEventMetadata  = PullRequestStatusChangedEventMetadata { "pullRequestStatus": Nothing }
 
 -- | Constructs PullRequestStatusChangedEventMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPullRequestStatusChangedEventMetadata' :: ( { "pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum) } -> {"pullRequestStatus" :: NullOrUndefined (PullRequestStatusEnum) } ) -> PullRequestStatusChangedEventMetadata
-newPullRequestStatusChangedEventMetadata'  customize = (PullRequestStatusChangedEventMetadata <<< customize) { "pullRequestStatus": (NullOrUndefined Nothing) }
+newPullRequestStatusChangedEventMetadata' :: ( { "pullRequestStatus" :: Maybe (PullRequestStatusEnum) } -> {"pullRequestStatus" :: Maybe (PullRequestStatusEnum) } ) -> PullRequestStatusChangedEventMetadata
+newPullRequestStatusChangedEventMetadata'  customize = (PullRequestStatusChangedEventMetadata <<< customize) { "pullRequestStatus": Nothing }
 
 
 
@@ -2782,12 +2781,12 @@ instance encodePullRequestStatusRequiredException :: Encode PullRequestStatusReq
 
 -- | <p>Returns information about a pull request target.</p>
 newtype PullRequestTarget = PullRequestTarget 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "sourceReference" :: NullOrUndefined (ReferenceName)
-  , "destinationReference" :: NullOrUndefined (ReferenceName)
-  , "destinationCommit" :: NullOrUndefined (CommitId)
-  , "sourceCommit" :: NullOrUndefined (CommitId)
-  , "mergeMetadata" :: NullOrUndefined (MergeMetadata)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "sourceReference" :: Maybe (ReferenceName)
+  , "destinationReference" :: Maybe (ReferenceName)
+  , "destinationCommit" :: Maybe (CommitId)
+  , "sourceCommit" :: Maybe (CommitId)
+  , "mergeMetadata" :: Maybe (MergeMetadata)
   }
 derive instance newtypePullRequestTarget :: Newtype PullRequestTarget _
 derive instance repGenericPullRequestTarget :: Generic PullRequestTarget _
@@ -2797,12 +2796,12 @@ instance encodePullRequestTarget :: Encode PullRequestTarget where encode = gene
 
 -- | Constructs PullRequestTarget from required parameters
 newPullRequestTarget :: PullRequestTarget
-newPullRequestTarget  = PullRequestTarget { "destinationCommit": (NullOrUndefined Nothing), "destinationReference": (NullOrUndefined Nothing), "mergeMetadata": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing), "sourceCommit": (NullOrUndefined Nothing), "sourceReference": (NullOrUndefined Nothing) }
+newPullRequestTarget  = PullRequestTarget { "destinationCommit": Nothing, "destinationReference": Nothing, "mergeMetadata": Nothing, "repositoryName": Nothing, "sourceCommit": Nothing, "sourceReference": Nothing }
 
 -- | Constructs PullRequestTarget's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPullRequestTarget' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "sourceReference" :: NullOrUndefined (ReferenceName) , "destinationReference" :: NullOrUndefined (ReferenceName) , "destinationCommit" :: NullOrUndefined (CommitId) , "sourceCommit" :: NullOrUndefined (CommitId) , "mergeMetadata" :: NullOrUndefined (MergeMetadata) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "sourceReference" :: NullOrUndefined (ReferenceName) , "destinationReference" :: NullOrUndefined (ReferenceName) , "destinationCommit" :: NullOrUndefined (CommitId) , "sourceCommit" :: NullOrUndefined (CommitId) , "mergeMetadata" :: NullOrUndefined (MergeMetadata) } ) -> PullRequestTarget
-newPullRequestTarget'  customize = (PullRequestTarget <<< customize) { "destinationCommit": (NullOrUndefined Nothing), "destinationReference": (NullOrUndefined Nothing), "mergeMetadata": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing), "sourceCommit": (NullOrUndefined Nothing), "sourceReference": (NullOrUndefined Nothing) }
+newPullRequestTarget' :: ( { "repositoryName" :: Maybe (RepositoryName) , "sourceReference" :: Maybe (ReferenceName) , "destinationReference" :: Maybe (ReferenceName) , "destinationCommit" :: Maybe (CommitId) , "sourceCommit" :: Maybe (CommitId) , "mergeMetadata" :: Maybe (MergeMetadata) } -> {"repositoryName" :: Maybe (RepositoryName) , "sourceReference" :: Maybe (ReferenceName) , "destinationReference" :: Maybe (ReferenceName) , "destinationCommit" :: Maybe (CommitId) , "sourceCommit" :: Maybe (CommitId) , "mergeMetadata" :: Maybe (MergeMetadata) } ) -> PullRequestTarget
+newPullRequestTarget'  customize = (PullRequestTarget <<< customize) { "destinationCommit": Nothing, "destinationReference": Nothing, "mergeMetadata": Nothing, "repositoryName": Nothing, "sourceCommit": Nothing, "sourceReference": Nothing }
 
 
 
@@ -2820,11 +2819,11 @@ newtype PutFileInput = PutFileInput
   , "branchName" :: (BranchName)
   , "fileContent" :: (FileContent)
   , "filePath" :: (Path)
-  , "fileMode" :: NullOrUndefined (FileModeTypeEnum)
-  , "parentCommitId" :: NullOrUndefined (CommitId)
-  , "commitMessage" :: NullOrUndefined (Message)
-  , "name" :: NullOrUndefined (Name)
-  , "email" :: NullOrUndefined (Email)
+  , "fileMode" :: Maybe (FileModeTypeEnum)
+  , "parentCommitId" :: Maybe (CommitId)
+  , "commitMessage" :: Maybe (Message)
+  , "name" :: Maybe (Name)
+  , "email" :: Maybe (Email)
   }
 derive instance newtypePutFileInput :: Newtype PutFileInput _
 derive instance repGenericPutFileInput :: Generic PutFileInput _
@@ -2834,12 +2833,12 @@ instance encodePutFileInput :: Encode PutFileInput where encode = genericEncode 
 
 -- | Constructs PutFileInput from required parameters
 newPutFileInput :: BranchName -> FileContent -> Path -> RepositoryName -> PutFileInput
-newPutFileInput _branchName _fileContent _filePath _repositoryName = PutFileInput { "branchName": _branchName, "fileContent": _fileContent, "filePath": _filePath, "repositoryName": _repositoryName, "commitMessage": (NullOrUndefined Nothing), "email": (NullOrUndefined Nothing), "fileMode": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "parentCommitId": (NullOrUndefined Nothing) }
+newPutFileInput _branchName _fileContent _filePath _repositoryName = PutFileInput { "branchName": _branchName, "fileContent": _fileContent, "filePath": _filePath, "repositoryName": _repositoryName, "commitMessage": Nothing, "email": Nothing, "fileMode": Nothing, "name": Nothing, "parentCommitId": Nothing }
 
 -- | Constructs PutFileInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutFileInput' :: BranchName -> FileContent -> Path -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "branchName" :: (BranchName) , "fileContent" :: (FileContent) , "filePath" :: (Path) , "fileMode" :: NullOrUndefined (FileModeTypeEnum) , "parentCommitId" :: NullOrUndefined (CommitId) , "commitMessage" :: NullOrUndefined (Message) , "name" :: NullOrUndefined (Name) , "email" :: NullOrUndefined (Email) } -> {"repositoryName" :: (RepositoryName) , "branchName" :: (BranchName) , "fileContent" :: (FileContent) , "filePath" :: (Path) , "fileMode" :: NullOrUndefined (FileModeTypeEnum) , "parentCommitId" :: NullOrUndefined (CommitId) , "commitMessage" :: NullOrUndefined (Message) , "name" :: NullOrUndefined (Name) , "email" :: NullOrUndefined (Email) } ) -> PutFileInput
-newPutFileInput' _branchName _fileContent _filePath _repositoryName customize = (PutFileInput <<< customize) { "branchName": _branchName, "fileContent": _fileContent, "filePath": _filePath, "repositoryName": _repositoryName, "commitMessage": (NullOrUndefined Nothing), "email": (NullOrUndefined Nothing), "fileMode": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "parentCommitId": (NullOrUndefined Nothing) }
+newPutFileInput' :: BranchName -> FileContent -> Path -> RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "branchName" :: (BranchName) , "fileContent" :: (FileContent) , "filePath" :: (Path) , "fileMode" :: Maybe (FileModeTypeEnum) , "parentCommitId" :: Maybe (CommitId) , "commitMessage" :: Maybe (Message) , "name" :: Maybe (Name) , "email" :: Maybe (Email) } -> {"repositoryName" :: (RepositoryName) , "branchName" :: (BranchName) , "fileContent" :: (FileContent) , "filePath" :: (Path) , "fileMode" :: Maybe (FileModeTypeEnum) , "parentCommitId" :: Maybe (CommitId) , "commitMessage" :: Maybe (Message) , "name" :: Maybe (Name) , "email" :: Maybe (Email) } ) -> PutFileInput
+newPutFileInput' _branchName _fileContent _filePath _repositoryName customize = (PutFileInput <<< customize) { "branchName": _branchName, "fileContent": _fileContent, "filePath": _filePath, "repositoryName": _repositoryName, "commitMessage": Nothing, "email": Nothing, "fileMode": Nothing, "name": Nothing, "parentCommitId": Nothing }
 
 
 
@@ -2889,7 +2888,7 @@ newPutRepositoryTriggersInput' _repositoryName _triggers customize = (PutReposit
 
 -- | <p>Represents the output of a put repository triggers operation.</p>
 newtype PutRepositoryTriggersOutput = PutRepositoryTriggersOutput 
-  { "configurationId" :: NullOrUndefined (RepositoryTriggersConfigurationId)
+  { "configurationId" :: Maybe (RepositoryTriggersConfigurationId)
   }
 derive instance newtypePutRepositoryTriggersOutput :: Newtype PutRepositoryTriggersOutput _
 derive instance repGenericPutRepositoryTriggersOutput :: Generic PutRepositoryTriggersOutput _
@@ -2899,12 +2898,12 @@ instance encodePutRepositoryTriggersOutput :: Encode PutRepositoryTriggersOutput
 
 -- | Constructs PutRepositoryTriggersOutput from required parameters
 newPutRepositoryTriggersOutput :: PutRepositoryTriggersOutput
-newPutRepositoryTriggersOutput  = PutRepositoryTriggersOutput { "configurationId": (NullOrUndefined Nothing) }
+newPutRepositoryTriggersOutput  = PutRepositoryTriggersOutput { "configurationId": Nothing }
 
 -- | Constructs PutRepositoryTriggersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutRepositoryTriggersOutput' :: ( { "configurationId" :: NullOrUndefined (RepositoryTriggersConfigurationId) } -> {"configurationId" :: NullOrUndefined (RepositoryTriggersConfigurationId) } ) -> PutRepositoryTriggersOutput
-newPutRepositoryTriggersOutput'  customize = (PutRepositoryTriggersOutput <<< customize) { "configurationId": (NullOrUndefined Nothing) }
+newPutRepositoryTriggersOutput' :: ( { "configurationId" :: Maybe (RepositoryTriggersConfigurationId) } -> {"configurationId" :: Maybe (RepositoryTriggersConfigurationId) } ) -> PutRepositoryTriggersOutput
+newPutRepositoryTriggersOutput'  customize = (PutRepositoryTriggersOutput <<< customize) { "configurationId": Nothing }
 
 
 
@@ -2996,16 +2995,16 @@ instance encodeRepositoryLimitExceededException :: Encode RepositoryLimitExceede
 
 -- | <p>Information about a repository.</p>
 newtype RepositoryMetadata = RepositoryMetadata 
-  { "accountId" :: NullOrUndefined (AccountId)
-  , "repositoryId" :: NullOrUndefined (RepositoryId)
-  , "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "repositoryDescription" :: NullOrUndefined (RepositoryDescription)
-  , "defaultBranch" :: NullOrUndefined (BranchName)
-  , "lastModifiedDate" :: NullOrUndefined (LastModifiedDate)
-  , "creationDate" :: NullOrUndefined (CreationDate)
-  , "cloneUrlHttp" :: NullOrUndefined (CloneUrlHttp)
-  , "cloneUrlSsh" :: NullOrUndefined (CloneUrlSsh)
-  , "Arn" :: NullOrUndefined (Arn)
+  { "accountId" :: Maybe (AccountId)
+  , "repositoryId" :: Maybe (RepositoryId)
+  , "repositoryName" :: Maybe (RepositoryName)
+  , "repositoryDescription" :: Maybe (RepositoryDescription)
+  , "defaultBranch" :: Maybe (BranchName)
+  , "lastModifiedDate" :: Maybe (LastModifiedDate)
+  , "creationDate" :: Maybe (CreationDate)
+  , "cloneUrlHttp" :: Maybe (CloneUrlHttp)
+  , "cloneUrlSsh" :: Maybe (CloneUrlSsh)
+  , "Arn" :: Maybe (Arn)
   }
 derive instance newtypeRepositoryMetadata :: Newtype RepositoryMetadata _
 derive instance repGenericRepositoryMetadata :: Generic RepositoryMetadata _
@@ -3015,12 +3014,12 @@ instance encodeRepositoryMetadata :: Encode RepositoryMetadata where encode = ge
 
 -- | Constructs RepositoryMetadata from required parameters
 newRepositoryMetadata :: RepositoryMetadata
-newRepositoryMetadata  = RepositoryMetadata { "Arn": (NullOrUndefined Nothing), "accountId": (NullOrUndefined Nothing), "cloneUrlHttp": (NullOrUndefined Nothing), "cloneUrlSsh": (NullOrUndefined Nothing), "creationDate": (NullOrUndefined Nothing), "defaultBranch": (NullOrUndefined Nothing), "lastModifiedDate": (NullOrUndefined Nothing), "repositoryDescription": (NullOrUndefined Nothing), "repositoryId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newRepositoryMetadata  = RepositoryMetadata { "Arn": Nothing, "accountId": Nothing, "cloneUrlHttp": Nothing, "cloneUrlSsh": Nothing, "creationDate": Nothing, "defaultBranch": Nothing, "lastModifiedDate": Nothing, "repositoryDescription": Nothing, "repositoryId": Nothing, "repositoryName": Nothing }
 
 -- | Constructs RepositoryMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRepositoryMetadata' :: ( { "accountId" :: NullOrUndefined (AccountId) , "repositoryId" :: NullOrUndefined (RepositoryId) , "repositoryName" :: NullOrUndefined (RepositoryName) , "repositoryDescription" :: NullOrUndefined (RepositoryDescription) , "defaultBranch" :: NullOrUndefined (BranchName) , "lastModifiedDate" :: NullOrUndefined (LastModifiedDate) , "creationDate" :: NullOrUndefined (CreationDate) , "cloneUrlHttp" :: NullOrUndefined (CloneUrlHttp) , "cloneUrlSsh" :: NullOrUndefined (CloneUrlSsh) , "Arn" :: NullOrUndefined (Arn) } -> {"accountId" :: NullOrUndefined (AccountId) , "repositoryId" :: NullOrUndefined (RepositoryId) , "repositoryName" :: NullOrUndefined (RepositoryName) , "repositoryDescription" :: NullOrUndefined (RepositoryDescription) , "defaultBranch" :: NullOrUndefined (BranchName) , "lastModifiedDate" :: NullOrUndefined (LastModifiedDate) , "creationDate" :: NullOrUndefined (CreationDate) , "cloneUrlHttp" :: NullOrUndefined (CloneUrlHttp) , "cloneUrlSsh" :: NullOrUndefined (CloneUrlSsh) , "Arn" :: NullOrUndefined (Arn) } ) -> RepositoryMetadata
-newRepositoryMetadata'  customize = (RepositoryMetadata <<< customize) { "Arn": (NullOrUndefined Nothing), "accountId": (NullOrUndefined Nothing), "cloneUrlHttp": (NullOrUndefined Nothing), "cloneUrlSsh": (NullOrUndefined Nothing), "creationDate": (NullOrUndefined Nothing), "defaultBranch": (NullOrUndefined Nothing), "lastModifiedDate": (NullOrUndefined Nothing), "repositoryDescription": (NullOrUndefined Nothing), "repositoryId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newRepositoryMetadata' :: ( { "accountId" :: Maybe (AccountId) , "repositoryId" :: Maybe (RepositoryId) , "repositoryName" :: Maybe (RepositoryName) , "repositoryDescription" :: Maybe (RepositoryDescription) , "defaultBranch" :: Maybe (BranchName) , "lastModifiedDate" :: Maybe (LastModifiedDate) , "creationDate" :: Maybe (CreationDate) , "cloneUrlHttp" :: Maybe (CloneUrlHttp) , "cloneUrlSsh" :: Maybe (CloneUrlSsh) , "Arn" :: Maybe (Arn) } -> {"accountId" :: Maybe (AccountId) , "repositoryId" :: Maybe (RepositoryId) , "repositoryName" :: Maybe (RepositoryName) , "repositoryDescription" :: Maybe (RepositoryDescription) , "defaultBranch" :: Maybe (BranchName) , "lastModifiedDate" :: Maybe (LastModifiedDate) , "creationDate" :: Maybe (CreationDate) , "cloneUrlHttp" :: Maybe (CloneUrlHttp) , "cloneUrlSsh" :: Maybe (CloneUrlSsh) , "Arn" :: Maybe (Arn) } ) -> RepositoryMetadata
+newRepositoryMetadata'  customize = (RepositoryMetadata <<< customize) { "Arn": Nothing, "accountId": Nothing, "cloneUrlHttp": Nothing, "cloneUrlSsh": Nothing, "creationDate": Nothing, "defaultBranch": Nothing, "lastModifiedDate": Nothing, "repositoryDescription": Nothing, "repositoryId": Nothing, "repositoryName": Nothing }
 
 
 
@@ -3054,8 +3053,8 @@ instance encodeRepositoryNameExistsException :: Encode RepositoryNameExistsExcep
 
 -- | <p>Information about a repository name and ID.</p>
 newtype RepositoryNameIdPair = RepositoryNameIdPair 
-  { "repositoryName" :: NullOrUndefined (RepositoryName)
-  , "repositoryId" :: NullOrUndefined (RepositoryId)
+  { "repositoryName" :: Maybe (RepositoryName)
+  , "repositoryId" :: Maybe (RepositoryId)
   }
 derive instance newtypeRepositoryNameIdPair :: Newtype RepositoryNameIdPair _
 derive instance repGenericRepositoryNameIdPair :: Generic RepositoryNameIdPair _
@@ -3065,12 +3064,12 @@ instance encodeRepositoryNameIdPair :: Encode RepositoryNameIdPair where encode 
 
 -- | Constructs RepositoryNameIdPair from required parameters
 newRepositoryNameIdPair :: RepositoryNameIdPair
-newRepositoryNameIdPair  = RepositoryNameIdPair { "repositoryId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newRepositoryNameIdPair  = RepositoryNameIdPair { "repositoryId": Nothing, "repositoryName": Nothing }
 
 -- | Constructs RepositoryNameIdPair's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRepositoryNameIdPair' :: ( { "repositoryName" :: NullOrUndefined (RepositoryName) , "repositoryId" :: NullOrUndefined (RepositoryId) } -> {"repositoryName" :: NullOrUndefined (RepositoryName) , "repositoryId" :: NullOrUndefined (RepositoryId) } ) -> RepositoryNameIdPair
-newRepositoryNameIdPair'  customize = (RepositoryNameIdPair <<< customize) { "repositoryId": (NullOrUndefined Nothing), "repositoryName": (NullOrUndefined Nothing) }
+newRepositoryNameIdPair' :: ( { "repositoryName" :: Maybe (RepositoryName) , "repositoryId" :: Maybe (RepositoryId) } -> {"repositoryName" :: Maybe (RepositoryName) , "repositoryId" :: Maybe (RepositoryId) } ) -> RepositoryNameIdPair
+newRepositoryNameIdPair'  customize = (RepositoryNameIdPair <<< customize) { "repositoryId": Nothing, "repositoryName": Nothing }
 
 
 
@@ -3135,8 +3134,8 @@ instance encodeRepositoryNotFoundList :: Encode RepositoryNotFoundList where enc
 newtype RepositoryTrigger = RepositoryTrigger 
   { "name" :: (RepositoryTriggerName)
   , "destinationArn" :: (Arn)
-  , "customData" :: NullOrUndefined (RepositoryTriggerCustomData)
-  , "branches" :: NullOrUndefined (BranchNameList)
+  , "customData" :: Maybe (RepositoryTriggerCustomData)
+  , "branches" :: Maybe (BranchNameList)
   , "events" :: (RepositoryTriggerEventList)
   }
 derive instance newtypeRepositoryTrigger :: Newtype RepositoryTrigger _
@@ -3147,12 +3146,12 @@ instance encodeRepositoryTrigger :: Encode RepositoryTrigger where encode = gene
 
 -- | Constructs RepositoryTrigger from required parameters
 newRepositoryTrigger :: Arn -> RepositoryTriggerEventList -> RepositoryTriggerName -> RepositoryTrigger
-newRepositoryTrigger _destinationArn _events _name = RepositoryTrigger { "destinationArn": _destinationArn, "events": _events, "name": _name, "branches": (NullOrUndefined Nothing), "customData": (NullOrUndefined Nothing) }
+newRepositoryTrigger _destinationArn _events _name = RepositoryTrigger { "destinationArn": _destinationArn, "events": _events, "name": _name, "branches": Nothing, "customData": Nothing }
 
 -- | Constructs RepositoryTrigger's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRepositoryTrigger' :: Arn -> RepositoryTriggerEventList -> RepositoryTriggerName -> ( { "name" :: (RepositoryTriggerName) , "destinationArn" :: (Arn) , "customData" :: NullOrUndefined (RepositoryTriggerCustomData) , "branches" :: NullOrUndefined (BranchNameList) , "events" :: (RepositoryTriggerEventList) } -> {"name" :: (RepositoryTriggerName) , "destinationArn" :: (Arn) , "customData" :: NullOrUndefined (RepositoryTriggerCustomData) , "branches" :: NullOrUndefined (BranchNameList) , "events" :: (RepositoryTriggerEventList) } ) -> RepositoryTrigger
-newRepositoryTrigger' _destinationArn _events _name customize = (RepositoryTrigger <<< customize) { "destinationArn": _destinationArn, "events": _events, "name": _name, "branches": (NullOrUndefined Nothing), "customData": (NullOrUndefined Nothing) }
+newRepositoryTrigger' :: Arn -> RepositoryTriggerEventList -> RepositoryTriggerName -> ( { "name" :: (RepositoryTriggerName) , "destinationArn" :: (Arn) , "customData" :: Maybe (RepositoryTriggerCustomData) , "branches" :: Maybe (BranchNameList) , "events" :: (RepositoryTriggerEventList) } -> {"name" :: (RepositoryTriggerName) , "destinationArn" :: (Arn) , "customData" :: Maybe (RepositoryTriggerCustomData) , "branches" :: Maybe (BranchNameList) , "events" :: (RepositoryTriggerEventList) } ) -> RepositoryTrigger
+newRepositoryTrigger' _destinationArn _events _name customize = (RepositoryTrigger <<< customize) { "destinationArn": _destinationArn, "events": _events, "name": _name, "branches": Nothing, "customData": Nothing }
 
 
 
@@ -3215,8 +3214,8 @@ instance encodeRepositoryTriggerEventsListRequiredException :: Encode Repository
 
 -- | <p>A trigger failed to run.</p>
 newtype RepositoryTriggerExecutionFailure = RepositoryTriggerExecutionFailure 
-  { "trigger" :: NullOrUndefined (RepositoryTriggerName)
-  , "failureMessage" :: NullOrUndefined (RepositoryTriggerExecutionFailureMessage)
+  { "trigger" :: Maybe (RepositoryTriggerName)
+  , "failureMessage" :: Maybe (RepositoryTriggerExecutionFailureMessage)
   }
 derive instance newtypeRepositoryTriggerExecutionFailure :: Newtype RepositoryTriggerExecutionFailure _
 derive instance repGenericRepositoryTriggerExecutionFailure :: Generic RepositoryTriggerExecutionFailure _
@@ -3226,12 +3225,12 @@ instance encodeRepositoryTriggerExecutionFailure :: Encode RepositoryTriggerExec
 
 -- | Constructs RepositoryTriggerExecutionFailure from required parameters
 newRepositoryTriggerExecutionFailure :: RepositoryTriggerExecutionFailure
-newRepositoryTriggerExecutionFailure  = RepositoryTriggerExecutionFailure { "failureMessage": (NullOrUndefined Nothing), "trigger": (NullOrUndefined Nothing) }
+newRepositoryTriggerExecutionFailure  = RepositoryTriggerExecutionFailure { "failureMessage": Nothing, "trigger": Nothing }
 
 -- | Constructs RepositoryTriggerExecutionFailure's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRepositoryTriggerExecutionFailure' :: ( { "trigger" :: NullOrUndefined (RepositoryTriggerName) , "failureMessage" :: NullOrUndefined (RepositoryTriggerExecutionFailureMessage) } -> {"trigger" :: NullOrUndefined (RepositoryTriggerName) , "failureMessage" :: NullOrUndefined (RepositoryTriggerExecutionFailureMessage) } ) -> RepositoryTriggerExecutionFailure
-newRepositoryTriggerExecutionFailure'  customize = (RepositoryTriggerExecutionFailure <<< customize) { "failureMessage": (NullOrUndefined Nothing), "trigger": (NullOrUndefined Nothing) }
+newRepositoryTriggerExecutionFailure' :: ( { "trigger" :: Maybe (RepositoryTriggerName) , "failureMessage" :: Maybe (RepositoryTriggerExecutionFailureMessage) } -> {"trigger" :: Maybe (RepositoryTriggerName) , "failureMessage" :: Maybe (RepositoryTriggerExecutionFailureMessage) } ) -> RepositoryTriggerExecutionFailure
+newRepositoryTriggerExecutionFailure'  customize = (RepositoryTriggerExecutionFailure <<< customize) { "failureMessage": Nothing, "trigger": Nothing }
 
 
 
@@ -3342,7 +3341,7 @@ instance encodeSourceAndDestinationAreSameException :: Encode SourceAndDestinati
 newtype Target = Target 
   { "repositoryName" :: (RepositoryName)
   , "sourceReference" :: (ReferenceName)
-  , "destinationReference" :: NullOrUndefined (ReferenceName)
+  , "destinationReference" :: Maybe (ReferenceName)
   }
 derive instance newtypeTarget :: Newtype Target _
 derive instance repGenericTarget :: Generic Target _
@@ -3352,12 +3351,12 @@ instance encodeTarget :: Encode Target where encode = genericEncode options
 
 -- | Constructs Target from required parameters
 newTarget :: RepositoryName -> ReferenceName -> Target
-newTarget _repositoryName _sourceReference = Target { "repositoryName": _repositoryName, "sourceReference": _sourceReference, "destinationReference": (NullOrUndefined Nothing) }
+newTarget _repositoryName _sourceReference = Target { "repositoryName": _repositoryName, "sourceReference": _sourceReference, "destinationReference": Nothing }
 
 -- | Constructs Target's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTarget' :: RepositoryName -> ReferenceName -> ( { "repositoryName" :: (RepositoryName) , "sourceReference" :: (ReferenceName) , "destinationReference" :: NullOrUndefined (ReferenceName) } -> {"repositoryName" :: (RepositoryName) , "sourceReference" :: (ReferenceName) , "destinationReference" :: NullOrUndefined (ReferenceName) } ) -> Target
-newTarget' _repositoryName _sourceReference customize = (Target <<< customize) { "repositoryName": _repositoryName, "sourceReference": _sourceReference, "destinationReference": (NullOrUndefined Nothing) }
+newTarget' :: RepositoryName -> ReferenceName -> ( { "repositoryName" :: (RepositoryName) , "sourceReference" :: (ReferenceName) , "destinationReference" :: Maybe (ReferenceName) } -> {"repositoryName" :: (RepositoryName) , "sourceReference" :: (ReferenceName) , "destinationReference" :: Maybe (ReferenceName) } ) -> Target
+newTarget' _repositoryName _sourceReference customize = (Target <<< customize) { "repositoryName": _repositoryName, "sourceReference": _sourceReference, "destinationReference": Nothing }
 
 
 
@@ -3414,8 +3413,8 @@ newTestRepositoryTriggersInput' _repositoryName _triggers customize = (TestRepos
 
 -- | <p>Represents the output of a test repository triggers operation.</p>
 newtype TestRepositoryTriggersOutput = TestRepositoryTriggersOutput 
-  { "successfulExecutions" :: NullOrUndefined (RepositoryTriggerNameList)
-  , "failedExecutions" :: NullOrUndefined (RepositoryTriggerExecutionFailureList)
+  { "successfulExecutions" :: Maybe (RepositoryTriggerNameList)
+  , "failedExecutions" :: Maybe (RepositoryTriggerExecutionFailureList)
   }
 derive instance newtypeTestRepositoryTriggersOutput :: Newtype TestRepositoryTriggersOutput _
 derive instance repGenericTestRepositoryTriggersOutput :: Generic TestRepositoryTriggersOutput _
@@ -3425,12 +3424,12 @@ instance encodeTestRepositoryTriggersOutput :: Encode TestRepositoryTriggersOutp
 
 -- | Constructs TestRepositoryTriggersOutput from required parameters
 newTestRepositoryTriggersOutput :: TestRepositoryTriggersOutput
-newTestRepositoryTriggersOutput  = TestRepositoryTriggersOutput { "failedExecutions": (NullOrUndefined Nothing), "successfulExecutions": (NullOrUndefined Nothing) }
+newTestRepositoryTriggersOutput  = TestRepositoryTriggersOutput { "failedExecutions": Nothing, "successfulExecutions": Nothing }
 
 -- | Constructs TestRepositoryTriggersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTestRepositoryTriggersOutput' :: ( { "successfulExecutions" :: NullOrUndefined (RepositoryTriggerNameList) , "failedExecutions" :: NullOrUndefined (RepositoryTriggerExecutionFailureList) } -> {"successfulExecutions" :: NullOrUndefined (RepositoryTriggerNameList) , "failedExecutions" :: NullOrUndefined (RepositoryTriggerExecutionFailureList) } ) -> TestRepositoryTriggersOutput
-newTestRepositoryTriggersOutput'  customize = (TestRepositoryTriggersOutput <<< customize) { "failedExecutions": (NullOrUndefined Nothing), "successfulExecutions": (NullOrUndefined Nothing) }
+newTestRepositoryTriggersOutput' :: ( { "successfulExecutions" :: Maybe (RepositoryTriggerNameList) , "failedExecutions" :: Maybe (RepositoryTriggerExecutionFailureList) } -> {"successfulExecutions" :: Maybe (RepositoryTriggerNameList) , "failedExecutions" :: Maybe (RepositoryTriggerExecutionFailureList) } ) -> TestRepositoryTriggersOutput
+newTestRepositoryTriggersOutput'  customize = (TestRepositoryTriggersOutput <<< customize) { "failedExecutions": Nothing, "successfulExecutions": Nothing }
 
 
 
@@ -3495,7 +3494,7 @@ newUpdateCommentInput' _commentId _content customize = (UpdateCommentInput <<< c
 
 
 newtype UpdateCommentOutput = UpdateCommentOutput 
-  { "comment" :: NullOrUndefined (Comment)
+  { "comment" :: Maybe (Comment)
   }
 derive instance newtypeUpdateCommentOutput :: Newtype UpdateCommentOutput _
 derive instance repGenericUpdateCommentOutput :: Generic UpdateCommentOutput _
@@ -3505,12 +3504,12 @@ instance encodeUpdateCommentOutput :: Encode UpdateCommentOutput where encode = 
 
 -- | Constructs UpdateCommentOutput from required parameters
 newUpdateCommentOutput :: UpdateCommentOutput
-newUpdateCommentOutput  = UpdateCommentOutput { "comment": (NullOrUndefined Nothing) }
+newUpdateCommentOutput  = UpdateCommentOutput { "comment": Nothing }
 
 -- | Constructs UpdateCommentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateCommentOutput' :: ( { "comment" :: NullOrUndefined (Comment) } -> {"comment" :: NullOrUndefined (Comment) } ) -> UpdateCommentOutput
-newUpdateCommentOutput'  customize = (UpdateCommentOutput <<< customize) { "comment": (NullOrUndefined Nothing) }
+newUpdateCommentOutput' :: ( { "comment" :: Maybe (Comment) } -> {"comment" :: Maybe (Comment) } ) -> UpdateCommentOutput
+newUpdateCommentOutput'  customize = (UpdateCommentOutput <<< customize) { "comment": Nothing }
 
 
 
@@ -3662,7 +3661,7 @@ newUpdatePullRequestTitleOutput' _pullRequest customize = (UpdatePullRequestTitl
 -- | <p>Represents the input of an update repository description operation.</p>
 newtype UpdateRepositoryDescriptionInput = UpdateRepositoryDescriptionInput 
   { "repositoryName" :: (RepositoryName)
-  , "repositoryDescription" :: NullOrUndefined (RepositoryDescription)
+  , "repositoryDescription" :: Maybe (RepositoryDescription)
   }
 derive instance newtypeUpdateRepositoryDescriptionInput :: Newtype UpdateRepositoryDescriptionInput _
 derive instance repGenericUpdateRepositoryDescriptionInput :: Generic UpdateRepositoryDescriptionInput _
@@ -3672,12 +3671,12 @@ instance encodeUpdateRepositoryDescriptionInput :: Encode UpdateRepositoryDescri
 
 -- | Constructs UpdateRepositoryDescriptionInput from required parameters
 newUpdateRepositoryDescriptionInput :: RepositoryName -> UpdateRepositoryDescriptionInput
-newUpdateRepositoryDescriptionInput _repositoryName = UpdateRepositoryDescriptionInput { "repositoryName": _repositoryName, "repositoryDescription": (NullOrUndefined Nothing) }
+newUpdateRepositoryDescriptionInput _repositoryName = UpdateRepositoryDescriptionInput { "repositoryName": _repositoryName, "repositoryDescription": Nothing }
 
 -- | Constructs UpdateRepositoryDescriptionInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateRepositoryDescriptionInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "repositoryDescription" :: NullOrUndefined (RepositoryDescription) } -> {"repositoryName" :: (RepositoryName) , "repositoryDescription" :: NullOrUndefined (RepositoryDescription) } ) -> UpdateRepositoryDescriptionInput
-newUpdateRepositoryDescriptionInput' _repositoryName customize = (UpdateRepositoryDescriptionInput <<< customize) { "repositoryName": _repositoryName, "repositoryDescription": (NullOrUndefined Nothing) }
+newUpdateRepositoryDescriptionInput' :: RepositoryName -> ( { "repositoryName" :: (RepositoryName) , "repositoryDescription" :: Maybe (RepositoryDescription) } -> {"repositoryName" :: (RepositoryName) , "repositoryDescription" :: Maybe (RepositoryDescription) } ) -> UpdateRepositoryDescriptionInput
+newUpdateRepositoryDescriptionInput' _repositoryName customize = (UpdateRepositoryDescriptionInput <<< customize) { "repositoryName": _repositoryName, "repositoryDescription": Nothing }
 
 
 
@@ -3705,9 +3704,9 @@ newUpdateRepositoryNameInput' _newName _oldName customize = (UpdateRepositoryNam
 
 -- | <p>Information about the user who made a specified commit.</p>
 newtype UserInfo = UserInfo 
-  { "name" :: NullOrUndefined (Name)
-  , "email" :: NullOrUndefined (Email)
-  , "date" :: NullOrUndefined (Date)
+  { "name" :: Maybe (Name)
+  , "email" :: Maybe (Email)
+  , "date" :: Maybe (Date)
   }
 derive instance newtypeUserInfo :: Newtype UserInfo _
 derive instance repGenericUserInfo :: Generic UserInfo _
@@ -3717,10 +3716,10 @@ instance encodeUserInfo :: Encode UserInfo where encode = genericEncode options
 
 -- | Constructs UserInfo from required parameters
 newUserInfo :: UserInfo
-newUserInfo  = UserInfo { "date": (NullOrUndefined Nothing), "email": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newUserInfo  = UserInfo { "date": Nothing, "email": Nothing, "name": Nothing }
 
 -- | Constructs UserInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserInfo' :: ( { "name" :: NullOrUndefined (Name) , "email" :: NullOrUndefined (Email) , "date" :: NullOrUndefined (Date) } -> {"name" :: NullOrUndefined (Name) , "email" :: NullOrUndefined (Email) , "date" :: NullOrUndefined (Date) } ) -> UserInfo
-newUserInfo'  customize = (UserInfo <<< customize) { "date": (NullOrUndefined Nothing), "email": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newUserInfo' :: ( { "name" :: Maybe (Name) , "email" :: Maybe (Email) , "date" :: Maybe (Date) } -> {"name" :: Maybe (Name) , "email" :: Maybe (Email) , "date" :: Maybe (Date) } ) -> UserInfo
+newUserInfo'  customize = (UserInfo <<< customize) { "date": Nothing, "email": Nothing, "name": Nothing }
 
